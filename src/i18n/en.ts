@@ -212,14 +212,14 @@ export const en: Dict = {
   recap: {
     label: "Recap PDF requested",
     offerTitle: "Do you want a recap before you end?",
-    offerText: "A PDF with your request, the official recommendations, the places found, the next steps and questions to ask your doctor.",
+    offerText: "A PDF with your request, the official recommendations, the places found and questions for your doctor. It stays on your device.",
     download: "Download the recap",
     endWithout: "End without a recap",
+    doneText: "The file is saved on your device. You can now end the conversation.",
     doneTitle: "Your recap is downloaded.",
     back: "Back to the conversation",
     again: "Download again",
     card: "Recap of the conversation (PDF)",
-    privacy: "The PDF is laid out by markdowntopdf.dev, a CloudRaker service that keeps nothing. It is saved only on your device.",
     errorTitle: "The recap could not be made",
     errors: {
       unavailable: "The recap did not pass our checks. You can try again or end the conversation.",

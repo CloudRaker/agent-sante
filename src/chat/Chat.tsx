@@ -1,7 +1,7 @@
 // The chat screen: thread, live activity steps, one morphing alert, composer.
 // The person never sees an unchecked reply: the thread receives a reply only after both checks pass.
 import { useReducedMotion } from "motion/react";
-import { CircleCheck, FileDown, LogOut, MessageCircleOff, Phone } from "lucide-react";
+import { CircleCheck, FileDown, FileText, LogOut, MessageCircleOff, Phone, X } from "lucide-react";
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState, type Ref } from "react";
 import { Alert } from "@/components/arc/alert/alert";
 import { Button } from "@/components/arc/button/button";
@@ -324,25 +324,31 @@ export function Chat({
               </div>
             ) : ending ? (
               <section className={styles.endPanel} aria-labelledby="recap-title">
-                <p id="recap-title" className={styles.endPanelTitle}>
-                  {recapDone ? t.recap.doneTitle : t.recap.offerTitle}
-                </p>
-                {!recapDone && <p className={styles.endPanelText}>{t.recap.offerText}</p>}
+                <div className={styles.endPanelHead}>
+                  <span className={styles.endPanelIcon} data-done={recapDone || undefined} aria-hidden="true">
+                    {recapDone ? <CircleCheck size={20} strokeWidth={1.75} /> : <FileText size={20} strokeWidth={1.75} />}
+                  </span>
+                  <div className={styles.endPanelCopy}>
+                    <h2 id="recap-title" className={styles.endPanelTitle}>
+                      {recapDone ? t.recap.doneTitle : t.recap.offerTitle}
+                    </h2>
+                    <p className={styles.endPanelText}>{recapDone ? t.recap.doneText : t.recap.offerText}</p>
+                  </div>
+                  <Button variant="ghost" size="sm" className={styles.endPanelClose} disabled={busy} onClick={() => setEnding(false)} aria-label={t.recap.back}>
+                    <X size={18} strokeWidth={1.75} aria-hidden="true" />
+                  </Button>
+                </div>
                 <div className={styles.endPanelActions}>
                   {!recapDone && (
-                    <Button variant="primary" size="lg" loading={busy} disabled={busy} onClick={() => void askRecap()}>
-                      <FileDown size={18} strokeWidth={1.75} aria-hidden="true" />
+                    <Button variant="primary" size="md" loading={busy} disabled={busy} onClick={() => void askRecap()}>
+                      <FileDown size={16} strokeWidth={1.75} aria-hidden="true" />
                       {t.recap.download}
                     </Button>
                   )}
-                  <Button variant={recapDone ? "primary" : "secondary"} size="lg" disabled={busy} onClick={() => chat.finish("closed")}>
+                  <Button variant={recapDone ? "primary" : "secondary"} size="md" disabled={busy} onClick={() => chat.finish("closed")}>
                     {recapDone ? t.chat.end : t.recap.endWithout}
                   </Button>
-                  <Button variant="ghost" size="sm" disabled={busy} onClick={() => setEnding(false)}>
-                    {t.recap.back}
-                  </Button>
                 </div>
-                <p className={styles.hint}>{t.recap.privacy}</p>
               </section>
             ) : (
               <>

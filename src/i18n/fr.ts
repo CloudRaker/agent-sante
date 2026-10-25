@@ -213,14 +213,14 @@ export const fr = {
   recap: {
     label: "Récapitulatif PDF demandé",
     offerTitle: "Voulez-vous un récapitulatif avant de terminer ?",
-    offerText: "Un PDF avec votre demande, les recommandations officielles, les lieux trouvés, les prochaines étapes et des questions à poser à votre médecin.",
+    offerText: "Un PDF avec votre demande, les recommandations officielles, les lieux trouvés et des questions pour votre médecin. Il reste sur votre appareil.",
     download: "Télécharger le récapitulatif",
     endWithout: "Terminer sans récapitulatif",
+    doneText: "Le fichier est enregistré sur votre appareil. Vous pouvez maintenant terminer la conversation.",
     doneTitle: "Votre récapitulatif est téléchargé.",
     back: "Revenir à la conversation",
     again: "Télécharger à nouveau",
     card: "Récapitulatif de la conversation (PDF)",
-    privacy: "Le PDF est mis en page par markdowntopdf.dev, un service de CloudRaker qui ne garde rien. Il est enregistré seulement sur votre appareil.",
     errorTitle: "Le récapitulatif n'a pas pu être créé",
     errors: {
       unavailable: "Le récapitulatif n'a pas passé nos vérifications. Vous pouvez réessayer ou terminer la conversation.",

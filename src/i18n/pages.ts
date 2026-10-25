@@ -142,7 +142,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
             "Le bouton micro enregistre un message vocal. Votre navigateur demande la permission d'utiliser le micro la première fois que vous le touchez, jamais avant. L'enregistrement dure au plus une minute.",
             "Le son va seulement à notre serveur, puis à rakeaudio, le modèle de transcription de CloudRaker, à Montréal. Ni notre serveur ni rakeaudio ne gardent le son ou le texte. Nos journaux contiennent seulement la taille, la durée et le temps de traitement. Le son ne va jamais aux modèles de langue : seul le texte transcrit continue, et il passe par le filtre des renseignements personnels comme un message écrit.",
             "Les pages Transparence et Coûts montrent seulement des totaux, comme le nombre de messages bloqués. Aucun texte n'y est gardé.",
-            "Récapitulatif PDF : seulement si vous le demandez, l'agent écrit un résumé de la conversation, vérifié comme ses autres réponses. Notre serveur le fait mettre en page par markdowntopdf.dev, un service de CloudRaker qui ne garde rien, puis le PDF va seulement à votre navigateur. Il n'est enregistré nulle part ailleurs.",
+            "Récapitulatif PDF : seulement si vous le demandez, l'agent écrit un résumé de la conversation, vérifié comme ses autres réponses. Notre serveur le fait mettre en page par un service de CloudRaker qui ne garde rien, puis le PDF va seulement à votre navigateur. Il n'est enregistré nulle part ailleurs.",
           ],
         },
         {
@@ -307,7 +307,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
             "The microphone button records a voice message. Your browser asks for permission to use the microphone the first time you select it, never before. A recording lasts one minute at most.",
             "The sound goes only to our server, then to rakeaudio, the CloudRaker transcription model, in Montréal. Neither our server nor rakeaudio keeps the sound or the text. Our logs contain only the size, the length and the processing time. The sound never goes to the language models: only the transcribed text goes on, and it goes through the personal information filter like a typed message.",
             "The Transparency and Costs pages show totals only, such as the number of blocked messages. No text is kept there.",
-            "PDF recap: only if you ask for it, the agent writes a summary of the conversation, checked like its other replies. Our server has it laid out by markdowntopdf.dev, a CloudRaker service that keeps nothing, then the PDF goes only to your browser. It is saved nowhere else.",
+            "PDF recap: only if you ask for it, the agent writes a summary of the conversation, checked like its other replies. Our server has it laid out by a CloudRaker service that keeps nothing, then the PDF goes only to your browser. It is saved nowhere else.",
           ],
         },
         {
