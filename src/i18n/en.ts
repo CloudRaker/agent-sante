@@ -176,6 +176,7 @@ export const en: Dict = {
       slotsShort: (week: number, later: number) => (week > 0 ? `${week} open` : later > 0 ? "Later" : "Full"),
     },
     citationLabel: "Official excerpt",
+    doseNotice: "Always ask your pharmacist before you take or give a medication.",
     leafletLabel: "Excerpt from the product leaflet",
     leafletNotice: "This information comes from the leaflet of the pharmaceutical product. Always ask your pharmacist for advice.",
     citationSource: "Source:",

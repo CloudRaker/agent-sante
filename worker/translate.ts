@@ -200,7 +200,9 @@ const after = (ms: number) => new Promise<null>((resolve) => setTimeout(() => re
  * A citation that cannot be translated in the budget gets `untranslated: true`.
  */
 export async function translateCitations(citations: Citation[], lang: KbLang, deps: TranslateDeps): Promise<Citation[]> {
-  const todo = citations.filter((c) => c.lang && c.lang !== lang);
+  // A quote with a dose is never machine-translated: the card shows the official text as written.
+  citations = citations.map((c) => (c.dose && c.lang && c.lang !== lang ? { ...c, untranslated: true } : c));
+  const todo = citations.filter((c) => c.lang && c.lang !== lang && !c.dose);
   if (!todo.length) return citations;
   const { translator, cache, log } = deps;
   let inflight = translator ? inflightBy.get(translator) : undefined;

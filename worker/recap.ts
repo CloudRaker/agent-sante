@@ -73,6 +73,7 @@ const WORDS = {
     officialPage: "Fiche officielle",
     source: "Source",
     leafletSource: "Santé Canada, notice du produit",
+    dose: "Demandez toujours conseil à votre pharmacien avant de prendre ou de donner un médicament.",
     leaflet: "Ces informations proviennent de la notice du produit pharmaceutique. Demandez toujours conseil à votre pharmacien.",
     notice:
       "Ce document résume une conversation avec Agent Santé, un service gratuit de CloudRaker. Ce n'est pas un avis médical et ce n'est pas un service du gouvernement du Québec. En cas d'urgence, appelez le 911. Pour parler à une infirmière, appelez Info-Santé au 811.",
@@ -89,6 +90,7 @@ const WORDS = {
     officialPage: "Official page",
     source: "Source",
     leafletSource: "Health Canada, product leaflet",
+    dose: "Always ask your pharmacist before you take or give a medication.",
     leaflet: "This information comes from the leaflet of the pharmaceutical product. Always ask your pharmacist for advice.",
     notice:
       "This document sums up a conversation with Agent Santé, a free service by CloudRaker. It is not medical advice and not a Government of Québec service. In an emergency, call 911. To talk to a nurse, call Info-Santé at 811.",
@@ -108,6 +110,7 @@ function quoteBlock(c: Citation, lang: Lang): string {
   const label = c.kind === "leaflet" ? WORDS[lang].leafletSource : (officialDomain(c.src) ?? "");
   const lines = [body, ">", `> ${WORDS[lang].source} : [${label}](${c.src})`];
   if (c.kind === "leaflet") lines.push(">", `> *${WORDS[lang].leaflet}*`);
+  else if (c.dose) lines.push(">", `> *${WORDS[lang].dose}*`);
   return lines.join("\n");
 }
 

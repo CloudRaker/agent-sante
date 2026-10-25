@@ -141,14 +141,15 @@ export async function verifyQuote(
   kb: KbStore,
   src: string,
   text: string,
-): Promise<{ reason: UnverifiedReason } | { retrieved?: string; lang?: KbLang; kind?: "leaflet" }> {
+): Promise<{ reason: UnverifiedReason } | { retrieved?: string; lang?: KbLang; kind?: "leaflet"; dose?: true }> {
   const url = normalizeSourceUrl(src);
   if (!url || !officialDomain(url)) return { reason: "bad_src" };
   if (!text) return { reason: "empty" };
   if (text.length > MAX_QUOTE_CHARS) return { reason: "too_long" };
   const leaflet = parseLeafletSource(url);
-  // A leaflet quote may hold a dose: the leaflet is the product's own text, shown with a notice.
-  if (!leaflet && hasDose(text)) return { reason: "dose" };
+  // A quote may hold a dose when it matches the official text word for word. The card then adds
+  // a notice to ask a pharmacist. A dose in the agent's own words never verifies (it is not a quote).
+  const dose = !leaflet && hasDose(text);
   const fragments = quoteFragments(text);
   if (!fragments.length) return { reason: "empty" };
   if (fragments.some((f) => f.length < MIN_FRAGMENT)) return { reason: "short_fragment" };
@@ -184,7 +185,7 @@ export async function verifyQuote(
     }
     if (fragmentsInOrder(fragments, key)) {
       const lang = langs?.[file];
-      return { ...(entry.retrieved ? { retrieved: entry.retrieved } : {}), ...(lang ? { lang } : {}) };
+      return { ...(entry.retrieved ? { retrieved: entry.retrieved } : {}), ...(lang ? { lang } : {}), ...(dose ? { dose: true as const } : {}) };
     }
   }
   return { reason: read ? "not_found" : "kb_unavailable" };
@@ -244,6 +245,7 @@ export async function prepareReply(text: string, kb: KbStore | undefined, lang: 
       ...("retrieved" in result && result.retrieved ? { retrieved: result.retrieved } : {}),
       ...("lang" in result && result.lang ? { lang: result.lang } : {}),
       ...("kind" in result && result.kind ? { kind: result.kind } : {}),
+      ...("dose" in result && result.dose ? { dose: true as const } : {}),
     });
     check.push(PLACEHOLDER[lang]);
     display.push(`\n\n${citationMarker(n)}\n\n`);

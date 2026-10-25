@@ -145,8 +145,9 @@ describe("verifyQuote", () => {
     expect(await verifyQuote(kb, SRC, `${a} […] la fièvre`)).toEqual({ reason: "short_fragment" });
   });
 
-  it("refuses a quote with a dose, an empty quote and a long quote", async () => {
-    expect(await verifyQuote(kb, SRC, "Donnez 15 mg/kg d’acétaminophène toutes les 4 heures")).toEqual({ reason: "dose" });
+  it("checks a dose quote like any quote, and refuses an empty quote and a long quote", async () => {
+    // The source holds this dose sentence: it verifies, with the dose flag for the pharmacist notice.
+    expect(await verifyQuote(kb, SRC, "Donnez 15 mg/kg d’acétaminophène toutes les 4 heures")).toEqual({ retrieved: "2026-10-23", dose: true });
     expect(await verifyQuote(kb, SRC, " ")).toEqual({ reason: "empty" });
     expect(await verifyQuote(kb, SRC, QUOTE.repeat(20))).toEqual({ reason: "too_long" });
   });

@@ -187,7 +187,7 @@ describe("translation in the pipeline", () => {
     expect(res.json.reply.citations).toBeUndefined();
   });
 
-  it("a French quote with dosing text never verifies, so it is checked and never translated", async () => {
+  it("a French quote with dosing text verifies with the dose flag, and is never translated", async () => {
     const dosed = memoryKb([{ url: FR_SRC, body: `${FR_DOC}\n\nDonner 1 à 2 comprimés toutes les 4 à 6 heures, au besoin.`, lang: "fr" }]);
     const quote = "Donner 1 à 2 comprimés toutes les 4 à 6 heures, au besoin.";
     const { run } = scriptedRun((call) =>
@@ -199,10 +199,11 @@ describe("translation in the pipeline", () => {
     const { say } = await session(post, "en");
     const res = await say("How much can I give my child?");
     if (res.json.ended) throw new Error("ended");
-    expect(checked[0]).toContain(quote);
+    // Official text, word for word: the check sees the placeholder, the card shows the pharmacist notice.
+    expect(checked[0]).not.toContain(quote);
     expect(inputs).toEqual([]);
-    expect(res.json.reply.citations).toBeUndefined();
-    expect(logs).toContainEqual(expect.objectContaining({ event: "citation_unverified", reason: "dose" }));
+    expect(res.json.reply.citations?.[0]).toMatchObject({ text: quote, dose: true, untranslated: true });
+    expect(logs).not.toContainEqual(expect.objectContaining({ event: "citation_unverified" }));
   });
 
   it("the second reply with the same quote is a cache hit: one translator call", async () => {

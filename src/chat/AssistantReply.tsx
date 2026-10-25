@@ -182,10 +182,10 @@ export function CitationCard({ citation }: { citation: Citation }) {
           )}
         </>
       )}
-      {citation.kind === "leaflet" && (
+      {(citation.kind === "leaflet" || citation.dose) && (
         <p className={styles.leafletNotice}>
           <Pill size={14} strokeWidth={1.75} aria-hidden="true" />
-          {t.chat.leafletNotice}
+          {citation.kind === "leaflet" ? t.chat.leafletNotice : t.chat.doseNotice}
         </p>
       )}
       <p className={styles.citationSource}>

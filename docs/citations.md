@@ -7,10 +7,12 @@ medical-advice check, the Worker verifies each quote (`worker/citations.ts`):
 - The quote, normalized, must be in the text of that source. `[…]` can join exact fragments in order
   (each fragment has at least 20 characters). The normalization (`shared/kb.ts`) removes Markdown
   syntax, applies NFKC, unifies apostrophes, quotes and dashes, collapses spaces and folds the case.
-- A quote that holds dosing text does not verify, so the medical-advice check sees it. That covers an
-  amount ("15 mg", "1 à 2 comprimés", "one tablet"), an intake frequency ("toutes les 4 à 6 heures",
-  "twice a day"), a number per day or per 24 hours ("maximum 8 in 24 hours") and an intake verb with a
-  number ("prendre 2", "take two"), in French and in English (`hasDose` in `shared/kb.ts`).
+- A quote that holds dosing text verifies like any quote, when it matches the official text word for
+  word. It gets `dose: true`: the card adds a notice to ask a pharmacist, and the quote is never
+  machine-translated. Dosing text (`hasDose` in `shared/kb.ts`) covers an amount ("15 mg", "1 à 2
+  comprimés"), an intake frequency ("toutes les 4 à 6 heures"), a number per day and an intake verb with
+  a number, in French and in English. A dose in the agent's own words is not a quote: the medical-advice
+  check sees it.
 - At most 3 quotes verify in one reply.
 
 A verified quote shows as a card ("Extrait officiel"). The medical-advice check sees a
@@ -58,8 +60,7 @@ source of such a quote is the Health Canada product page of the product:
 - The Worker reads the leaflet of that product from the directory API (`worker/drugs.ts`) and verifies
   the quote against it, with the same normalization and fragment rules.
 - Only a non-prescription (OTC) product verifies. A prescription product never gives a leaflet quote.
-- A leaflet quote may hold a dose: it is the product's own text. A dose in the agent's own words, or in a
-  quote of an official page, still does not verify.
+- A leaflet quote may hold a dose, like any verified quote.
 - The card says "Extrait de la notice du produit" ("Excerpt from the product leaflet") and adds: "Ces
   informations proviennent de la notice du produit pharmaceutique. Demandez toujours conseil à votre
   pharmacien."

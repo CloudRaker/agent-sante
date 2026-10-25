@@ -177,6 +177,7 @@ export const fr = {
       slotsShort: (week: number, later: number) => (week > 0 ? `${week} place${week > 1 ? "s" : ""}` : later > 0 ? "Plus tard" : "Complet"),
     },
     citationLabel: "Extrait officiel",
+    doseNotice: "Demandez toujours conseil à votre pharmacien avant de prendre ou de donner un médicament.",
     leafletLabel: "Extrait de la notice du produit",
     leafletNotice: "Ces informations proviennent de la notice du produit pharmaceutique. Demandez toujours conseil à votre pharmacien.",
     citationSource: "Source :",

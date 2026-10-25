@@ -197,9 +197,9 @@ describe("leaflet quotes", () => {
     expect(r).toEqual({ reason: "unknown_src" });
   });
 
-  it("a dose quote of an official page still does not verify", async () => {
+  it("a dose quote of an official page verifies only against that page", async () => {
     const r = await verifyQuote(kb({}), "https://www.quebec.ca/sante", DOSE);
-    expect(r).toEqual({ reason: "dose" });
+    expect(r).toEqual({ reason: "unknown_src" });
   });
 
   it("a verified leaflet quote is a leaflet citation, hidden from the medical-advice check", async () => {

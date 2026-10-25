@@ -217,6 +217,8 @@ export interface Citation {
    * adds a notice to ask a pharmacist. Absent: a quote of an official health page.
    */
   kind?: "leaflet";
+  /** The official text holds a dose: the UI adds a notice to ask a pharmacist. */
+  dose?: true;
   /**
    * Machine translation of `text` into the conversation language, when `lang` is another
    * language. The Worker translates only the verified official text, never agent text.
