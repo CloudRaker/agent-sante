@@ -11,6 +11,12 @@ import { toolPages, SOURCES_811 } from "../src/i18n/tool-pages";
 
 export const SITE = "https://agentsante.ca";
 
+/** Text of the social card (public/og.png, public/og.mp4: a question and a verified Québec.ca quote). */
+const OG_ALT = {
+  fr: "Agent Santé : vos questions santé, des réponses officielles. Une question sur la vaccination contre la grippe et un extrait officiel de Québec.ca.",
+  en: "Agent Santé: your health questions, official answers. A question about the flu vaccine and an official excerpt from Québec.ca.",
+};
+
 type PageKey = RoutePageId | "home";
 
 export interface PageMeta {
@@ -189,6 +195,18 @@ export function rewritePage(res: Response, meta: PageMeta): Response {
     `<meta property="og:description" content="${esc(meta.description)}" />`,
     `<meta property="og:url" content="${esc(meta.canonical)}" />`,
     `<meta property="og:locale" content="${meta.lang === "fr" ? "fr_CA" : "en_CA"}" />`,
+    `<meta property="og:image" content="${SITE}/og.png" />`,
+    `<meta property="og:image:type" content="image/png" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta property="og:image:alt" content="${esc(OG_ALT[meta.lang])}" />`,
+    `<meta property="og:video" content="${SITE}/og.mp4" />`,
+    `<meta property="og:video:secure_url" content="${SITE}/og.mp4" />`,
+    `<meta property="og:video:type" content="video/mp4" />`,
+    `<meta property="og:video:width" content="1200" />`,
+    `<meta property="og:video:height" content="630" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:image" content="${SITE}/og.png" />`,
     `<link rel="alternate" hreflang="fr-CA" href="${esc(meta.alternates.fr)}" />`,
     `<link rel="alternate" hreflang="en-CA" href="${esc(meta.alternates.en)}" />`,
     `<link rel="alternate" hreflang="x-default" href="${esc(meta.alternates.fr)}" />`,

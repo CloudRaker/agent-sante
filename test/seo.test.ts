@@ -32,6 +32,15 @@ describe("page metadata", () => {
     expect(graph.find((n) => n["@type"] === "WebApplication")?.isAccessibleForFree).toBe(true);
   });
 
+  it("declares the social card image and video", async () => {
+    const { readFileSync } = await import("node:fs");
+    const src = readFileSync(new URL("../worker/seo.ts", import.meta.url), "utf8");
+    expect(src).toContain('og:image" content="${SITE}/og.png"');
+    expect(src).toContain('og:video" content="${SITE}/og.mp4"');
+    expect(readFileSync(new URL("../public/og.png", import.meta.url)).length).toBeGreaterThan(10_000);
+    expect(readFileSync(new URL("../public/og.mp4", import.meta.url)).length).toBeGreaterThan(10_000);
+  });
+
   it("escapes HTML in the text and in the JSON-LD", () => {
     expect(jsonLdText({ a: "</script>" })).toBe('{"a":"\\u003c/script>"}');
     expect(pageMeta("fr", "terms").body).not.toMatch(/<script/i);
