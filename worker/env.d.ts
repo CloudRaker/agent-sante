@@ -6,7 +6,7 @@ interface __BaseEnv_Env {
 	RL_CHAT_IP: RateLimit;
 	RL_CHAT_SESSION: RateLimit;
 	ENVIRONMENT: "production";
-	RUN_BASE_URL: "https://cloudraker.cloudraker.run";
+	RUN_BASE_URL: "https://agent-sante.cloudraker.run";
 	RUN_BASE: "agent-sante";
 	RUN_EXPECTED_MODEL: "anthropic/claude-haiku-5-5";
 	MS_BASE_URL: "https://api.milliseconds.ai/v1/decision-machine-1";

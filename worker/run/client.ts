@@ -108,7 +108,7 @@ const TERMINAL: Record<string, RunStatus> = {
 
 export interface RunConfig {
   token: string;
-  /** For example https://cloudraker.cloudraker.run */
+  /** For example https://agent-sante.cloudraker.run */
   origin: string;
   /** Repo base path, for example agent-sante. */
   base: string;

@@ -47,7 +47,7 @@ node scripts/question-shots.mjs   # the question card, open and answered
 
 | Name                 | Kind   | What                                                             |
 | -------------------- | ------ | ---------------------------------------------------------------- |
-| `RUN_BASE_URL`       | var    | `https://cloudraker.cloudraker.run`                              |
+| `RUN_BASE_URL`       | var    | `https://agent-sante.cloudraker.run`                              |
 | `RUN_BASE`           | var    | Base path of the Run repo, `agent-sante`                         |
 | `RUN_EXPECTED_MODEL` | var    | A different model in `run.started` logs an alert                 |
 | `MS_BASE_URL`        | var    | milliseconds `decision-machine-1` endpoint                       |
