@@ -226,6 +226,21 @@ describe("static pages", () => {
     expect((await serveAsset(new Request(`${ORIGIN}/`), assets)).status).toBe(200);
   });
 
+  it("answers a byte range of a video with 206, as iOS needs", async () => {
+    const video = { fetch: async () => new Response(new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), { headers: { "content-type": "video/mp4" } }) };
+    const get = (range?: string) => serveAsset(new Request(`${ORIGIN}/og.mp4`, range ? { headers: { range } } : {}), video);
+    const whole = await get();
+    expect(whole.status).toBe(200);
+    expect(whole.headers.get("accept-ranges")).toBe("bytes");
+    const first = await get("bytes=0-1");
+    expect(first.status).toBe(206);
+    expect(first.headers.get("content-range")).toBe("bytes 0-1/10");
+    expect([...new Uint8Array(await first.arrayBuffer())]).toEqual([0, 1]);
+    expect([...new Uint8Array(await (await get("bytes=8-")).arrayBuffer())]).toEqual([8, 9]);
+    expect([...new Uint8Array(await (await get("bytes=-3")).arrayBuffer())]).toEqual([7, 8, 9]);
+    expect((await get("bytes=20-")).status).toBe(416);
+  });
+
   it("serves text files as UTF-8, and keeps a charset that is already there", async () => {
     const typed = (type: string) => ({ fetch: async () => new Response("é", { headers: { "content-type": type } }) });
     expect((await serveAsset(new Request(`${ORIGIN}/llms.txt`), typed("text/plain"))).headers.get("content-type")).toBe("text/plain; charset=utf-8");

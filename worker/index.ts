@@ -261,12 +261,38 @@ export const PAGE_HEADERS: Record<string, string> = {
  * index.html for any path; for a path that is not an app page, the status becomes 404.
  * securityHeaders is false only on the Vite dev server.
  */
+/**
+ * Byte ranges for video and audio files. iOS (and its link previews) plays a video only when the
+ * server answers a Range request with 206 Partial Content. Other files are unchanged.
+ */
+export async function mediaRange(request: Request, res: Response): Promise<Response> {
+  const type = res.headers.get("content-type") ?? "";
+  if (res.status !== 200 || !/^(video|audio)\//.test(type)) return res;
+  const headers = new Headers(res.headers);
+  headers.set("accept-ranges", "bytes");
+  const range = /^bytes=(\d*)-(\d*)$/.exec(request.headers.get("range") ?? "");
+  if (!range || (!range[1] && !range[2])) return new Response(res.body, { status: 200, headers });
+  const body = new Uint8Array(await res.arrayBuffer());
+  const size = body.length;
+  // "bytes=a-b", "bytes=a-" or the last n bytes ("bytes=-n").
+  let start = range[1] ? Number(range[1]) : Math.max(0, size - Number(range[2]));
+  let end = range[1] && range[2] ? Math.min(Number(range[2]), size - 1) : size - 1;
+  if (start >= size || start > end) {
+    headers.set("content-range", `bytes */${size}`);
+    headers.delete("content-length");
+    return new Response(null, { status: 416, headers });
+  }
+  headers.set("content-range", `bytes ${start}-${end}/${size}`);
+  headers.set("content-length", String(end - start + 1));
+  return new Response(body.slice(start, end + 1), { status: 206, headers });
+}
+
 export async function serveAsset(
   request: Request,
   assets: { fetch(request: Request): Promise<Response> },
   securityHeaders = true,
 ): Promise<Response> {
-  const res = await assets.fetch(request);
+  const res = await mediaRange(request, await assets.fetch(request));
   const url = new URL(request.url);
   const html = (res.headers.get("content-type") ?? "").includes("text/html");
   const notFound = res.status === 200 && html && !isAppPath(url.pathname);
