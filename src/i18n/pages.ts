@@ -62,7 +62,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
         {
           heading: "Comment ça fonctionne",
           paragraphs: [
-            "Les agents fonctionnent sur CloudRaker Run. Un agent d'accueil comprend votre question et la confie à un agent spécialisé (virus respiratoires, vaccination, aînés, santé mentale et autres). Chaque agent existe en français et en anglais.",
+            "Les agents fonctionnent sur CloudRaker Run. Un agent d'accueil comprend votre question et la confie à un agent spécialisé (virus respiratoires, vaccination, aînés, santé mentale et autres). Chaque agent existe en français et en anglais. Les agents utilisent des modèles de langue d'Anthropic ou d'OpenAI.",
             "Avant que votre message soit envoyé aux agents, Decision-machine-1, un modèle de CloudRaker hébergé à Montréal, vérifie qu'il ne contient pas de renseignements personnels. Il vérifie aussi que la réponse ne contient pas de conseil médical personnel.",
           ],
         },
@@ -114,7 +114,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           paragraphs: [
             "1. Votre navigateur envoie le message au serveur d'Agent Santé, hébergé par Cloudflare.",
             "2. Le serveur remplace d'abord un code postal par son secteur (voir plus bas). Il cherche ensuite les numéros, les courriels et les dates de naissance. Enfin, Decision-machine-1, un modèle de CloudRaker hébergé à Montréal, cherche les autres renseignements personnels, comme un nom ou une adresse. Si un renseignement personnel est trouvé, le message est bloqué.",
-            "3. Si le message est accepté par le filtre, il est transmis aux agents de CloudRaker Run. Les modèles de langue fonctionnent sur des serveurs au Canada et aux États-Unis, et peuvent lire le texte de vos messages.",
+            "3. Si le message est accepté par le filtre, il est transmis aux agents de CloudRaker Run. Les modèles de langue (Anthropic ou OpenAI) fonctionnent sur des serveurs au Canada et aux États-Unis, et peuvent lire le texte de vos messages.",
             "4. Decision-machine-1 vérifie la réponse de l'agent avant son affichage, pour retirer tout conseil médical personnel.",
             "Un message vocal fait d'abord un détour : votre navigateur envoie l'enregistrement à notre serveur, qui le fait transcrire à Montréal par rakeaudio, le modèle de transcription de CloudRaker. Le texte revient à votre navigateur, puis suit les étapes 1 à 4 comme un message écrit. Si le filtre le bloque, le texte revient dans la zone de message pour que vous le corrigiez.",
           ],
@@ -227,7 +227,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
         {
           heading: "How it works",
           paragraphs: [
-            "The agents run on CloudRaker Run. A welcome agent understands your question and passes it to a specialized agent (respiratory viruses, vaccination, seniors, mental health and others). Each agent exists in French and in English.",
+            "The agents run on CloudRaker Run. A welcome agent understands your question and passes it to a specialized agent (respiratory viruses, vaccination, seniors, mental health and others). Each agent exists in French and in English. The agents use language models from Anthropic or OpenAI.",
             "Before your message goes to the agents, Decision-machine-1, a CloudRaker model hosted in Montréal, checks that it contains no personal information. It also checks that the reply contains no personal medical advice.",
           ],
         },
@@ -279,7 +279,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           paragraphs: [
             "1. Your browser sends the message to the Agent Santé server, hosted by Cloudflare.",
             "2. The server first replaces a postal code with its area (see below). It then looks for numbers, emails and dates of birth. Next, Decision-machine-1, a CloudRaker model hosted in Montréal, looks for other personal information, such as a name or an address. If personal information is found, the message is blocked.",
-            "3. If the message passes the filter, it goes to the CloudRaker Run agents. The language models run on servers in Canada and the United States, and can read the text of your messages.",
+            "3. If the message passes the filter, it goes to the CloudRaker Run agents. The language models (Anthropic or OpenAI) run on servers in Canada and the United States, and can read the text of your messages.",
             "4. Decision-machine-1 checks the agent reply before it shows, to remove any personal medical advice.",
             "A voice message takes one more step first: your browser sends the recording to our server, which has rakeaudio, the CloudRaker transcription model, transcribe it in Montréal. The text comes back to your browser, then follows steps 1 to 4 like a typed message. If the filter blocks it, the text goes back to the message box so that you can correct it.",
           ],

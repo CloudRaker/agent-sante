@@ -1,9 +1,9 @@
 // Press kit: facts, architecture diagram (inline SVG on theme tokens, so it follows light and dark),
 // data flow, the logo and a contact. No open letter.
-import { ArrowLeft, Download, ExternalLink } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { useI18n } from "@/i18n";
-import { LINKS, PAGE_PATHS } from "@/i18n/pages";
+import { PAGE_PATHS } from "@/i18n/pages";
 import { toolPages, PRESS_EMAIL, type ToolPages } from "@/i18n/tool-pages";
 import { frenchSpaces, mapStrings } from "@/lib/typography";
 import styles from "./page.module.css";
@@ -161,20 +161,9 @@ export function PressPage() {
       <section className={styles.section}>
         <h2>{c.contactTitle}</h2>
         <p>{c.contact}</p>
-        <ul className={styles.links}>
-          <li>
-            <a href={LINKS.cloudraker} target="_blank" rel="noopener noreferrer">
-              {c.contactSite}
-              <ExternalLink size={14} strokeWidth={1.75} aria-hidden="true" />
-              <span className="sr-only"> {t.common.newTab}</span>
-            </a>
-          </li>
-          {PRESS_EMAIL && (
-            <li>
-              {c.contactEmail} : <a href={`mailto:${PRESS_EMAIL}`}>{PRESS_EMAIL}</a>
-            </li>
-          )}
-        </ul>
+        <p>
+          <a href={`mailto:${PRESS_EMAIL}`}>{PRESS_EMAIL}</a>
+        </p>
       </section>
     </article>
   );

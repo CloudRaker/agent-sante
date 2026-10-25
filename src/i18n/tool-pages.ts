@@ -14,8 +14,8 @@ export const SOURCES_811 = {
   },
 } as const;
 
-/** Press contact address. Null: the page shows only the website link. */
-export const PRESS_EMAIL: string | null = null;
+/** Press contact address. */
+export const PRESS_EMAIL = "contact@agentsante.ca";
 
 const fr = {
   call811: {
@@ -193,6 +193,7 @@ const fr = {
       "Chaque réponse donne le lien vers sa source officielle (Québec.ca, Santé Québec, INSPQ, ministère de la Santé).",
       "Ce n'est ni un service gouvernemental ni un service d'urgence. Il ne donne aucun conseil médical personnel.",
       "Le code du site et les instructions des agents sont publics, sous licence Apache 2.0.",
+      "Les agents utilisent des modèles de langue d'Anthropic ou d'OpenAI.",
     ],
     diagramTitle: "Architecture",
     diagramDesc:
@@ -236,9 +237,7 @@ const fr = {
     logoAgent: "Symbole Agent Santé (SVG)",
     logoNote: "Le symbole est libre d'usage pour parler du projet. Ne le modifiez pas.",
     contactTitle: "Contact",
-    contact: "Pour une entrevue ou une question, écrivez à CloudRaker.",
-    contactSite: "cloudraker.com",
-    contactEmail: "Courriel",
+    contact: "Pour une entrevue ou une question, écrivez-nous :",
   },
 };
 
@@ -425,6 +424,7 @@ const en: ToolPages = {
       "Every answer links its official source (Québec.ca, Santé Québec, INSPQ, Ministry of Health).",
       "Not a government service, not an emergency service, and no personal medical advice.",
       "The site code and the agent instructions are public, under the Apache 2.0 license.",
+      "The agents use language models from Anthropic or OpenAI.",
     ],
     diagramTitle: "Architecture",
     diagramDesc:
@@ -468,9 +468,7 @@ const en: ToolPages = {
     logoAgent: "Agent Santé symbol (SVG)",
     logoNote: "You can use the symbol to talk about the project. Do not change it.",
     contactTitle: "Contact",
-    contact: "For an interview or a question, write to CloudRaker.",
-    contactSite: "cloudraker.com",
-    contactEmail: "Email",
+    contact: "For an interview or a question, write to us:",
   },
 };
 
