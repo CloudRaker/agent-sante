@@ -103,7 +103,7 @@ export const en: Dict = {
     },
     activity: {
       listLabel: "Steps of the answer",
-      privacy: "Confirmed: no personal information",
+      privacy: "Checking for personal information",
       routing: (name: string, direct: boolean) => (direct ? `Routing: ${name}` : `Routing: ${name}`),
       agent: (name: string) => `The ${name} specialist agent is preparing an answer`,
       search: (query: string) => (query ? `Searching the official sources: “${query}”` : "Searching the official sources"),
@@ -111,9 +111,9 @@ export const en: Dict = {
       tool: (name: string) => `Tool: ${name}`,
       handoff: (name: string) => `Handoff to ${name}`,
       language: (toFrench: boolean) => (toFrench ? "Switch to French" : "Switch to English"),
-      safety: "Checking the medical information in the answer",
+      safety: "Checking that no medical advice is given",
       rewrite: (attempt: number, of: number) =>
-        `Rewrite requested from the agent (attempt ${attempt} of ${of}): the answer contained medical advice that is not allowed`,
+        `The answer contained medical advice. The agent must rewrite it (attempt ${attempt} of ${of}).`,
       waiting: "Still working",
       location: (area: string) => `Searching around ${area}`,
       places: "Looking for places nearby",

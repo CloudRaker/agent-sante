@@ -22,10 +22,10 @@ describe("recap markdown", () => {
     expect(md).toContain("25 octobre 2026");
     expect(md).toContain("## Questions à poser à votre médecin");
     expect(md).toContain("> Prendre 1 ou 2 capsules.");
-    expect(md).toContain("> Source : [Santé Canada, notice du produit](https://pmps.hpfb-dgpsa.ca/dhpp/resource/101046)");
+    expect(md).toContain("> Source : [Santé Canada, feuillet d'information du médicament](https://pmps.hpfb-dgpsa.ca/dhpp/resource/101046)");
     expect(md).toContain("Demandez toujours conseil à votre pharmacien.");
     expect(md).toContain("- **Pharmacie A** · 1 rue X · 0,4 km");
-    expect(md).toContain("Ce n'est pas un avis médical");
+    expect(md).toContain("Il ne remplace pas un avis médical");
     expect(md).not.toContain("[[citation:");
   });
 

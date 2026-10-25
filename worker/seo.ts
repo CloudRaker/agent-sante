@@ -13,7 +13,7 @@ export const SITE = "https://agentsante.ca";
 
 /** Text of the social card (public/og.png, public/og.mp4: a question and a verified Québec.ca quote). */
 const OG_ALT = {
-  fr: "Agent Santé : vos questions santé, des réponses officielles. Une question sur la vaccination contre la grippe et un extrait officiel de Québec.ca.",
+  fr: "Agent Santé : vos questions sur la santé, des réponses officielles. L'image montre une question sur la vaccination contre la grippe et un extrait officiel de Québec.ca.",
   en: "Agent Santé: your health questions, official answers. A question about the flu vaccine and an official excerpt from Québec.ca.",
 };
 

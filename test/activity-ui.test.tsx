@@ -132,7 +132,7 @@ describe("ActivityList and ActivitySummary", () => {
     // The panel opens on a spring; jsdom does not run it, so the query includes hidden nodes.
     expect(document.querySelector('ol[aria-label="Étapes de la réponse"]')?.children).toHaveLength(STEPS.length);
     expect(screen.getByText(/«\s?vaccin grippe\s?»/)).toBeTruthy();
-    expect(screen.getAllByText(/, non réussi/)).toHaveLength(1);
+    expect(screen.getAllByText(/, échec/)).toHaveLength(1);
     expect(screen.getByText("5,1 s")).toBeTruthy();
     const result = await axe.run(document.body, { rules: { "color-contrast": { enabled: false } }, resultTypes: ["violations"] });
     expect(result.violations.map((v) => v.id)).toEqual([]);

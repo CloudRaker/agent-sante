@@ -1,7 +1,7 @@
 {
   "name": "Agent Santé",
   "short_name": "Agent Santé",
-  "description": "Vos questions santé, des réponses officielles. Gratuit, en français et en anglais.",
+  "description": "Vos questions sur la santé, des réponses officielles. Gratuit, en français et en anglais.",
   "lang": "fr-CA",
   "dir": "ltr",
   "id": "/",

@@ -43,7 +43,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
     updatedLabel: "Dernière mise à jour",
     about: {
       title: "À propos d'Agent Santé",
-      lead: "Agent Santé aide les gens à trouver l'information santé officielle du Québec quand la ligne Info-Santé 811 est très occupée.",
+      lead: "Agent Santé vous aide à trouver l'information officielle sur la santé au Québec quand la ligne Info-Santé 811 est très occupée.",
       updated: "23 octobre 2026",
       sections: [
         {
@@ -63,14 +63,14 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           heading: "Comment ça fonctionne",
           paragraphs: [
             "Les agents fonctionnent sur CloudRaker Run. Un agent d'accueil comprend votre question et la confie à un agent spécialisé (virus respiratoires, vaccination, aînés, santé mentale et autres). Chaque agent existe en français et en anglais.",
-            "Avant d'envoyer votre message aux agents, Decision-machine-1, un modèle de CloudRaker hébergé à Montréal, vérifie qu'il ne contient pas de renseignements personnels. Il vérifie aussi que la réponse ne contient pas de conseil médical personnel.",
+            "Avant que votre message soit envoyé aux agents, Decision-machine-1, un modèle de CloudRaker hébergé à Montréal, vérifie qu'il ne contient pas de renseignements personnels. Il vérifie aussi que la réponse ne contient pas de conseil médical personnel.",
           ],
         },
         {
           heading: "Données ouvertes utilisées",
           paragraphs: [
-            "Positions des codes postaux : « CP Territoires », Institut de la statistique du Québec (mai 2026), sous licence Creative Commons Attribution 4.0 (CC BY 4.0).",
-            "Établissements : le Répertoire des ressources en santé et services sociaux du gouvernement du Québec (sante.gouv.qc.ca). Chaque établissement donne le lien vers sa fiche officielle.",
+            "Position géographique des codes postaux : « CP Territoires », Institut de la statistique du Québec (mai 2026), sous licence Creative Commons Attribution 4.0 (CC BY 4.0).",
+            "Établissements : le Répertoire des ressources en santé et services sociaux du gouvernement du Québec (sante.gouv.qc.ca). Pour chaque établissement, Agent Santé donne le lien vers sa fiche officielle.",
             "Rendez-vous : Agent Santé donne seulement un lien vers la page de résultats de Clic Santé. Il ne lit pas les disponibilités et ne prend aucun rendez-vous.",
             "Carte : Apple Plans (MapKit JS).",
           ],
@@ -81,7 +81,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           ],
         },
         {
-          heading: "Un projet libre et bénévole",
+          heading: "Un projet bénévole à code source ouvert",
           paragraphs: [
             "CloudRaker a créé Agent Santé bénévolement. Le code du site et les instructions des agents sont publics, sous licence Apache 2.0 : tout le monde peut les lire et les vérifier.",
             "Agent Santé n'est pas un service du gouvernement du Québec ni de Santé Québec, et n'a aucun lien avec eux.",
@@ -104,7 +104,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           paragraphs: [],
           list: [
             "Aucun compte, aucun téléversement, aucun témoin (cookie) de suivi ou de statistiques.",
-            "La conversation reste dans la mémoire de cette fenêtre. Si vous la rechargez ou la fermez, elle prend fin.",
+            "La conversation reste dans la mémoire de cet onglet. Si vous le rechargez ou le fermez, elle prend fin.",
             "Vos échanges sont effacés environ 10 minutes après la fin de la conversation.",
             "Les messages qui contiennent des renseignements personnels sont bloqués avant d'atteindre les modèles de langue.",
           ],
@@ -113,51 +113,51 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           heading: "Où vont vos messages",
           paragraphs: [
             "1. Votre navigateur envoie le message au serveur d'Agent Santé, hébergé par Cloudflare.",
-            "2. Le serveur remplace d'abord un code postal par son secteur (voir plus bas). Il cherche ensuite les numéros, les courriels et les dates de naissance. Puis Decision-machine-1, un modèle de CloudRaker hébergé à Montréal, cherche les autres renseignements personnels, comme un nom ou une adresse. Si un renseignement personnel est trouvé, le message est bloqué.",
-            "3. Si le message passe le filtre, il va aux agents de CloudRaker Run. Les modèles de langue fonctionnent sur des serveurs au Canada et aux États-Unis, et peuvent lire le texte de vos messages.",
-            "4. Decision-machine-1 vérifie la réponse de l'agent avant qu'elle s'affiche, pour retirer tout conseil médical personnel.",
+            "2. Le serveur remplace d'abord un code postal par son secteur (voir plus bas). Il cherche ensuite les numéros, les courriels et les dates de naissance. Enfin, Decision-machine-1, un modèle de CloudRaker hébergé à Montréal, cherche les autres renseignements personnels, comme un nom ou une adresse. Si un renseignement personnel est trouvé, le message est bloqué.",
+            "3. Si le message est accepté par le filtre, il est transmis aux agents de CloudRaker Run. Les modèles de langue fonctionnent sur des serveurs au Canada et aux États-Unis, et peuvent lire le texte de vos messages.",
+            "4. Decision-machine-1 vérifie la réponse de l'agent avant son affichage, pour retirer tout conseil médical personnel.",
             "Un message vocal fait d'abord un détour : votre navigateur envoie l'enregistrement à notre serveur, qui le fait transcrire à Montréal par rakeaudio, le modèle de transcription de CloudRaker. Le texte revient à votre navigateur, puis suit les étapes 1 à 4 comme un message écrit. Si le filtre le bloque, le texte revient dans la zone de message pour que vous le corrigiez.",
           ],
         },
         {
           heading: "Votre code postal",
           paragraphs: [
-            "Le code postal est le seul renseignement personnel accepté, et seulement pour trouver un service ou un rendez-vous près de chez vous. Donnez-le seulement si vous le voulez.",
+            "Le code postal est le seul renseignement personnel accepté. Il sert uniquement à trouver un service ou un rendez-vous près de chez vous. Donnez-le seulement si vous le souhaitez.",
             "Notre serveur retire le code postal de votre message avant toute autre étape. Le filtre et le modèle d'IA voient seulement votre secteur (les 3 premiers caractères, par exemple H2X), ainsi que le nom de votre municipalité et de votre territoire de CLSC.",
-            "Le serveur trouve la position du code dans les données ouvertes de l'Institut de la statistique du Québec. Il ne garde pas le code : il garde seulement cette position et votre secteur, pendant votre conversation, puis il les efface (au plus 15 minutes après votre dernier message).",
-            "Pour chercher des établissements, le serveur envoie au répertoire des ressources en santé une position arrondie à environ 100 m. Le lien vers Clic Santé utilise la même position arrondie, jamais votre code postal. La carte (Apple Plans) reçoit seulement les positions des établissements.",
+            "Le serveur trouve la position géographique du code dans les données ouvertes de l'Institut de la statistique du Québec. Il ne garde pas le code : il garde seulement cette position et votre secteur, pendant votre conversation, puis il les efface (au plus 15 minutes après votre dernier message).",
+            "Pour chercher des établissements, le serveur envoie au Répertoire des ressources en santé et services sociaux une position arrondie à environ 100 m. Le lien vers Clic Santé utilise la même position arrondie, jamais votre code postal. La carte (Apple Plans) reçoit seulement les positions des établissements.",
             "Agent Santé ne prend jamais de rendez-vous pour vous. Vous réservez vous-même sur Clic Santé.",
           ],
         },
         {
-          heading: "Combien de temps",
+          heading: "Durée de conservation",
           paragraphs: [
-            "Votre session dure 10 minutes après votre dernier message. La conversation prend fin quand vous cliquez sur « Terminer », quand vous fermez ou rechargez l'onglet, ou après 10 minutes sans activité. Elle est alors annulée chez CloudRaker Run. Vos échanges sont effacés environ 10 minutes après la fin de la conversation.",
+            "Votre session reste active 10 minutes après votre dernier message. La conversation prend fin quand vous cliquez sur « Terminer », quand vous fermez ou rechargez l'onglet, ou après 10 minutes sans activité. CloudRaker Run l'annule alors aussi. Vos échanges sont effacés environ 10 minutes après la fin de la conversation.",
             "Le serveur d'Agent Santé ne garde pas le texte de vos messages. Ses journaux contiennent seulement des numéros de requête, des codes d'état et des durées, jamais le contenu.",
           ],
         },
         {
           heading: "Messages vocaux, récapitulatif et statistiques",
           paragraphs: [
-            "Le bouton micro enregistre un message vocal. Votre navigateur demande la permission d'utiliser le micro la première fois que vous le touchez, jamais avant. L'enregistrement dure au plus une minute.",
-            "Le son va seulement à notre serveur, puis à rakeaudio, le modèle de transcription de CloudRaker, à Montréal. Ni notre serveur ni rakeaudio ne gardent le son ou le texte. Nos journaux contiennent seulement la taille, la durée et le temps de traitement. Le son ne va jamais aux modèles de langue : seul le texte transcrit continue, et il passe par le filtre des renseignements personnels comme un message écrit.",
+            "Le bouton micro enregistre un message vocal. Votre navigateur demande la permission d'utiliser le micro la première fois que vous touchez ce bouton, jamais avant. L'enregistrement dure au plus une minute.",
+            "L'enregistrement va seulement à notre serveur, puis à rakeaudio, le modèle de transcription de CloudRaker, à Montréal. Ni notre serveur ni rakeaudio ne conservent l'enregistrement ou le texte. Nos journaux contiennent seulement la taille, la durée et le temps de traitement. L'enregistrement n'est jamais envoyé aux modèles de langue. Seul le texte transcrit poursuit son chemin, et il passe par le filtre des renseignements personnels comme un message écrit.",
             "Les pages Transparence et Coûts montrent seulement des totaux, comme le nombre de messages bloqués. Aucun texte n'y est gardé.",
-            "Récapitulatif PDF : seulement si vous le demandez, l'agent écrit un résumé de la conversation, vérifié comme ses autres réponses. Notre serveur le fait mettre en page par un service de CloudRaker qui ne garde rien, puis le PDF va seulement à votre navigateur. Il n'est enregistré nulle part ailleurs.",
+            "Récapitulatif PDF : si vous le demandez, et seulement dans ce cas, l'agent rédige un résumé de la conversation, vérifié comme ses autres réponses. Notre serveur le fait mettre en page par un service de CloudRaker qui ne conserve rien. Le PDF est ensuite envoyé seulement à votre navigateur. Il n'est enregistré nulle part ailleurs.",
           ],
         },
         {
           heading: "Protection contre les robots et les abus",
           paragraphs: [
-            "Une vérification de Cloudflare confirme que vous n'êtes pas un robot avant la conversation. Votre adresse IP sert à limiter le nombre de requêtes, pour protéger le service. Agent Santé ne la conserve pas.",
+            "Avant la conversation, une vérification de Cloudflare confirme que vous n'êtes pas un robot. Votre adresse IP sert à limiter le nombre de requêtes, pour protéger le service. Agent Santé ne la conserve pas.",
           ],
         },
         {
           heading: "Vos choix",
           paragraphs: [
             "Votre navigateur garde seulement vos préférences de langue et d'affichage, pour vos prochaines visites. Vous pouvez les effacer dans ses réglages.",
-            "Pour une question sur cette politique, écrivez-nous par GitHub.",
+            "Pour toute question sur cette politique, écrivez-nous sur GitHub.",
           ],
-          links: [{ label: "Ouvrir une question sur GitHub", href: `${LINKS.webRepo}/issues` }],
+          links: [{ label: "Poser une question sur GitHub", href: `${LINKS.webRepo}/issues` }],
         },
       ],
     },
@@ -167,13 +167,13 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
       updated: "23 octobre 2026",
       sections: [
         {
-          heading: "Pas un service d'urgence",
+          heading: "Ce n'est pas un service d'urgence",
           paragraphs: [
             "Agent Santé n'est pas un service d'urgence. En cas d'urgence, appelez le 911. Pour parler à une infirmière, appelez Info-Santé au 811. Pour un besoin psychosocial, appelez Info-Social au 811, option 2. En cas d'intoxication, appelez le Centre antipoison du Québec au 1 800 463-5060.",
           ],
         },
         {
-          heading: "Pas un service gouvernemental",
+          heading: "Ce n'est pas un service gouvernemental",
           paragraphs: [
             "Agent Santé est un projet bénévole de CloudRaker. Il n'a aucun lien avec le gouvernement du Québec, le ministère de la Santé et des Services sociaux ni Santé Québec. Les sources citées appartiennent à leurs auteurs.",
           ],
@@ -185,7 +185,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           ],
         },
         {
-          heading: "Aucune responsabilité",
+          heading: "Limitation de responsabilité",
           paragraphs: [
             "CloudRaker fournit Agent Santé tel quel, sans garantie. CloudRaker n'assume aucune responsabilité pour une décision prise à partir des réponses, ni pour une interruption du service.",
           ],
@@ -197,7 +197,7 @@ export const pages: Record<Lang, Record<PageId, PageContent> & { updatedLabel: s
           ],
         },
         {
-          heading: "Code libre",
+          heading: "Code source ouvert",
           paragraphs: ["Le code d'Agent Santé est publié sous licence Apache 2.0."],
           links: [{ label: "Code du site sur GitHub", href: LINKS.webRepo }],
         },

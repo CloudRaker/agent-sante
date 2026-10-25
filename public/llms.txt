@@ -1,6 +1,6 @@
 # Agent Santé
 
-> Agent Santé est un site gratuit qui aide les Québécois à trouver l'information santé officielle : où consulter, comment prendre rendez-vous, vaccination, médicaments en vente libre, aînés, santé mentale et plus. Chaque réponse cite une source officielle (Québec.ca, Santé Québec, INSPQ, Santé Canada) et donne le lien. C'est un projet bénévole et libre de CloudRaker, à Montréal. Ce n'est pas un service du gouvernement du Québec ni un service d'urgence. En cas d'urgence, appelez le 911. Pour parler à une infirmière, appelez Info-Santé au 811.
+> Agent Santé est un site gratuit qui aide les Québécois à trouver l'information officielle sur la santé : où consulter, comment prendre rendez-vous, la vaccination, les médicaments en vente libre, les aînés, la santé mentale et plus encore. Chaque réponse cite une source officielle (Québec.ca, Santé Québec, INSPQ, Santé Canada) et donne le lien. C'est un projet bénévole à code source ouvert de CloudRaker, une entreprise de Montréal. Ce n'est pas un service du gouvernement du Québec ni un service d'urgence. En cas d'urgence, appelez le 911. Pour parler à une infirmière, appelez Info-Santé au 811.
 
 Agent Santé is a free website that helps Quebecers find official health information. It answers in French and English, with a link to the official source of each answer. It is a volunteer, open-source project by CloudRaker, in Montréal. It is not a government service and not an emergency service.
 
@@ -9,10 +9,10 @@ Agent Santé is a free website that helps Quebecers find official health informa
 - [Agent Santé](https://agentsante.ca/): la conversation, en français
 - [À propos](https://agentsante.ca/a-propos): pourquoi ce site, ce qu'il fait et ne fait pas, comment il fonctionne
 - [Devrais-je appeler le 811 ?](https://agentsante.ca/appeler-le-811): les options du 811 et comment préparer l'appel
-- [Politique de confidentialité](https://agentsante.ca/confidentialite): ce qui arrive aux messages, effacés environ 10 minutes après la fin de la conversation
+- [Politique de confidentialité](https://agentsante.ca/confidentialite): ce qui arrive à vos messages. Vos échanges sont effacés environ 10 minutes après la fin de la conversation.
 - [Conditions d'utilisation](https://agentsante.ca/conditions)
 - [Transparence](https://agentsante.ca/transparence): compteurs publics des conversations et des messages bloqués
-- [Coûts et utilisation](https://agentsante.ca/couts): ce que coûte le fonctionnement du site, payé par CloudRaker
+- [Coûts et utilisation](https://agentsante.ca/couts): le coût de fonctionnement du site, payé par CloudRaker
 - [Trousse média](https://agentsante.ca/presse)
 
 ## Pages (English)

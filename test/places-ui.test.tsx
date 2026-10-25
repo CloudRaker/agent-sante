@@ -76,8 +76,8 @@ describe("attachments under a reply", () => {
     expect(cta.getAttribute("href")).toBe(DATA.appointments![0]!.url);
     expect(cta.getAttribute("target")).toBe("_blank");
     expect(cta.getAttribute("rel")).toContain("noopener");
-    expect(container.textContent).toContain("Vous choisissez et réservez vous-même sur Clic Santé");
-    expect(container.textContent).toContain("Autour du secteur H2X (Montréal)");
+    expect(container.textContent).toContain("Vous choisissez et réservez vous-même votre rendez-vous dans Clic Santé");
+    expect(container.textContent).toContain("Secteur H2X (Montréal)");
     expect(container.textContent).toContain("Établissements près de H2X (Montréal)");
     const items = container.querySelectorAll("ol li");
     expect(items).toHaveLength(2);
@@ -139,9 +139,9 @@ describe("attachments under a reply", () => {
   });
 
   it("labels the new activity steps", () => {
-    expect(stepLabel(step("location", { area: "H2X 1Y4" }), dicts.fr)).toBe("Recherche autour de H2X 1Y4");
+    expect(stepLabel(step("location", { area: "H2X 1Y4" }), dicts.fr)).toBe("Recherche près de H2X 1Y4");
     expect(stepLabel(step("places"), dicts.fr)).toBe("Recherche d'établissements à proximité");
-    expect(stepLabel(step("appointments"), dicts.fr)).toBe("Recherche de rendez-vous sur Clic Santé");
+    expect(stepLabel(step("appointments"), dicts.fr)).toBe("Recherche de rendez-vous dans Clic Santé");
     expect(stepLabel(step("appointments"), dicts.en)).toBe("Looking for appointments on Clic Santé");
   });
 });

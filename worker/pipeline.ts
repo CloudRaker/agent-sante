@@ -122,7 +122,7 @@ const WORDS = {
     simpleOn:
       "[Mode langage simple activé. Répondez en français facile à lire et à comprendre (FALC) : phrases courtes, mots courants, une idée par phrase. Gardez les liens vers les sources.]",
     simpleOff: "[Mode langage simple désactivé. Répondez comme d'habitude.]",
-    recapReady: "Votre récapitulatif est prêt. Le fichier PDF est téléchargé.",
+    recapReady: "Votre récapitulatif est prêt. Le fichier PDF a été téléchargé.",
     rewrite:
       "[Vérification automatique] Votre dernière réponse contient un conseil médical personnel (diagnostic, dose, consigne sur un médicament, traitement à faire soi-même ou décision sur le besoin de consulter). " +
       "Réécrivez la réponse complète sans ce conseil (avec la question et ses réponses proposées, s'il y en avait une). Donnez seulement l'information générale officielle, avec ses liens, " +

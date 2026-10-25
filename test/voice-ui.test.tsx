@@ -187,7 +187,7 @@ describe("voice messages", () => {
     renderChat();
     await recordAndSend();
     // Silence: no Retry (the same audio gives the same result).
-    await screen.findByText(/Nous n'avons entendu aucune parole/);
+    await screen.findByText(/Nous n'avons rien entendu/);
     expect(screen.queryByRole("button", { name: "Réessayer la transcription" })).toBeNull();
     await act(async () => {
       fireEvent.click(screen.getByRole("button", { name: "Retirer le message vocal et écrire votre message" }));

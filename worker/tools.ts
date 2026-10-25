@@ -42,19 +42,19 @@ const LINK_NOTE = {
 /** Longest leaflet text sent to the agent. A longer one needs `question` (passages) or is cut. */
 const MAX_LEAFLET_CHARS = 12_000;
 const DRUG_SEARCH_NOTE = {
-  fr: "otc: true = vente libre (drug_info donne la notice). prescription: true = sur ordonnance : dites seulement ce que c'est (nom, ingrédient) et que le médecin ou le pharmacien décide. Ne proposez jamais un médicament sur ordonnance.",
+  fr: "otc: true = vente libre (drug_info donne le feuillet d'information). prescription: true = sur ordonnance : dites seulement ce que c'est (nom, ingrédient) et que le médecin ou le pharmacien décide. Ne proposez jamais un médicament sur ordonnance.",
   en: "otc: true = over the counter (drug_info gives the leaflet). prescription: true = prescription only: say only what it is (name, ingredient) and that a doctor or pharmacist decides. Never suggest a prescription drug.",
 };
 const RX_NOTE = {
-  fr: "Médicament sur ordonnance : pas de notice ici. Dites ce que c'est (nom, ingrédient) et dirigez la personne vers son pharmacien ou son médecin. Ne le proposez pas comme option.",
+  fr: "Médicament sur ordonnance : pas de feuillet d'information ici. Dites ce que c'est (nom, ingrédient) et dirigez la personne vers son pharmacien ou son médecin. Ne le proposez pas comme option.",
   en: "Prescription drug: no leaflet here. Say what it is (name, ingredient) and direct the person to their pharmacist or doctor. Do not suggest it as an option.",
 };
 const NO_LEAFLET = {
-  fr: "La notice de ce produit n'est pas encore disponible. Dirigez la personne vers son pharmacien, qui peut répondre sans rendez-vous.",
+  fr: "Le feuillet d'information de ce produit n'est pas encore disponible. Dirigez la personne vers son pharmacien, qui peut répondre sans rendez-vous.",
   en: "The leaflet of this product is not available yet. Direct the person to their pharmacist, who can answer without an appointment.",
 };
 const LEAFLET_NOTE = {
-  fr: 'Citez la notice mot pour mot avec <citation src="cite_src">texte exact</citation>. La personne voit sous la citation que l\'information vient de la notice et qu\'elle doit demander conseil à son pharmacien.',
+  fr: 'Citez le feuillet d\'information mot pour mot avec <citation src="cite_src">texte exact</citation>. La personne voit sous la citation que l\'information vient du feuillet d\'information et qu\'elle doit demander conseil à son pharmacien.',
   en: 'Quote the leaflet word for word with <citation src="cite_src">exact text</citation>. Under the quote, the person sees that the information comes from the leaflet and that they should ask their pharmacist.',
 };
 const DRUGS_DOWN = {

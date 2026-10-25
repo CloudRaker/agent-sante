@@ -58,8 +58,8 @@ describe("accessibility", () => {
     await screen.findByText(/pas un service d'urgence/);
     await waitFor(() => expect(screen.getByRole("button", { name: "J'accepte" }).hasAttribute("disabled")).toBe(false));
     fireEvent.click(screen.getByRole("button", { name: "J'accepte" }));
-    await screen.findByText(/N'écrivez pas votre nom/);
-    const last = await screen.findByRole("button", { name: "Compris, on commence" });
+    await screen.findByText(/N'écrivez ni votre nom/);
+    const last = await screen.findByRole("button", { name: "Compris, commençons" });
     await waitFor(() => expect(last.hasAttribute("disabled")).toBe(false));
     expect(screen.getByRole("link", { name: /conditions d'utilisation/ })).toBeTruthy();
     expect(await violations()).toEqual([]);

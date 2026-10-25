@@ -86,7 +86,7 @@ describe("tool pages UI", () => {
   it("kill switch: the home shows the maintenance page with the help numbers", async () => {
     stubApi({ maintenance: true });
     renderApp("/");
-    await screen.findByText(/Agent Santé est en pause/);
+    await screen.findByText(/Agent Santé est temporairement indisponible/);
     expect(screen.getAllByRole("link", { name: /Info-Santé.*811/ }).map((a) => a.getAttribute("href"))).toContain("tel:811");
     expect(screen.queryByRole("checkbox")).toBeNull();
     expect(await violations()).toEqual([]);

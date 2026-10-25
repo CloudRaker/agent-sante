@@ -216,9 +216,9 @@ describe("leaflet quotes", () => {
         <CitationCard citation={{ src: SRC, text: DOSE, verified: true, lang: "fr", kind: "leaflet" }} />
       </I18nProvider>,
     );
-    expect(screen.getByText("Extrait de la notice du produit")).toBeTruthy();
+    expect(screen.getByText("Extrait du feuillet d'information du médicament")).toBeTruthy();
     expect(
-      screen.getByText("Ces informations proviennent de la notice du produit pharmaceutique. Demandez toujours conseil à votre pharmacien."),
+      screen.getByText("Ces renseignements sont tirés du feuillet d'information du médicament. Demandez toujours conseil à votre pharmacien."),
     ).toBeTruthy();
   });
 });

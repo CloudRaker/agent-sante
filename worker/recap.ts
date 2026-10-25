@@ -72,13 +72,13 @@ const WORDS = {
     appointments: "Rendez-vous sur Clic Santé",
     officialPage: "Fiche officielle",
     source: "Source",
-    leafletSource: "Santé Canada, notice du produit",
+    leafletSource: "Santé Canada, feuillet d'information du médicament",
     dose: "Demandez toujours conseil à votre pharmacien avant de prendre ou de donner un médicament.",
-    leaflet: "Ces informations proviennent de la notice du produit pharmaceutique. Demandez toujours conseil à votre pharmacien.",
+    leaflet: "Ces renseignements sont tirés du feuillet d'information du médicament. Demandez toujours conseil à votre pharmacien.",
     notice:
-      "Ce document résume une conversation avec Agent Santé, un service gratuit de CloudRaker. Ce n'est pas un avis médical et ce n'est pas un service du gouvernement du Québec. En cas d'urgence, appelez le 911. Pour parler à une infirmière, appelez Info-Santé au 811.",
+      "Ce document résume votre conversation avec Agent Santé, un service gratuit offert par CloudRaker. Il ne remplace pas un avis médical. Agent Santé n'est pas un service du gouvernement du Québec. En cas d'urgence, appelez le 911. Pour parler à une infirmière, appelez Info-Santé au 811.",
     // markdowntopdf.dev takes 60 characters at most.
-    footer: "agentsante.ca · Pas un avis médical · {page} / {total}",
+    footer: "Ne remplace pas un avis médical · Page {page} de {total}",
     header: "Agent Santé",
     filename: "agent-sante-recapitulatif",
     date: (d: string) => `Créé le ${d}`,
@@ -94,7 +94,7 @@ const WORDS = {
     leaflet: "This information comes from the leaflet of the pharmaceutical product. Always ask your pharmacist for advice.",
     notice:
       "This document sums up a conversation with Agent Santé, a free service by CloudRaker. It is not medical advice and not a Government of Québec service. In an emergency, call 911. To talk to a nurse, call Info-Santé at 811.",
-    footer: "agentsante.ca · Not medical advice · {page} / {total}",
+    footer: "Does not replace medical advice · Page {page} of {total}",
     header: "Agent Santé",
     filename: "agent-sante-recap",
     date: (d: string) => `Created on ${d}`,
