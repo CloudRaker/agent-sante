@@ -226,6 +226,14 @@ describe("static pages", () => {
     expect((await serveAsset(new Request(`${ORIGIN}/`), assets)).status).toBe(200);
   });
 
+  it("serves text files as UTF-8, and keeps a charset that is already there", async () => {
+    const typed = (type: string) => ({ fetch: async () => new Response("é", { headers: { "content-type": type } }) });
+    expect((await serveAsset(new Request(`${ORIGIN}/llms.txt`), typed("text/plain"))).headers.get("content-type")).toBe("text/plain; charset=utf-8");
+    expect((await serveAsset(new Request(`${ORIGIN}/sitemap.xml`), typed("application/xml"))).headers.get("content-type")).toBe("application/xml; charset=utf-8");
+    expect((await serveAsset(new Request(`${ORIGIN}/x.txt`), typed("text/plain; charset=utf-8"))).headers.get("content-type")).toBe("text/plain; charset=utf-8");
+    expect((await serveAsset(new Request(`${ORIGIN}/og.png`), typed("image/png"))).headers.get("content-type")).toBe("image/png");
+  });
+
   it("sets the same security headers as public/_headers", async () => {
     const res = await serveAsset(new Request(`${ORIGIN}/presse`), assets);
     for (const [k, v] of Object.entries(PAGE_HEADERS)) expect(res.headers.get(k)).toBe(v);

@@ -276,6 +276,11 @@ export async function serveAsset(
     headers: res.headers,
   });
   if (securityHeaders) for (const [k, v] of Object.entries(PAGE_HEADERS)) out.headers.set(k, v);
+  // Text files are UTF-8 (llms.txt, robots.txt, sitemap.xml). Without a charset, a browser reads them as Windows-1252.
+  const type = out.headers.get("content-type") ?? "";
+  if (/^(text\/|application\/(xml|json|javascript))/.test(type) && !/charset=/i.test(type)) {
+    out.headers.set("content-type", `${type}; charset=utf-8`);
+  }
   // App pages get their metadata and static text for crawlers (worker/seo.ts). Not on the Vite dev server.
   const found = res.status === 200 && html && securityHeaders ? findPage(url.pathname) : null;
   return found ? rewritePage(out, pageMeta(found.lang, found.page)) : out;
