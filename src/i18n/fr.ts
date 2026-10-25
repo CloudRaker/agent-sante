@@ -338,6 +338,13 @@ export const fr = {
     title: "Agent Santé a atteint sa limite pour aujourd'hui",
     text: "Nous ne pouvons pas répondre à d'autres questions aujourd'hui. Pour parler à une infirmière, appelez Info-Santé au 811. En cas d'urgence, appelez le 911. Revenez demain.",
   },
+  install: {
+    title: "Sur votre écran d'accueil",
+    before: "Ajoutez Agent Santé comme une app : touchez Partager",
+    shareName: "(Partager)",
+    middle: ", puis « Sur l'écran d'accueil »",
+    after: ".",
+  },
   nav: {
     label: "Pages",
     menu: "Menu",

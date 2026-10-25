@@ -194,6 +194,32 @@
 .drawerSection .prefList {
   gap: var(--space-3);
 }
+/* Home screen tip (iOS only). */
+.installTip {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--space-3);
+  background: var(--surface);
+}
+.installIcon {
+  border-radius: 10px;
+}
+.installText {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+.installGlyph {
+  display: inline-block;
+  margin-inline-start: 0.25em;
+  vertical-align: -0.2em;
+  color: var(--accent);
+}
+
 .drawerNote {
   margin: var(--space-3) 0 0;
   color: var(--text-muted);

@@ -10,6 +10,7 @@ import type { Lang } from "@shared/api";
 import { useI18n } from "@/i18n";
 import { LINKS, PAGE_PATHS, pages } from "@/i18n/pages";
 import { DisplayMenu, DisplayOptions } from "./DisplayMenu";
+import { InstallTip } from "./InstallTip";
 import type { Theme } from "./theme";
 import styles from "./shell.module.css";
 
@@ -133,6 +134,7 @@ export function Header({ theme, onTheme, onLang }: { theme: Theme; onTheme: (nex
         </DrawerTrigger>
         <DrawerContent side="right" title={t.nav.menu} className={styles.drawer}>
           <nav className={styles.drawerBody} aria-label={t.nav.label}>
+            <InstallTip />
             <section className={styles.drawerSection}>
               <h2 className={styles.menuGroupTitle}>{t.common.languageLabel}</h2>
               {language}

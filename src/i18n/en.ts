@@ -336,6 +336,13 @@ export const en: Dict = {
     title: "Agent Santé has reached its limit for today",
     text: "We cannot answer more questions today. To talk to a nurse, call Info-Santé at 811. In an emergency, call 911. Come back tomorrow.",
   },
+  install: {
+    title: "On your Home Screen",
+    before: "Add Agent Santé like an app: tap Share",
+    shareName: "(Share)",
+    middle: ", then \"Add to Home Screen\"",
+    after: ".",
+  },
   nav: {
     label: "Pages",
     menu: "Menu",
