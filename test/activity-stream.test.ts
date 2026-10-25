@@ -303,6 +303,8 @@ describe("Run work rows", () => {
       state: "done",
     });
     expect(toolRow({ text: "x", tool: "emit_handoff", call_id: "c", state: "done" })).toBeNull();
+    // Our own tools show by their operation ("Called drug_search"), not as a raw call_api row.
+    expect(toolRow({ text: "Calling a connected system", tool: "call_api", call_id: "c", state: "running" })).toBeNull();
     expect(toolRow({ text: "Still working", heartbeat: true })).toBeNull();
     expect(toolRow({ text: "Stopped" })).toBeNull();
     expect(toolRow({ text: "x", tool: "Bad Tool!", call_id: "c", state: "done" })).toEqual({

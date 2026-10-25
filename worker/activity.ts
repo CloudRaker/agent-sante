@@ -35,14 +35,18 @@ export interface ToolRow {
 
 /**
  * A Run `run.progress` data object to a tool step, or null when it is not a tool row
- * (a heartbeat, "Stopped", a row without a tool, or an `emit_*` tool: the custom events
- * handoff and switch_language come as their own events, and Run sends no row for them).
+ * (a heartbeat, "Stopped", a row without a tool, an `emit_*` tool: the custom events
+ * handoff and switch_language come as their own events, and Run sends no row for them; or
+ * `call_api`, shown by its operation instead).
  */
 export function toolRow(data: Record<string, unknown>): ToolRow | null {
   const tool = typeof data.tool === "string" ? data.tool : "";
   const callId = typeof data.call_id === "string" && data.call_id ? data.call_id : "";
   const state = data.state === "running" || data.state === "done" || data.state === "failed" ? data.state : null;
   if (!tool || !callId || !state || data.heartbeat === true || tool.startsWith("emit_")) return null;
+  // `call_api` reaches our own tools: their step (places, appointments, drugs) comes from the
+  // "Called <operation>" event (toolStepKind), so this generic row would only repeat it.
+  if (tool === "call_api") return null;
   const text = typeof data.text === "string" ? data.text : "";
   if (tool === "knowledge_search") {
     const query = cleanParam(/\bknowledge for (.+)$/i.exec(text)?.[1]);
