@@ -220,6 +220,8 @@ export function Chat({
         : notice?.kind === "recap"
           ? t.recap.errors[notice.code]
           : "";
+  /** At least one answer of an agent: the recap has something to sum up. */
+  const answered = chat.messages.some((m) => m.authorId === AGENT_ID);
   // "Terminer" first offers the recap PDF. The panel takes the place of the composer.
   const [ending, setEnding] = useState(false);
   const [recapDone, setRecapDone] = useState(false);
@@ -388,7 +390,15 @@ export function Chat({
                 )}
                 <div className={styles.under}>
                   {/* While recording, the hint says where the voice goes. */}
-                  <p className={styles.hint}>{micNote ?? (recording ? v.disclosure : t.chat.hint)}</p>
+                  {micNote || recording || !answered ? (
+                    <p className={styles.hint}>{micNote ?? (recording ? v.disclosure : t.chat.hint)}</p>
+                  ) : (
+                    // After the first answer: the recap of the conversation, one tap away.
+                    <button type="button" className={styles.recapLink} disabled={locked} onClick={() => void askRecap()}>
+                      <FileDown size={16} strokeWidth={1.75} aria-hidden="true" />
+                      {t.recap.link}
+                    </button>
+                  )}
                   {canMic && (
                     <>
                       <span id={VOICE_DISCLOSURE_ID} hidden>

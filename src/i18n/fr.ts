@@ -213,6 +213,7 @@ export const fr = {
   },
   recap: {
     label: "Récapitulatif PDF demandé",
+    link: "Télécharger un récapitulatif de votre conversation",
     offerTitle: "Voulez-vous un récapitulatif avant de terminer ?",
     offerText: "Un PDF avec votre demande, les recommandations officielles, les lieux trouvés et des questions pour votre médecin. Il reste sur votre appareil.",
     download: "Télécharger le récapitulatif",

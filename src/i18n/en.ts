@@ -212,6 +212,7 @@ export const en: Dict = {
   },
   recap: {
     label: "Recap PDF requested",
+    link: "Download a recap of your conversation",
     offerTitle: "Do you want a recap before you end?",
     offerText: "A PDF with your request, the official recommendations, the places found and questions for your doctor. It stays on your device.",
     download: "Download the recap",

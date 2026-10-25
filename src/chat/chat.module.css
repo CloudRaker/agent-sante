@@ -94,6 +94,37 @@
   gap: var(--space-3);
   min-height: 32px;
 }
+/* Under the composer, after the first answer: download the recap. */
+.recapLink {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  min-height: 32px;
+  margin: 0;
+  border: 0;
+  padding: 0 var(--space-2);
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: var(--text-sm);
+  text-align: start;
+  cursor: pointer;
+}
+.recapLink:hover:not(:disabled) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.recapLink:disabled {
+  color: var(--text-muted);
+  cursor: default;
+}
+.recapLink:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+  border-radius: var(--radius-control);
+}
 .endButton {
   flex: none;
 }

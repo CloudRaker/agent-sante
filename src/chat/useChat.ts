@@ -183,6 +183,10 @@ export function useChat({ session, lang, onLanguage, simple = false }: Options) 
           (activity) => {
             stepsRef.current = applyActivity(stepsRef.current, activity);
             setSteps(stepsRef.current);
+            // The conversation moves to the other language: the interface follows at once,
+            // not only when the reply arrives.
+            const next = activity.kind === "language" && activity.state === "done" ? activity.params?.lang : undefined;
+            if ((next === "fr" || next === "en") && next !== langRef.current) onLanguageRef.current(next);
           },
           ctrl.signal,
         );
