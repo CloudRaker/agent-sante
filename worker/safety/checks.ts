@@ -7,8 +7,8 @@ import type { PiiKind } from "../../shared/api";
  * has probability >= PII_THRESHOLD. Check B flags the reply when the MED_HINT yes-no
  * probability >= MED_THRESHOLD.
  */
-export const PII_THRESHOLD = 0.5;
-export const MED_THRESHOLD = 0.4;
+export const PII_THRESHOLD = 0.7;
+export const MED_THRESHOLD = 0.5;
 
 /** Check A: entity types for POST /entities. */
 export const PII_TYPES: Record<PiiKind, string> = {

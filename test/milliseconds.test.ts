@@ -27,8 +27,8 @@ const json = (status: number, body: unknown, headers: Record<string, string> = {
 
 describe("final definitions", () => {
   it("uses the thresholds and the hint pair", () => {
-    expect(PII_THRESHOLD).toBe(0.5);
-    expect(MED_THRESHOLD).toBe(0.4);
+    expect(PII_THRESHOLD).toBe(0.7);
+    expect(MED_THRESHOLD).toBe(0.5);
     expect(MED_HINT.statement).toBe("The reply gives the reader personal medical advice.");
     expect(MED_HINT.when_true).toMatch(/^The reply gives the reader personal medical advice: a diagnosis/);
     expect(MED_HINT.when_false).toMatch(/leaves the decision to that service\.$/);
@@ -47,9 +47,9 @@ describe("final definitions", () => {
     expect(keepPiiSpan({ type: "person_name", text: "Marie Dubois", probability: 0.9, start: 10, end: 22 }, ph)).toBe(false);
   });
 
-  it("check B flags at 0.4 and above", async () => {
-    expect((await at(0.4)).flagged).toBe(true);
-    expect((await at(0.399)).flagged).toBe(false);
+  it("check B flags at 0.5 and above", async () => {
+    expect((await at(0.5)).flagged).toBe(true);
+    expect((await at(0.499)).flagged).toBe(false);
   });
 
   it("check A reports scores and span types, never text", async () => {
@@ -139,8 +139,8 @@ describe("pipeline fails closed", () => {
     const { post, logs } = makeApp(run, scriptedModel({ advice: () => 0.12 }).model);
     const { say } = await session(post);
     await say("Bonjour");
-    expect(logs.find((l) => l.event === "pii_score")).toMatchObject({ threshold: 0.5, layer: "model" });
-    expect(logs.find((l) => l.event === "advice_score")).toMatchObject({ score: 0.12, threshold: 0.4, attempt: 1 });
+    expect(logs.find((l) => l.event === "pii_score")).toMatchObject({ threshold: 0.7, layer: "model" });
+    expect(logs.find((l) => l.event === "advice_score")).toMatchObject({ score: 0.12, threshold: 0.5, attempt: 1 });
   });
 });
 

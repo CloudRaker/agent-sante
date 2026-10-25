@@ -30,7 +30,7 @@ both checks passed. The Worker never logs step params. The logs and the error-ra
 status of the `result` frame (`request` log with `stream: true`). When the browser closes the stream,
 the Worker stops the Run read, cancels the live run and releases the session lease.
 
-Thresholds: PII 0.5, medical advice 0.4. Both checks fail closed: an error, a bad answer or a timeout (3 s per
+Thresholds: PII 0.7, medical advice 0.5. Both checks fail closed: an error, a bad answer or a timeout (3 s per
 attempt, one retry) blocks the message (check A) or hides the reply and cancels the run (check B).
 The logs keep scores only: `pii_score` (layer, best score, threshold, kept and dropped span types),
 `advice_score` (score, threshold, attempt) and `ms_call` (route, status, `x-input-tokens`, `x-inference-ms`).
