@@ -226,6 +226,24 @@ describe("static pages", () => {
     expect((await serveAsset(new Request(`${ORIGIN}/`), assets)).status).toBe(200);
   });
 
+  it("serves the offline page and a valid app manifest with its icons", async () => {
+    const html = { fetch: async () => new Response("<!doctype html>", { headers: { "content-type": "text/html" } }) };
+    expect((await serveAsset(new Request(`${ORIGIN}/offline`), html)).status).toBe(200);
+    const manifest = JSON.parse(readFileSync(new URL("../public/manifest.webmanifest", import.meta.url), "utf8")) as {
+      display: string;
+      start_url: string;
+      icons: { src: string; purpose: string }[];
+    };
+    expect(manifest.display).toBe("standalone");
+    expect(manifest.start_url).toBe("/");
+    expect(manifest.icons.some((i) => i.purpose === "maskable")).toBe(true);
+    for (const icon of manifest.icons) expect(readFileSync(new URL(`../public${icon.src}`, import.meta.url)).length).toBeGreaterThan(100);
+    const sw = readFileSync(new URL("../public/sw.js", import.meta.url), "utf8");
+    // The service worker never handles the API: conversations are never cached.
+    expect(sw).toContain('url.pathname.startsWith("/api/")');
+    expect(sw).toContain('const OFFLINE = "/offline"');
+  });
+
   it("answers a byte range of a video with 206, as iOS needs", async () => {
     const video = { fetch: async () => new Response(new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), { headers: { "content-type": "video/mp4" } }) };
     const get = (range?: string) => serveAsset(new Request(`${ORIGIN}/og.mp4`, range ? { headers: { range } } : {}), video);

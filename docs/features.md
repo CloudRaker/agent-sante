@@ -133,3 +133,14 @@ An agent can end a reply with an action link whose address is the next message:
 spaces), shows them inline with a chat bubble icon, and a click sends the text as the person's next
 message, through the normal path (PII check included). They are inactive while a turn runs, and
 plain text in the PDF recap. They never carry a web address.
+
+## Home screen app (PWA)
+
+- `public/manifest.webmanifest`: name, standalone display, start URL `/`, theme colors and icons
+  (`public/icons/`: 192 and 512 px, maskable, and the 180 px Apple touch icon).
+- `index.html`: the manifest link, the Apple touch icon and the iOS web app tags (title, status bar).
+- `public/sw.js`: keeps only the static files (`/assets/*`, the icon, the offline page). Pages go to the
+  network first and show `/offline` (the help numbers) when there is no network. `/api` and `/tools`
+  never go through the cache, so no conversation is ever stored. `sw.js` and the manifest are served
+  with `cache-control: no-cache`, so a deploy reaches installed apps. Change `VERSION` in `sw.js` to drop
+  the old static cache.

@@ -247,7 +247,7 @@ const tools = createTools((c) => buildToolsDeps(c.env as WorkerEnv));
  */
 export const PAGE_HEADERS: Record<string, string> = {
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://cdn.apple-mapkit.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://*.apple-mapkit.com https://*.geo.apple.com https://*.ls.apple.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.apple-mapkit.com https://*.geo.apple.com; worker-src blob:; child-src blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://cdn.apple-mapkit.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://*.apple-mapkit.com https://*.geo.apple.com https://*.ls.apple.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.apple-mapkit.com https://*.geo.apple.com; worker-src 'self' blob:; child-src blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
   "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
   "X-Content-Type-Options": "nosniff",
   "Referrer-Policy": "no-referrer",
@@ -261,6 +261,9 @@ export const PAGE_HEADERS: Record<string, string> = {
  * index.html for any path; for a path that is not an app page, the status becomes 404.
  * securityHeaders is false only on the Vite dev server.
  */
+/** Static HTML files that are real pages (not the single-page fallback). */
+const STATIC_PAGES = new Set(["/offline"]);
+
 /**
  * Byte ranges for video and audio files. iOS (and its link previews) plays a video only when the
  * server answers a Range request with 206 Partial Content. Other files are unchanged.
@@ -295,13 +298,16 @@ export async function serveAsset(
   const res = await mediaRange(request, await assets.fetch(request));
   const url = new URL(request.url);
   const html = (res.headers.get("content-type") ?? "").includes("text/html");
-  const notFound = res.status === 200 && html && !isAppPath(url.pathname);
+  const notFound = res.status === 200 && html && !isAppPath(url.pathname) && !STATIC_PAGES.has(url.pathname);
   const out = new Response(res.body, {
     status: notFound ? 404 : res.status,
     statusText: notFound ? "Not Found" : res.statusText,
     headers: res.headers,
   });
   if (securityHeaders) for (const [k, v] of Object.entries(PAGE_HEADERS)) out.headers.set(k, v);
+  // The service worker and the manifest must not stay in a cache: a new deploy must reach installed apps.
+  if (url.pathname === "/sw.js" || url.pathname === "/manifest.webmanifest") out.headers.set("cache-control", "no-cache");
+  if (url.pathname === "/manifest.webmanifest") out.headers.set("content-type", "application/manifest+json; charset=utf-8");
   // Text files are UTF-8 (llms.txt, robots.txt, sitemap.xml). Without a charset, a browser reads them as Windows-1252.
   const type = out.headers.get("content-type") ?? "";
   if (/^(text\/|application\/(xml|json|javascript))/.test(type) && !/charset=/i.test(type)) {
