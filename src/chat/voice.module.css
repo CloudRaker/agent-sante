@@ -1,0 +1,191 @@
+/* Voice messages: mic button, recording bar, audio bubble. Arc tokens only; light and dark follow the theme. */
+
+/* Same size and place as the Arc composer attach button. */
+.mic {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  flex: none;
+  margin-bottom: 1px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+}
+
+/* The bar has the height of the one-line composer (42 px), so the dock does not move. */
+.bar {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  align-items: center;
+  gap: 6px;
+}
+.cancel {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  flex: none;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+}
+.track {
+  display: flex;
+  min-width: 0;
+  height: 42px;
+  box-sizing: border-box;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  padding-left: 14px;
+  border: 1px solid var(--accent);
+  border-radius: 21px;
+  background: var(--surface);
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--danger);
+}
+.time {
+  flex: none;
+  color: var(--foreground);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+.max {
+  color: var(--text-muted);
+}
+.live {
+  display: flex;
+  min-width: 0;
+  height: 24px;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  margin-inline: 4px;
+  overflow: hidden;
+}
+.liveBar {
+  width: 3px;
+  height: 100%;
+  flex: none;
+  border-radius: 2px;
+  background: var(--accent);
+  transform-origin: center;
+}
+/* Same place and look as the ready send button of the Arc composer. */
+.send {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  place-items: center;
+  margin-right: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.send:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dot {
+    animation: pulse 1.2s var(--ease-standard) infinite alternate;
+  }
+  .liveBar {
+    transition: transform 80ms linear;
+  }
+  .send:active {
+    transform: scale(0.92);
+  }
+}
+@keyframes pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.35;
+  }
+}
+
+/* The audio bubble: the look of the person's own bubble (accent), with the state under it. */
+.voiceMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.bubble {
+  display: inline-flex;
+  margin: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px 6px 11px;
+  border-radius: 18px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.voiceMessage[data-failed] .bubble {
+  opacity: 0.6;
+}
+.bubbleIcon {
+  flex: none;
+}
+.wave {
+  display: block;
+  flex: none;
+  fill: currentColor;
+}
+.duration {
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+.state {
+  display: block;
+  padding-inline: 4px;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+.transcribing {
+  font-size: var(--text-xs);
+}
+.error {
+  color: var(--foreground);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+/* The privacy line and the mic notes under the composer. */
+.note {
+  flex: 1 1 100%;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

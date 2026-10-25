@@ -1,0 +1,48 @@
+{
+  "_note": "SYNTHETIC. Not an observed response. The field names follow the Clic Santé portal. The values are placeholders.",
+  "places": [
+    {
+      "id": 12345,
+      "establishment": 678,
+      "nameFr": "Pharmacie Exemple - Atwater",
+      "nameEn": "Example Pharmacy - Atwater",
+      "address": "1 rue Exemple",
+      "city": "Montréal",
+      "postal_code": "H3Z 0A0",
+      "formattedAddress": "1 rue Exemple, Montréal, QC H3Z 0A0",
+      "latitude": 45.49,
+      "longitude": -73.58,
+      "region": 6,
+      "isPhysicalLocation": true,
+      "openToPublic": true,
+      "isPrivate": false,
+      "placeStatus": "?",
+      "establishmentStatus": "?",
+      "hasOnlyServicesWithFees": false,
+      "hasOnlyFreeServices": true,
+      "services": [ { "stId": 3161, "st_id": 3161 } ],
+      "settings": [
+        { "setting": 188, "value": "1" },
+        { "setting": 198, "value": "0" },
+        { "setting": 222, "value": "0" },
+        { "setting": 243, "value": "0" }
+      ],
+      "availabilities": {
+        "sunull": { "t02": 0, "t07": 14, "ta7": 120 }
+      }
+    }
+  ],
+  "establishments": [
+    {
+      "id": 678,
+      "name": "Pharmacie Exemple",
+      "establishmentType": "pharmacie",
+      "establishment_type": "pharmacie",
+      "publicUrl": "? (establishment booking URL, booking flow: never follow)",
+      "headOfficeRegionCode": "?"
+    }
+  ],
+  "distanceByPlaces": { "12345": 0.8 },
+  "serviceIdsByPlaces": { "12345": [ 9999 ] },
+  "services": [ { "id": 9999, "_comment": "service rows referenced by serviceIdsByPlaces; shape unknown" } ]
+}

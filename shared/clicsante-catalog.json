@@ -1,0 +1,1050 @@
+{
+ "source": "https://portal3.clicsante.ca/sitemap.xml",
+ "retrieved": "2026-10-24",
+ "services": [
+  {
+   "fr": "vaccination-contre-la-rougeole-la-rubeole-la-varicelle-et-les-oreillons",
+   "en": "measles-mumps-chickenpox-and-rubella-vaccination"
+  },
+  {
+   "fr": "vaccination-virus-respiratoires",
+   "en": "respiratory-virus-vaccination"
+  },
+  {
+   "fr": "immunisation-vrs-bebes",
+   "en": "immunization-rsv-babies"
+  },
+  {
+   "fr": "prise-de-sang",
+   "en": "blood-test"
+  },
+  {
+   "fr": "vaccination-generale",
+   "en": "general-vaccination"
+  },
+  {
+   "fr": "vaccination-contre-la-covid-19",
+   "en": "covid-19-vaccination"
+  },
+  {
+   "fr": "vaccination-contre-l-influenza",
+   "en": "flu-vaccination"
+  },
+  {
+   "fr": "vaccination-des-enfants-ages-de-0-a-5-ans",
+   "en": "children-s-vaccination-0-to-5-years-old"
+  },
+  {
+   "fr": "depistage-de-la-covid-19",
+   "en": "covid-19-screening"
+  },
+  {
+   "fr": "vaccination-contre-le-zona",
+   "en": "shingles-vaccination"
+  },
+  {
+   "fr": "depistage-itss",
+   "en": "sti-screening"
+  },
+  {
+   "fr": "vaccination-scolaire-de-4-a-17-ans",
+   "en": "school-vaccination-4-to-17-years-old"
+  },
+  {
+   "fr": "consultation-avec-une-medecin-specialiste",
+   "en": "consultation-with-a-specialist-physician"
+  },
+  {
+   "fr": "vaccination-contre-la-tuberculose",
+   "en": "tuberculosis-vaccination"
+  },
+  {
+   "fr": "therapeute-relation-d-aide",
+   "en": "therapist"
+  },
+  {
+   "fr": "depistage-post-exposition",
+   "en": "post-exposure-screening"
+  },
+  {
+   "fr": "art-therapie",
+   "en": "art-therapy"
+  },
+  {
+   "fr": "zootherapie",
+   "en": "zootherapy"
+  },
+  {
+   "fr": "appel-video",
+   "en": "video-conference"
+  },
+  {
+   "fr": "depistage-prenatal",
+   "en": "prenatal-screening"
+  },
+  {
+   "fr": "suivi-de-grossesse",
+   "en": "pregnancy-follow-up"
+  },
+  {
+   "fr": "troubles-du-sommeil",
+   "en": "sleeping-disorders"
+  },
+  {
+   "fr": "consultation-en-lien-avec-la-fertilite",
+   "en": "fertility-consultation"
+  },
+  {
+   "fr": "tomodensitometrie-scan",
+   "en": "ct-scan"
+  },
+  {
+   "fr": "allergie-et-immunologie",
+   "en": "allergy-and-immunology"
+  },
+  {
+   "fr": "vaccination-contre-le-pneumocoque",
+   "en": "pneumococcal-vaccination"
+  },
+  {
+   "fr": "vaccination-contre-le-virus-du-papillome-humain-vph",
+   "en": "human-papillomavirus-hpv-vaccination"
+  },
+  {
+   "fr": "prise-de-tension-arterielle",
+   "en": "blood-pressure-measurement"
+  },
+  {
+   "fr": "consultation-pour-une-maladie-chronique",
+   "en": "consultation-for-chronic-illness"
+  },
+  {
+   "fr": "prise-de-la-glycemie-capillaire",
+   "en": "blood-sugar-test"
+  },
+  {
+   "fr": "nettoyage-d-oreille",
+   "en": "ear-cleaning"
+  },
+  {
+   "fr": "consultation-avec-une-nutritionniste",
+   "en": "consultation-with-a-nutritionist"
+  },
+  {
+   "fr": "prolongation-et-renouvellement-d-ordonnance",
+   "en": "prescription-renewal-and-extension"
+  },
+  {
+   "fr": "soins-de-plaies-changements-de-pansements",
+   "en": "wound-care-dressing-changes"
+  },
+  {
+   "fr": "soins-des-pieds-et-des-ongles",
+   "en": "foot-and-nail-care"
+  },
+  {
+   "fr": "consultation-et-soutien-en-lien-avec-l-allaitement",
+   "en": "consultation-and-support-for-breastfeeding"
+  },
+  {
+   "fr": "revision-de-la-medication",
+   "en": "medication-review"
+  },
+  {
+   "fr": "examen-auditif",
+   "en": "hearing-test"
+  },
+  {
+   "fr": "consultation-pour-des-migraines",
+   "en": "consultation-for-migraines"
+  },
+  {
+   "fr": "vaginite-et-vaginose",
+   "en": "vaginitis-and-bacterial-vaginosis"
+  },
+  {
+   "fr": "prevention-de-la-diarrhee-du-voyageur-et-du-cholera",
+   "en": "prevention-of-traveler-s-diarrhea-and-cholera"
+  },
+  {
+   "fr": "administration-et-injection-de-medicament",
+   "en": "administration-and-injection-of-medication"
+  },
+  {
+   "fr": "retrait-d-agrafes-ou-de-sutures",
+   "en": "staple-or-suture-removal"
+  },
+  {
+   "fr": "location-d-equipements-medicaux",
+   "en": "medical-equipment-rental"
+  },
+  {
+   "fr": "vaccination-contre-la-meningocoque",
+   "en": "meningococcal-vaccination"
+  },
+  {
+   "fr": "depistage-du-streptocoque-a",
+   "en": "streptococcus-a-screening"
+  },
+  {
+   "fr": "prophylaxie-de-paludisme-malaria",
+   "en": "malaria-prophylaxis"
+  },
+  {
+   "fr": "consultation-avec-une-pharmacienne",
+   "en": "consultation-with-a-pharmacist"
+  },
+  {
+   "fr": "cessation-du-tabagisme",
+   "en": "smoking-cessation"
+  },
+  {
+   "fr": "prophylaxie-du-mal-aigu-des-montagnes",
+   "en": "prophylaxis-for-acute-mountain-sickness"
+  },
+  {
+   "fr": "ajustement-de-medicaments",
+   "en": "medication-adjustment"
+  },
+  {
+   "fr": "enseignement-et-accompagnement",
+   "en": "teaching-and-support"
+  },
+  {
+   "fr": "consultation-sante-voyage",
+   "en": "travel-health-consultation"
+  },
+  {
+   "fr": "consultation-pour-vetements-compressifs",
+   "en": "consultation-for-compression-garments"
+  },
+  {
+   "fr": "problemes-de-peau-mineur",
+   "en": "minor-skin-problems-"
+  },
+  {
+   "fr": "examen-de-l-oreille",
+   "en": "ear-examination"
+  },
+  {
+   "fr": "herpes-labial",
+   "en": "cold-sores"
+  },
+  {
+   "fr": "ulceres-buccaux",
+   "en": "mouth-ulcers"
+  },
+  {
+   "fr": "problemes-d-acne",
+   "en": "acne-problems"
+  },
+  {
+   "fr": "douleurs-menstruelles",
+   "en": "menstrual-cramps"
+  },
+  {
+   "fr": "hemorroides",
+   "en": "hemorrhoids"
+  },
+  {
+   "fr": "pediculose-poux",
+   "en": "head-lice"
+  },
+  {
+   "fr": "entretien-des-audioprotheses",
+   "en": "hearing-aid-maintenance"
+  },
+  {
+   "fr": "soins-des-stomies-colostomies-urostomie-etc",
+   "en": "stoma-care-colostomies-urostomy-etc"
+  },
+  {
+   "fr": "traitement-des-verrues-et-acrochordons",
+   "en": "wart-and-skin-tag-treatment"
+  },
+  {
+   "fr": "infection-urinaire",
+   "en": "urinary-tract-infection"
+  },
+  {
+   "fr": "suivi-du-developpement-de-l-enfant",
+   "en": "child-development-follow-up"
+  },
+  {
+   "fr": "muguet-buccal",
+   "en": "oral-thrush"
+  },
+  {
+   "fr": "irritation-due-aux-couches",
+   "en": "diaper-rash"
+  },
+  {
+   "fr": "supplement-vitaminique-lors-de-la-grossesse",
+   "en": "vitamin-supplement-during-pregnancy"
+  },
+  {
+   "fr": "vaccination-contre-la-diphterie-la-coqueluche-le-tetanos-et-la-polio",
+   "en": "diphtheria-whooping-cough-tetanus-and-polio-vaccination"
+  },
+  {
+   "fr": "nausees-et-vomissements-lies-a-la-grossesse",
+   "en": "nausea-and-vomiting-related-to-pregnancy"
+  },
+  {
+   "fr": "soins-du-corps-et-bien-etre",
+   "en": "body-care-and-wellness"
+  },
+  {
+   "fr": "eczema-dermatite-atopique",
+   "en": "eczema-atopic-dermatitis"
+  },
+  {
+   "fr": "maladie-de-lyme-initiation-d-un-traitement-preventif",
+   "en": "lyme-disease-initiation-of-preventive-treatment-"
+  },
+  {
+   "fr": "vaccination-pour-la-sante-sexuelle",
+   "en": "sexual-health-vaccination"
+  },
+  {
+   "fr": "brulure-d-estomac-et-reflux-gastro-oesophagien",
+   "en": "heartburn-and-gastroesophageal-reflux"
+  },
+  {
+   "fr": "tests-de-la-fonction-respiratoire",
+   "en": "lung-function-tests"
+  },
+  {
+   "fr": "consultation-avec-une-sexologue",
+   "en": "consultation-with-a-sexologist"
+  },
+  {
+   "fr": "test-pour-detecter-la-tuberculose-tct",
+   "en": "tuberculosis-skin-test"
+  },
+  {
+   "fr": "test-de-grossesse",
+   "en": "pregnancy-test"
+  },
+  {
+   "fr": "information-et-conseils-sur-la-grossesse",
+   "en": "pregnancy-information-and-advice"
+  },
+  {
+   "fr": "contraception-orale-d-urgence",
+   "en": "emergency-contraceptive-pills"
+  },
+  {
+   "fr": "injection-de-depo-provera",
+   "en": "depo-provera-injection"
+  },
+  {
+   "fr": "debuter-une-contraception-hormonale",
+   "en": "initiate-a-hormonal-contraception"
+  },
+  {
+   "fr": "consultation-en-sante-sexuelle",
+   "en": "sexual-health-consultation"
+  },
+  {
+   "fr": "pose-et-retrait-d-un-sterilet",
+   "en": "iud-insertion-and-removal"
+  },
+  {
+   "fr": "cours-prenataux",
+   "en": "prenatal-classes"
+  },
+  {
+   "fr": "consultation-avec-une-infirmiere",
+   "en": "consultation-with-a-nurse"
+  },
+  {
+   "fr": "consultation-pour-la-contraception",
+   "en": "contraception-consultation"
+  },
+  {
+   "fr": "injection-winhro",
+   "en": "winrho-injection"
+  },
+  {
+   "fr": "consultation-medicale-urgente",
+   "en": "urgent-medical-consultation"
+  },
+  {
+   "fr": "depistage-du-diabete",
+   "en": "diabetes-screening-test"
+  },
+  {
+   "fr": "electrocardiogramme",
+   "en": "electrocardiogram"
+  },
+  {
+   "fr": "radiographie",
+   "en": "x-ray"
+  },
+  {
+   "fr": "spermogramme",
+   "en": "spermogram"
+  },
+  {
+   "fr": "vaccination-contre-la-fievre-jaune",
+   "en": "yellow-fever-vaccination"
+  },
+  {
+   "fr": "vaccination-contre-la-typhoide",
+   "en": "typhoid-vaccination"
+  },
+  {
+   "fr": "evaluation-du-besoin-en-vitamines-et-supplement",
+   "en": "assessment-of-vitamin-and-supplement-needs"
+  },
+  {
+   "fr": "constipation-fr",
+   "en": "constipation-en"
+  },
+  {
+   "fr": "mycoses-des-plis",
+   "en": "fold-mycoses"
+  },
+  {
+   "fr": "consultation-pour-evaluer-et-traiter-la-douleur",
+   "en": "consultation-for-pain-assessment-and-treatment"
+  },
+  {
+   "fr": "nausees-vomissements-et-diarrhee",
+   "en": "nausea-vomiting-and-diarrhea"
+  },
+  {
+   "fr": "traitement-et-soins-du-zona",
+   "en": "shingle-treatment-and-care"
+  },
+  {
+   "fr": "morsure-de-chat",
+   "en": "cat-bite"
+  },
+  {
+   "fr": "depistage-cancer-col-uterus",
+   "en": "cervical-cancer-screening"
+  },
+  {
+   "fr": "moniteur-de-tension-arterielle-mapa",
+   "en": "ambulatory-monitoring-of-blood-pressure-ambp"
+  },
+  {
+   "fr": "vaccination-contre-l-hepatite-a-et-l-hepatite-b",
+   "en": "hepatitis-a-and-hepatitis-b-vaccination"
+  },
+  {
+   "fr": "traitement-oral-contre-la-grippe-et-la-covid-19",
+   "en": "oral-flu-and-covid-19-treatment"
+  },
+  {
+   "fr": "atelier-parents-et-bebes",
+   "en": "workshop-parents-and-babys"
+  },
+  {
+   "fr": "vaccination-contre-l-encephalite-japonaise",
+   "en": "japanese-encephalitis-vaccination"
+  },
+  {
+   "fr": "vaccination-contre-la-rage",
+   "en": "rabies-vaccination"
+  },
+  {
+   "fr": "consultation-a-la-clinique-jeunesse",
+   "en": "youth-clinic-consultation"
+  },
+  {
+   "fr": "consultation-clinique-mobile-de-services-de-proximite",
+   "en": "consultation-mobile-proximity-service-clinic"
+  },
+  {
+   "fr": "consultation-pour-des-services-en-dependance",
+   "en": "addiction-services-consultation"
+  },
+  {
+   "fr": "gestion-du-poids",
+   "en": "weight-management"
+  },
+  {
+   "fr": "consultation-avec-une-optometriste",
+   "en": "optometrist-consultation"
+  },
+  {
+   "fr": "consultation-avec-une-opticienne",
+   "en": "consultation-with-an-optician"
+  },
+  {
+   "fr": "drainage-dabces-ou-kyste",
+   "en": "abscess-or-cyst-drainage"
+  },
+  {
+   "fr": "detection-et-traitement-des-vers-intestinaux",
+   "en": "intestinal-worms-screening-and-treatment"
+  },
+  {
+   "fr": "traitement-de-lincontinence-urinaire",
+   "en": "urinary-incontinence-treatments"
+  },
+  {
+   "fr": "traitements-des-varices",
+   "en": "varicose-vein-treatments"
+  },
+  {
+   "fr": "injection-plasma-riche-en-plaquettes",
+   "en": "platelet-rich-plasma-injection"
+  },
+  {
+   "fr": "consultation-pour-une-chirurgie-esthetique",
+   "en": "cosmetic-surgery-consultation"
+  },
+  {
+   "fr": "trousse-en-cas-de-surdose-d-opioides",
+   "en": "opioid-overdose-kit"
+  },
+  {
+   "fr": "insertion-et-retrait-d-un-implant-contraceptif",
+   "en": "insertion-and-removal-of-contraceptive-implant"
+  },
+  {
+   "fr": "consultation-avec-une-ergotherapeute",
+   "en": "consultation-with-an-occupational-therapist"
+  },
+  {
+   "fr": "consultation-avec-une-osteopathe",
+   "en": "consultation-with-an-osteopath"
+  },
+  {
+   "fr": "consultation-avec-une-acupuncteure",
+   "en": "consultation-with-an-acupuncturist"
+  },
+  {
+   "fr": "revision-de-cicatrices",
+   "en": "scar-revision"
+  },
+  {
+   "fr": "soins-a-domicile",
+   "en": "home-care"
+  },
+  {
+   "fr": "consultation-avec-une-physiotherapeute",
+   "en": "consultation-with-a-physiotherapist"
+  },
+  {
+   "fr": "soins-pour-paupieres-tombantes",
+   "en": "drooping-eyelid-cares"
+  },
+  {
+   "fr": "suivi-post-partum",
+   "en": "postpartum-follow-up"
+  },
+  {
+   "fr": "retrait-d-un-kyste",
+   "en": "cyst-removal"
+  },
+  {
+   "fr": "consultation-pour-la-perte-de-cheveux",
+   "en": "consultation-for-hair-loss"
+  },
+  {
+   "fr": "traitement-couperose-rosacee",
+   "en": "rosacea-treatment"
+  },
+  {
+   "fr": "consultation-pour-de-la-toux-et-de-la-congestion-nasale",
+   "en": "consultation-for-cough-and-nasal-congestion"
+  },
+  {
+   "fr": "consultation-pour-douleur-a-l-oreille",
+   "en": "ear-pain-consultation"
+  },
+  {
+   "fr": "mammographie",
+   "en": "mammography"
+  },
+  {
+   "fr": "consultation-avec-une-massotherapeute",
+   "en": "consultation-with-a-massage-therapist"
+  },
+  {
+   "fr": "consultation-avec-une-orl",
+   "en": "consultation-with-an-ent-specialist"
+  },
+  {
+   "fr": "consultation-medicale-pour-un-enfant",
+   "en": "medical-consultation-for-a-child"
+  },
+  {
+   "fr": "examen-avec-un-moniteur-cardiaque-portatif",
+   "en": "portable-cardiac-monitor-test"
+  },
+  {
+   "fr": "biopsie",
+   "en": "biopsy"
+  },
+  {
+   "fr": "traitement-et-soins-esthetiques",
+   "en": "aesthetic-treatments-and-cares"
+  },
+  {
+   "fr": "consultation-sante-de-la-femme",
+   "en": "women-s-health-consultation"
+  },
+  {
+   "fr": "osteodensitometrie",
+   "en": "bone-density-scan"
+  },
+  {
+   "fr": "demande-liee-a-une-interruption-de-grossesse",
+   "en": "request-for-a-termination-of-pregnancy"
+  },
+  {
+   "fr": "consultation-pour-une-chirurgie-mineure",
+   "en": "minor-surgery-consultation-"
+  },
+  {
+   "fr": "injection-de-produit-de-comblement",
+   "en": "filler-injections"
+  },
+  {
+   "fr": "consultation-en-medecine-esthetique",
+   "en": "aesthetic-medicine-consultation"
+  },
+  {
+   "fr": "consultation-en-lien-avec-l-hypersudation",
+   "en": "excessive-sweating-consultation"
+  },
+  {
+   "fr": "vaccination-contre-la-mpox",
+   "en": "mpox-vaccination"
+  },
+  {
+   "fr": "depistage-du-virus-respiratoire-syncytial-vrs",
+   "en": "respiratory-syncytial-virus-rsv-screening"
+  },
+  {
+   "fr": "vaccination-contre-le-cholera-et-la-diarrhee-a-ecoli",
+   "en": "cholera-and-e-coli-diarrhea-vaccination"
+  },
+  {
+   "fr": "consultation-en-lien-avec-un-appareil-cpap",
+   "en": "consultation-for-a-cpap-device"
+  },
+  {
+   "fr": "echographies",
+   "en": "ultrasounds"
+  },
+  {
+   "fr": "consultation-avec-une-dermatologue",
+   "en": "consultation-with-a-dermatologist"
+  },
+  {
+   "fr": "bilan-de-sante",
+   "en": "health-checkup"
+  },
+  {
+   "fr": "consultation-en-lien-avec-les-soins-palliatifs",
+   "en": "consultation-palliative-care"
+  },
+  {
+   "fr": "consultation-en-lien-avec-la-menopause",
+   "en": "menopause-related-consultation-"
+  },
+  {
+   "fr": "soins-de-sonde-urinaire",
+   "en": "urinary-catheter-cares"
+  },
+  {
+   "fr": "detection-drogues-de-rue",
+   "en": "street-drug-screening"
+  },
+  {
+   "fr": "consultation-avec-une-educatrice-specialisee",
+   "en": "consultation-with-a-special-education-teacher"
+  },
+  {
+   "fr": "infection-des-voies-respiratoires",
+   "en": "respiratory-tract-infection-"
+  },
+  {
+   "fr": "consultation-musculosquelettique",
+   "en": "musculoskeletal-consultation"
+  },
+  {
+   "fr": "cannabis-medical",
+   "en": "medical-marijuana"
+  },
+  {
+   "fr": "consultation-avec-une-audiologiste",
+   "en": "consultation-with-an-audiologist"
+  },
+  {
+   "fr": "traitement-molluscum-contagiosum",
+   "en": "molluscum-contagiosum-treatment"
+  },
+  {
+   "fr": "evaluation-et-suivi-du-tdah",
+   "en": "adhd-assessment-and-follow-up"
+  },
+  {
+   "fr": "traitement-des-condylomes",
+   "en": "condyloma-treatment"
+  },
+  {
+   "fr": "consultation-avec-une-audioprothesiste",
+   "en": "consultation-with-an-audioprosthetist"
+  },
+  {
+   "fr": "consultation-pour-troubles-cognitifs",
+   "en": "consultation-for-cognitive-disorders"
+  },
+  {
+   "fr": "formulaires-medicaux",
+   "en": "medical-forms"
+  },
+  {
+   "fr": "service-d-entretien-menager",
+   "en": "housekeeping-service"
+  },
+  {
+   "fr": "verification-d-appareils-medicaux",
+   "en": "medical-device-check-up"
+  },
+  {
+   "fr": "service-de-repit-avec-ou-sans-hebergement",
+   "en": "respite-care-with-or-without-accommodation"
+  },
+  {
+   "fr": "prise-de-signes-vitaux",
+   "en": "vital-signs-measurement"
+  },
+  {
+   "fr": "vaccination-femmes-enceintes-coqueluche",
+   "en": "pregnant-women-vaccination-pertussis"
+  },
+  {
+   "fr": "consultation-pour-un-probleme-au-niveau-des-yeux",
+   "en": "consultation-regarding-an-eye-problem"
+  },
+  {
+   "fr": "programme-saines-habitudes-de-vie",
+   "en": "healthy-lifestyle-program"
+  },
+  {
+   "fr": "vaccination-contre-le-rotavirus",
+   "en": "rotavirus-vaccination"
+  },
+  {
+   "fr": "consultation-avec-une-orthophoniste",
+   "en": "speech-therapy-consultation"
+  },
+  {
+   "fr": "consultation-avec-un-psychoeducateur-ou-une-psychoeducatrice",
+   "en": "consultation-with-a-psychoeducator"
+  },
+  {
+   "fr": "prophylaxie-pre-exposition-prep-et-post-exposition-ppe",
+   "en": "pre-exposure-prep-and-post-exposure-pep-prophylaxis"
+  },
+  {
+   "fr": "urgence-dentaire",
+   "en": "dental-emergency"
+  },
+  {
+   "fr": "examen-et-nettoyage-dentaire",
+   "en": "dental-check-up-and-cleaning"
+  },
+  {
+   "fr": "evaluation-de-lalignement-et-de-lapparence-des-dents",
+   "en": "dental-alignement-assessment"
+  },
+  {
+   "fr": "consultation-pour-de-l-orthodontie",
+   "en": "orthodontic-consultation"
+  },
+  {
+   "fr": "soins-et-suivi-pre-et-post-operatoire",
+   "en": "pre-and-post-operative-care-and-follow-up"
+  },
+  {
+   "fr": "consultation-avec-conseillere-en-perinatalite",
+   "en": "consultation-with-a-perinatal-counselor"
+  },
+  {
+   "fr": "consultation-avec-une-kinesiologue",
+   "en": "consultation-with-a-kinesiologist"
+  },
+  {
+   "fr": "infiltration-au-niveau-des-articulations",
+   "en": "joint-injections-"
+  },
+  {
+   "fr": "consultation-avec-une-travailleuse-sociale",
+   "en": "consultation-with-a-social-worker"
+  },
+  {
+   "fr": "consultation-avec-une-estheticienne",
+   "en": "consultation-with-an-aesthetician"
+  },
+  {
+   "fr": "sante-de-l-homme",
+   "en": "men-s-health"
+  },
+  {
+   "fr": "traitement-dentaire",
+   "en": "dental-treatments"
+  },
+  {
+   "fr": "examen-du-sommeil",
+   "en": "sleep-test"
+  },
+  {
+   "fr": "consultation-pour-ortheses-et-protheses",
+   "en": "consultation-for-orthotics-and-prosthetics"
+  },
+  {
+   "fr": "arthrographie",
+   "en": "arthrography"
+  },
+  {
+   "fr": "consultation-avec-une-ips-infirmiere-praticienne-specialisee",
+   "en": "consultation-with-a-nurse-practitioner-np"
+  },
+  {
+   "fr": "vasectomie",
+   "en": "vasectomy"
+  },
+  {
+   "fr": "consultation-avec-une-podiatre",
+   "en": "consultation-with-a-podiatrist"
+  },
+  {
+   "fr": "hypnotherapie",
+   "en": "hypnotherapy"
+  },
+  {
+   "fr": "consultation-pour-des-bouchons-auditifs-sur-mesure",
+   "en": "consultation-for-custom-made-earplugs"
+  },
+  {
+   "fr": "depistage-du-cancer-colorectal",
+   "en": "colorectal-cancer-screening"
+  },
+  {
+   "fr": "consultation-avec-une-chiropraticienne",
+   "en": "consultation-with-a-chiropractor"
+  },
+  {
+   "fr": "imagerie-par-resonance-magnetique-irm",
+   "en": "magnetic-resonance-imaging-mri"
+  },
+  {
+   "fr": "consultation-en-sante-mentale",
+   "en": "mental-health-consultation"
+  },
+  {
+   "fr": "cours-de-reanimation-cardiorespiratoire-rcr",
+   "en": "cardiopulmonary-resuscitation-course-cpr"
+  },
+  {
+   "fr": "vaccination-contre-le-virus-respiratoire-syncytial-vrs",
+   "en": "respiratory-syncytial-virus-rsv-vaccination"
+  },
+  {
+   "fr": "consultation-avec-une-cardiologue",
+   "en": "consultation-with-a-cardiologist"
+  },
+  {
+   "fr": "mal-des-transports",
+   "en": "motion-sickness"
+  },
+  {
+   "fr": "test-d-adn",
+   "en": "dna-testing"
+  },
+  {
+   "fr": "consultation-avec-une-medecin",
+   "en": "consultation-with-a-doctor"
+  },
+  {
+   "fr": "consultation-avec-une-inhalotherapeute",
+   "en": "consultation-with-a-respiratory-therapist"
+  },
+  {
+   "fr": "consultation-avec-une-chirurgien-orthopediste",
+   "en": "consultation-with-an-orthopedic-surgeon"
+  },
+  {
+   "fr": "electroencephalogramme-eeg",
+   "en": "electroencephalogram-eeg"
+  },
+  {
+   "fr": "greffe-gingivale-et-osseuse",
+   "en": "dental-bone-and-gum-grafting"
+  },
+  {
+   "fr": "depistage",
+   "en": "screening-test"
+  },
+  {
+   "fr": "consultation-avec-une-orthopedagogue",
+   "en": "consultation-with-an-orthopedagogue"
+  },
+  {
+   "fr": "support-et-accompagnement",
+   "en": "support-and-accompaniment"
+  },
+  {
+   "fr": "consultation-aire-ouverte",
+   "en": "aire-ouverte-consultation"
+  },
+  {
+   "fr": "hysteroscopie",
+   "en": "hysteroscopy"
+  },
+  {
+   "fr": "colonoscopie",
+   "en": "colonoscopy"
+  },
+  {
+   "fr": "gastroscopie",
+   "en": "gastroscopy"
+  },
+  {
+   "fr": "vaccination-chikungunya",
+   "en": "chikungunya-vaccination"
+  },
+  {
+   "fr": "ophtalmologue",
+   "en": "ophthalmologist"
+  },
+  {
+   "fr": "psychologue",
+   "en": "psychologist"
+  },
+  {
+   "fr": "depistage-diabete-evaluation-risque-cardiovasculaire",
+   "en": "screening-diabetes-assessment-cardiovascular-risk"
+  },
+  {
+   "fr": "traitement-accelere-partenaires",
+   "en": "expedited-partner-treatment"
+  },
+  {
+   "fr": "depistage-cancer-poumon",
+   "en": "lung-cancer-screening"
+  },
+  {
+   "fr": "depistage-cancer-prostate",
+   "en": "prostate-cancer-screening"
+  },
+  {
+   "fr": "osteoporose",
+   "en": "osteoporosis"
+  },
+  {
+   "fr": "traitement-keratose",
+   "en": "keratosis-treatment"
+  },
+  {
+   "fr": "gynecologue",
+   "en": "gynecologist"
+  },
+  {
+   "fr": "gastro-enterologue",
+   "en": "gastroenterologist"
+  },
+  {
+   "fr": "hygieniste-dentaire",
+   "en": "dental-hygienist"
+  },
+  {
+   "fr": "urologue",
+   "en": "urologist"
+  },
+  {
+   "fr": "oncologue",
+   "en": "oncologist"
+  },
+  {
+   "fr": "lipodensitométrie",
+   "en": "lipodensitometry"
+  },
+  {
+   "fr": "psychiatre",
+   "en": "psychiatrist"
+  },
+  {
+   "fr": "circoncision",
+   "en": "circumcision"
+  },
+  {
+   "fr": "dysfonction-erectile",
+   "en": "erectile-dysfunction"
+  },
+  {
+   "fr": "neurologue",
+   "en": "neurologist"
+  },
+  {
+   "fr": "pneumologue",
+   "en": "pulmonologist"
+  },
+  {
+   "fr": "andropause",
+   "en": "andropause"
+  },
+  {
+   "fr": "asthme-mpoc-emphyseme",
+   "en": "asthma-copd-emphysema"
+  },
+  {
+   "fr": "examen_peau",
+   "en": "skin_exam"
+  },
+  {
+   "fr": "rhumatologue",
+   "en": "rheumatologist"
+  },
+  {
+   "fr": "neuropsychologue",
+   "en": "neuropsychologist"
+  },
+  {
+   "fr": "evaluation-et-suivi-tsa",
+   "en": "tsa-assessment-and-follow-up"
+  },
+  {
+   "fr": "psychotherapeute",
+   "en": "psychotherapist"
+  },
+  {
+   "fr": "criminologue",
+   "en": "criminologist"
+  },
+  {
+   "fr": "etna",
+   "en": "etna"
+  },
+  {
+   "fr": "detection-precoce-cancer-peau",
+   "en": "early-detection-skin-cancer"
+  },
+  {
+   "fr": "medecine-sportive",
+   "en": "sports-medicine"
+  },
+  {
+   "fr": "infirmier-soins-podologiques",
+   "en": "foot-care-nurse"
+  },
+  {
+   "fr": "commotion_cerebrale",
+   "en": "concussion"
+  },
+  {
+   "fr": "conseiller-orientation",
+   "en": "guidance-counsellor"
+  }
+ ]
+}

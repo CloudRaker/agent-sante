@@ -1,0 +1,1 @@
+(https://www.rvsq.gouv.qc.ca/info/champrequis.html) source officielle : https://www.rvsq.gouv.qc.ca/info/champrequis.html les champs à remplir sont les suivants : prénom nom numéro d'assurance maladie numéro séquentiel de 2 chiffres de la carte d'assurance maladie (situé en dessous du prénom sur la carte) date de naissance sexe retour à la rubrique d'aide

@@ -1,0 +1,9 @@
+allowBuilds:
+  esbuild: true
+  workerd: true
+  sharp: false
+  "@tailwindcss/oxide": true
+
+# Security fix: miniflare pins undici 7.29.1 (GHSA, fixed in 7.30.1). Drop when miniflare moves past it.
+overrides:
+  undici@7.29.1: 7.30.1

@@ -1,0 +1,418 @@
+{
+ "places": [
+  {
+   "id": 3139,
+   "establishment": 63252,
+   "name_fr": "Jean-Coutu - Pharmacie Dave Larouche et Vy Ky Linh Le inc.",
+   "name_en": "Jean-Coutu - Pharmacie Dave Larouche et Vy Ky Linh Le inc.",
+   "formatted_address": "305, RUE SHERBROOKE OUEST MONTREAL H2X1Y1 Canada",
+   "address": "305, RUE SHERBROOKE OUEST",
+   "postal_code": "H2X1Y1",
+   "city": "MONTREAL",
+   "latitude": 45.5086742,
+   "longitude": -73.5713497,
+   "region": "06 - Montréal",
+   "is_virtual": 0,
+   "settings": [
+    {
+     "setting": 188,
+     "value": "0"
+    },
+    {
+     "setting": 198,
+     "value": "0"
+    },
+    {
+     "setting": 222,
+     "value": "0"
+    },
+    {
+     "setting": 243,
+     "value": "0"
+    }
+   ],
+   "is_physical_location": true,
+   "hasOnlyServicesWithFees": true,
+   "hasOnlyFreeServices": false,
+   "services": [
+    {
+     "id": 34440,
+     "st_id": 195,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination grippe",
+     "name_en": "Flu vaccination",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 0,
+      "t02": 0
+     },
+     "pricing_enabled": true,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": "private-public"
+    }
+   ]
+  },
+  {
+   "id": 3366,
+   "establishment": 62818,
+   "name_fr": "Familiprix Santé - Pharmacie David St-Jean-Gagnon",
+   "name_en": "Familiprix Santé - Pharmacie David St-Jean-Gagnon",
+   "formatted_address": "1588 boulevard Saint-Laurent MONTREAL H2X2T1 Canada",
+   "address": "1588 boulevard Saint-Laurent",
+   "postal_code": "H2X2T1",
+   "city": "MONTREAL",
+   "latitude": 45.5106144,
+   "longitude": -73.566299,
+   "region": "06 - Montréal",
+   "is_virtual": 0,
+   "settings": [
+    {
+     "setting": 188,
+     "value": "0"
+    },
+    {
+     "setting": 198,
+     "value": "0"
+    },
+    {
+     "setting": 222,
+     "value": "0"
+    },
+    {
+     "setting": 243,
+     "value": "0"
+    }
+   ],
+   "is_physical_location": true,
+   "hasOnlyServicesWithFees": false,
+   "hasOnlyFreeServices": true,
+   "services": [
+    {
+     "id": 395665,
+     "st_id": 3161,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination contre les virus respiratoires (grippe, COVID-19 et VRS)",
+     "name_en": "Vaccination against respiratory viruses (flu, COVID-19, and RSV)",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 160,
+      "t02": 0
+     },
+     "pricing_enabled": false,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": null
+    }
+   ]
+  },
+  {
+   "id": 3507,
+   "establishment": 63585,
+   "name_fr": "Pharmaprix St-Alexandre– Pharmaciennes-propriétaires : Hourig Tarakdjian & Pamela Orfali",
+   "name_en": "Pharmaprix St-Alexandre– Pharmaciennes-propriétaires : Hourig Tarakdjian & Pamela Orfali",
+   "formatted_address": "390, RUE SAINTE-CATHERINE OUEST MONTREAL H3B1A1 Canada",
+   "address": "390, RUE SAINTE-CATHERINE OUEST",
+   "postal_code": "H3B1A1",
+   "city": "MONTREAL",
+   "latitude": 45.5054522,
+   "longitude": -73.5675207,
+   "region": "06 - Montréal",
+   "is_virtual": 0,
+   "settings": [
+    {
+     "setting": 188,
+     "value": "1"
+    },
+    {
+     "setting": 198,
+     "value": "0"
+    },
+    {
+     "setting": 222,
+     "value": "1"
+    },
+    {
+     "setting": 243,
+     "value": "0"
+    }
+   ],
+   "is_physical_location": true,
+   "hasOnlyServicesWithFees": false,
+   "hasOnlyFreeServices": true,
+   "services": [
+    {
+     "id": 396185,
+     "st_id": 3161,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination contre les virus respiratoires (grippe, COVID-19 et VRS)",
+     "name_en": "Vaccination against respiratory viruses (flu, COVID-19, and RSV)",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 0,
+      "t02": 0
+     },
+     "pricing_enabled": false,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": null
+    }
+   ]
+  },
+  {
+   "id": 3361,
+   "establishment": 63274,
+   "name_fr": "Jean-Coutu - Pharmacie Odile Terzibachi inc.",
+   "name_en": "Jean-Coutu - Pharmacie Odile Terzibachi inc.",
+   "formatted_address": "150, SAINTE-CATHERINE OUESTC. P. 181 MONTREAL H5B1B3 Canada",
+   "address": "150, SAINTE-CATHERINE OUESTC. P. 181",
+   "postal_code": "H5B1B3",
+   "city": "MONTREAL",
+   "latitude": 45.5073696,
+   "longitude": -73.5641008,
+   "region": "06 - Montréal",
+   "is_virtual": 0,
+   "settings": [
+    {
+     "setting": 188,
+     "value": "1"
+    },
+    {
+     "setting": 198,
+     "value": "0"
+    },
+    {
+     "setting": 222,
+     "value": "1"
+    },
+    {
+     "setting": 243,
+     "value": "1"
+    }
+   ],
+   "is_physical_location": true,
+   "hasOnlyServicesWithFees": false,
+   "hasOnlyFreeServices": false,
+   "services": [
+    {
+     "id": 445673,
+     "st_id": 3161,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination contre les virus respiratoires (grippe, COVID-19 et VRS)",
+     "name_en": "Vaccination against respiratory viruses (flu, COVID-19, and RSV)",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 360,
+      "t02": 0
+     },
+     "pricing_enabled": true,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": null
+    },
+    {
+     "id": 499843,
+     "st_id": 3161,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination contre les virus respiratoires (grippe, COVID-19 et VRS)",
+     "name_en": "Vaccination against respiratory viruses (flu, COVID-19, and RSV)",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 360,
+      "t02": 0
+     },
+     "pricing_enabled": false,
+     "price": 20,
+     "price_description_fr": "gratuit si éligible selon gouvernement, prix varie selon vaccin 20-100$",
+     "price_description_en": "free if eligible according to government, otherwise 20-100 $ depending on vaccine",
+     "tarification_mode_value": null
+    }
+   ]
+  },
+  {
+   "id": 17899,
+   "establishment": 12009,
+   "name_fr": "CLSC Ste-Catherine",
+   "name_en": "CLSC Ste-Catherine",
+   "formatted_address": "66 Rue Sainte-Catherine Est Montréal H2X1K6 Canada",
+   "address": "66 Rue Sainte-Catherine Est",
+   "postal_code": "H2X1K6",
+   "city": "Montréal",
+   "latitude": 45.5105943,
+   "longitude": -73.5629387,
+   "region": "06 - Montréal",
+   "is_virtual": 0,
+   "settings": [
+    {
+     "setting": 188,
+     "value": "1"
+    },
+    {
+     "setting": 198,
+     "value": "0"
+    },
+    {
+     "setting": 222,
+     "value": "0"
+    },
+    {
+     "setting": 243,
+     "value": "0"
+    }
+   ],
+   "is_physical_location": true,
+   "hasOnlyServicesWithFees": false,
+   "hasOnlyFreeServices": true,
+   "services": [
+    {
+     "id": 394492,
+     "st_id": 3161,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination contre les virus respiratoires (grippe, COVID-19 et VRS)",
+     "name_en": "Vaccination against respiratory viruses (flu, COVID-19, and RSV)",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 0,
+      "t02": 0
+     },
+     "pricing_enabled": false,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": null
+    },
+    {
+     "id": 394619,
+     "st_id": 3161,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination COVID-19 et / ou grippe (5 ans et -)",
+     "name_en": "COVID-19 and / or flu vaccination (5 years and under)",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 0,
+      "t02": 0
+     },
+     "pricing_enabled": false,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": null
+    }
+   ]
+  },
+  {
+   "id": 3511,
+   "establishment": 63251,
+   "name_fr": "Jean-Coutu 204 - Pharmacie Dave Larouche et Vy Ky Linh Le inc. (PJC 204)",
+   "name_en": "Jean-Coutu 204 - Pharmacie Dave Larouche et Vy Ky Linh Le inc. (PJC 204)",
+   "formatted_address": "3745, BOUL. SAINT-LAURENT MONTREAL H2W1X8 Canada",
+   "address": "3745, BOUL. SAINT-LAURENT",
+   "postal_code": "H2W1X8",
+   "city": "MONTREAL",
+   "latitude": 45.5153623,
+   "longitude": -73.575102,
+   "region": "06 - Montréal",
+   "is_virtual": 0,
+   "settings": [
+    {
+     "setting": 188,
+     "value": "0"
+    },
+    {
+     "setting": 198,
+     "value": "0"
+    },
+    {
+     "setting": 222,
+     "value": "0"
+    },
+    {
+     "setting": 243,
+     "value": "0"
+    }
+   ],
+   "is_physical_location": true,
+   "hasOnlyServicesWithFees": true,
+   "hasOnlyFreeServices": false,
+   "services": [
+    {
+     "id": 34439,
+     "st_id": 195,
+     "st_description_fr": null,
+     "services_unified": [
+      65
+     ],
+     "categories": [
+      3
+     ],
+     "name_fr": "Vaccination grippe",
+     "name_en": "Flu vaccination",
+     "availabilities": {
+      "t07": 0,
+      "ta7": 0,
+      "t02": 0
+     },
+     "pricing_enabled": true,
+     "price": 0,
+     "price_description_fr": null,
+     "price_description_en": null,
+     "tarification_mode_value": "public-only"
+    }
+   ]
+  }
+ ],
+ "distanceByPlaces": {
+  "3139": "0.2",
+  "3366": "0.3",
+  "3507": "0.6",
+  "3361": "0.6",
+  "17899": "0.6",
+  "3511": "0.8"
+ }
+}

@@ -1,0 +1,446 @@
+/* Chat screen. Arc tokens only. */
+.chat {
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  /* One column that never grows past the screen, whatever the min-content of a card. */
+  grid-template-columns: minmax(0, 1fr);
+}
+.threadArea {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+}
+.center {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 44rem;
+  margin: auto;
+  padding: var(--space-6) var(--gutter);
+}
+.thread {
+  --chat-column: 46rem;
+  height: 100%;
+}
+
+/* Starter questions: one row of chips above the composer that scrolls sideways, like quick
+   replies in a messaging app, on every screen size. They go away after the first message. */
+.suggestions {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0 calc(-1 * max(var(--gutter), env(safe-area-inset-left)));
+  padding: 2px max(var(--gutter), env(safe-area-inset-left));
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: max(var(--gutter), env(safe-area-inset-left));
+  scrollbar-width: none;
+}
+.suggestions::-webkit-scrollbar {
+  display: none;
+}
+.suggestions li {
+  flex: none;
+  scroll-snap-align: start;
+}
+.suggestion {
+  min-height: 36px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.suggestion:hover {
+  border-color: var(--border-strong);
+}
+.suggestion:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.dock {
+  border-top: 1px solid var(--border-subtle);
+  background: var(--background);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.dockInner {
+  display: grid;
+  max-width: 46rem;
+  gap: var(--space-2);
+  margin-inline: auto;
+  padding: var(--space-2) max(var(--gutter), env(safe-area-inset-right)) var(--space-3) max(var(--gutter), env(safe-area-inset-left));
+}
+.composer {
+  width: 100%;
+}
+/* The dock already draws the separator above. */
+.dockInner .composer {
+  border-top: 0;
+  padding: 0;
+}
+/* One line under the composer: the privacy hint, and Terminer at the end. */
+.under {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 32px;
+}
+.endButton {
+  flex: none;
+}
+.hint {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding-inline-start: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  text-align: start;
+  text-wrap: pretty;
+}
+.ended {
+  display: grid;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+}
+.endCalls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.endCall {
+  display: flex;
+  min-height: var(--control-height-md);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--foreground);
+  font-weight: 500;
+  text-decoration: none;
+}
+.endCall[data-urgent] {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.endCall:hover {
+  background: var(--surface-muted);
+}
+
+/* A checked agent reply. */
+.reply {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  padding-block: var(--space-1);
+}
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+.markdown {
+  max-width: 68ch;
+  color: var(--foreground);
+  font-size: var(--text-base);
+  line-height: 1.55;
+}
+.markdown > :first-child {
+  margin-top: 0;
+}
+.markdown > :last-child {
+  margin-bottom: 0;
+}
+.markdown p {
+  margin: 0 0 var(--space-3);
+}
+.markdown ul,
+.markdown ol {
+  margin: 0 0 var(--space-3);
+  padding-inline-start: var(--space-6);
+}
+.markdown ul {
+  list-style: disc;
+}
+.markdown ol {
+  list-style: decimal;
+}
+.markdown li {
+  margin-block: var(--space-1);
+}
+.markdown li::marker {
+  color: var(--text-muted);
+}
+.markdown strong {
+  font-weight: 500;
+}
+.markdown h3,
+.markdown h4 {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+.markdown blockquote {
+  margin: 0 0 var(--space-3);
+  border-inline-start: 2px solid var(--border-strong);
+  padding-inline-start: var(--space-3);
+  color: var(--text-secondary);
+}
+
+/* A verified verbatim quote of official text (AssistantReply CitationCard). Arc has no quote
+   item, see ARC.md. A real boundary, so a bordered surface; no shadow (it does not float). */
+.citation {
+  display: grid;
+  max-width: 68ch;
+  min-width: 0;
+  gap: var(--space-2);
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+}
+.citationLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+.citationLabel svg {
+  flex: none;
+  color: var(--accent);
+}
+.citationText {
+  margin: 0;
+  color: var(--foreground);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+/* Under a leaflet quote: the information comes from the product leaflet, ask a pharmacist. */
+.leafletNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  border-radius: var(--radius-control);
+  padding: var(--space-2) var(--space-3);
+  background: var(--accent-subtle);
+  color: var(--foreground);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+.leafletNotice svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--accent);
+}
+.citationSource {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+.citationLink {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--foreground);
+  text-decoration: none;
+}
+.citationLink:hover {
+  text-decoration: underline;
+}
+.citationDate {
+  flex-basis: 100%;
+}
+/* The original text of a translated quote, in the Arc accordion. */
+.citationOriginal {
+  min-width: 0;
+}
+.citationOriginal blockquote {
+  color: var(--foreground);
+}
+.citationNote {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+}
+.citationNote svg {
+  flex: none;
+}
+
+.sources {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+}
+.sourcesTitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+.sourceList > li {
+  min-width: 0;
+  max-width: 100%;
+}
+.sourceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.source {
+  display: inline-flex;
+  max-width: 100%;
+  min-height: 40px;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+.source:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-muted);
+  color: var(--foreground);
+}
+.sourceTitle {
+  overflow: hidden;
+  min-width: 0;
+  max-width: 30ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sourceIcon {
+  flex: none;
+  color: var(--text-muted);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .source {
+    transition:
+      border-color var(--duration-fast) var(--ease-standard),
+      background-color var(--duration-fast) var(--ease-standard);
+  }
+}
+
+/* "Terminer": the recap offer takes the place of the composer. */
+.endPanel {
+  display: grid;
+  gap: var(--space-2);
+}
+.endPanelTitle {
+  margin: 0;
+  font-weight: 500;
+}
+.endPanelText {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+.endPanelActions {
+  display: grid;
+  gap: var(--space-2);
+}
+@media (min-width: 640px) {
+  .endPanelActions {
+    grid-template-columns: auto auto 1fr;
+    justify-items: start;
+  }
+}
+
+/* Under a recap reply: the PDF, to download again. */
+.recapCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 34rem;
+  margin-top: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--space-3);
+  background: var(--surface);
+}
+.recapIcon {
+  flex: none;
+  color: var(--accent);
+}
+.recapText {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+.recapTitle {
+  margin: 0;
+  font-weight: 500;
+}
+.recapName {
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A follow-up link of the agent: reads like a link, sends a message. */
+.followUp {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.followUp:hover:not([aria-disabled]) {
+  text-decoration-thickness: 2px;
+}
+.followUp[aria-disabled] {
+  color: var(--text-secondary);
+  cursor: default;
+}
+.followUp:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.followUpIcon {
+  display: inline-block;
+  margin-inline-start: 0.25em;
+  vertical-align: -0.15em;
+}

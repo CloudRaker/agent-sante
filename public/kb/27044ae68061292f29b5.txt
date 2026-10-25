@@ -1,0 +1,1 @@
+(https://www.rvsq.gouv.qc.ca/info/boutons-recommencer.html) source officielle : https://www.rvsq.gouv.qc.ca/info/boutons-recommencer.html " recommencer " : permet de retourner à la page de bienvenue, qui se trouve après l'identification. " retour " : permet de retourner à la page de recherche précédente. retour à la rubrique d'aide

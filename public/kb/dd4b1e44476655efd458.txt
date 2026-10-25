@@ -1,0 +1,1 @@
+help (https://www.rvsq.gouv.qc.ca/info/fields-required-for-id.html) official source: https://www.rvsq.gouv.qc.ca/info/fields-required-for-id.html you have to fill out the following fields: first name last name health insurance number 2-digit sequential number on the health insurance card (located below the first name on the card) date of birth sex back to help

@@ -1,0 +1,74 @@
+/* Tailwind v4 for layout utilities only: no Tailwind palette, no Tailwind font scale.
+   Colors and type come from Arc tokens (foundation.css + theme.css). */
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/geist";
+@import "../components/arc/foundation.css";
+@import "./theme.css";
+
+@theme inline {
+  --color-*: initial;
+  --font-*: initial;
+  --text-*: initial;
+  --shadow-*: initial;
+}
+
+html {
+  background: var(--background);
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+/* Large text mode: every Arc size is in rem, so one root change scales the whole page. */
+html[data-text="large"] {
+  font-size: 125%;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+#root {
+  min-height: 100dvh;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  color: var(--accent-strong);
+}
+
+/* Theme change: the next appearance rises into place (theme-switch-rise). Skipped for reduced motion in code. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  animation: theme-rise 460ms var(--ease-enter);
+}
+@keyframes theme-rise {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

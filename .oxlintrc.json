@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "jsx-a11y", "unicorn", "import", "vitest"],
+  "categories": { "correctness": "error", "suspicious": "warn" },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/no-autofocus": "error",
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }],
+    "jsx-a11y/anchor-is-valid": "error",
+    "no-console": ["warn", { "allow": ["log", "error"] }]
+  },
+  "ignorePatterns": ["src/components/arc/**", "worker/env.d.ts", "dist/**", "node_modules/**", "screenshots/**", "public/kb/**"]
+}

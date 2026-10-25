@@ -1,0 +1,43 @@
+/* Page frame: the navigation bar, then the content. In chat mode the screen is exactly one
+   viewport high: the thread scrolls inside it and the composer stays at the bottom, like an app. */
+:root {
+  --gutter: clamp(16px, 4vw, 32px);
+}
+.screen {
+  position: relative;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--page-wash), var(--background);
+  background-repeat: no-repeat;
+}
+.screen[data-chat] {
+  height: 100dvh;
+  min-height: 0;
+}
+.main {
+  display: grid;
+  min-height: 0;
+  min-width: 0;
+}
+.main:focus {
+  outline: none;
+}
+.home {
+  display: grid;
+  min-height: 0;
+  min-width: 0;
+}
+.home[hidden] {
+  display: none;
+}
+.gutter {
+  min-width: 0;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
+}
+.loading {
+  display: grid;
+  max-width: 42rem;
+  gap: var(--space-4);
+  margin: var(--space-10) auto;
+}

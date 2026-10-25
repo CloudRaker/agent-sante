@@ -1,0 +1,1 @@
+help (https://www.rvsq.gouv.qc.ca/info/restart-button.html) official source: https://www.rvsq.gouv.qc.ca/info/restart-button.html "restart": returns you to the home page, right after identification. "back": returns you to the previous search page. back to help

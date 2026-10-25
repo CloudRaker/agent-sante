@@ -1,0 +1,323 @@
+/* Places and appointments under a reply (Attachments.tsx). Custom cards on Arc tokens:
+   a bordered surface, no shadow (they do not float), sentence case, weights 400 and 500 only. */
+.attachments {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 68ch;
+  min-width: 0;
+  gap: var(--space-3);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  gap: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  background: var(--surface);
+}
+
+.panelHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+.icon {
+  flex: none;
+  align-self: center;
+  color: var(--accent);
+}
+.title {
+  margin: 0;
+  color: var(--foreground);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+.service {
+  margin: 0;
+  color: var(--foreground);
+}
+.muted {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+p.muted {
+  margin: 0;
+}
+.note {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+.services {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+.link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.link:hover {
+  color: var(--accent-strong);
+}
+
+/* The main action: a link to Clic Santé, styled like the Arc primary button (a <button> cannot
+   open a page, so a link it is). */
+.cta {
+  display: flex;
+  min-height: var(--control-height-lg);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-pill);
+  padding-inline: var(--space-5);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+.cta:hover {
+  background: var(--accent-strong);
+}
+
+/* Map above the list. The box has its height before MapKit loads, so nothing moves. */
+.browser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  gap: var(--space-2);
+}
+.mapBox {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: var(--radius-control);
+  background: var(--surface-muted);
+}
+.mapBox[data-big] {
+  height: min(60vh, 520px);
+}
+@media (min-width: 40rem) {
+  .mapBox {
+    height: 280px;
+  }
+}
+.mapCanvas {
+  width: 100%;
+  height: 100%;
+}
+.mapMessage {
+  display: grid;
+  height: 100%;
+  margin: 0;
+  padding: var(--space-4);
+  place-items: center;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+.mapToggle {
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  gap: var(--space-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding-inline: var(--space-3);
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  cursor: pointer;
+}
+.mapToggle:hover {
+  background: var(--surface-muted);
+}
+
+/* Compact list: it scrolls inside the card. The bottom border and the thin scrollbar show that
+   there is more. */
+.rows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-height: 280px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-control);
+  list-style: none;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+@media (min-width: 40rem) {
+  .rows {
+    max-height: 320px;
+  }
+}
+.row {
+  border-top: 1px solid var(--border-subtle);
+}
+.row:first-child {
+  border-top: 0;
+}
+.row[aria-current] {
+  background: var(--accent-subtle);
+}
+.rowButton {
+  display: grid;
+  width: 100%;
+  min-height: 56px;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2);
+  border: 0;
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .rowButton:hover {
+    background: var(--surface-muted);
+  }
+}
+.pin {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.rowMain {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+.rowLine {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.rowName {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--foreground);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* On a phone the column is narrow: a long name takes up to two lines. */
+@media (max-width: 39.99rem) {
+  .rowName {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    white-space: normal;
+  }
+}
+.rowDistance {
+  flex: none;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+.rowAddress {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rowStatus {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+}
+.rowStatus::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  content: "";
+}
+.rowStatus[data-tone="open"] {
+  color: var(--success);
+}
+.rowStatus[data-tone="open"]::before {
+  background: var(--success);
+}
+.chevron {
+  color: var(--text-muted);
+  transition: transform var(--duration-fast, 0.16s) var(--ease-standard, ease);
+}
+.rowButton[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+.rowDetails {
+  display: grid;
+  gap: var(--space-1);
+  padding: 0 var(--space-3) var(--space-2) calc(var(--space-3) + 22px + var(--space-2));
+}
+.rowDetails .link {
+  min-height: 2.25rem;
+}
+
+.map {
+  width: 100%;
+  height: 18rem;
+  min-height: 14rem;
+  overflow: hidden;
+  border-radius: var(--radius-control);
+  background: var(--surface-muted);
+}
+@media (min-width: 40rem) {
+  .map {
+    height: 22rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .cta {
+    border: 1px solid ButtonText;
+  }
+}

@@ -1,0 +1,395 @@
+/* Static pages: a calm reading column on Arc tokens. */
+.page {
+  width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding: var(--space-6) 0 var(--space-16);
+}
+.back {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+.back:hover {
+  color: var(--foreground);
+}
+.head {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-6) 0 var(--space-10);
+}
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 7vw, var(--text-4xl));
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-wrap: balance;
+}
+.lead {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.updated {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+.section {
+  display: grid;
+  gap: var(--space-3);
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+.section h2 {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 500;
+  letter-spacing: var(--tracking-body);
+}
+.section p {
+  max-width: 65ch;
+  margin: 0;
+  line-height: 1.6;
+}
+.section ul {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 65ch;
+  margin: 0;
+  padding-inline-start: var(--space-6);
+  list-style: disc;
+  line-height: 1.6;
+}
+.section li::marker {
+  color: var(--accent);
+}
+.section .links {
+  list-style: none;
+  padding-inline-start: 0;
+}
+.links a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: var(--space-1);
+}
+.homeLink {
+  font-weight: 500;
+}
+
+/* The 811, transparency, press kit and costs pages. */
+.note {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--accent-subtle);
+}
+.inlineCall {
+  font-weight: 500;
+}
+.checklist {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.count {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+.cta {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-control);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 500;
+  text-decoration: none;
+}
+.cta:hover {
+  background: var(--accent-strong);
+  color: var(--accent-foreground);
+}
+.ctaSecondary {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  font-weight: 500;
+}
+.updatedInline {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
+  gap: var(--space-3);
+}
+/* Wide screens show the table; a phone shows the stacked day list (.dayList). */
+.tableWrap {
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+.table {
+  table-layout: fixed;
+}
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-2);
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: end;
+  white-space: nowrap;
+}
+.table th:first-child {
+  text-align: start;
+}
+.table thead th {
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: normal;
+  vertical-align: bottom;
+}
+.table tbody th {
+  font-weight: 500;
+}
+.table thead th {
+  font-size: var(--text-xs);
+}
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.tableWrap .dayList {
+  display: none;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dayList > li {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.dayList > li:last-child {
+  border-bottom: 0;
+}
+.dayName {
+  margin: 0 0 var(--space-2);
+  font-weight: 500;
+}
+.dayList dl {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+.dayList dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.dayList dt {
+  color: var(--text-secondary);
+}
+.dayList dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 600px) {
+  .table {
+    display: none;
+  }
+  .tableWrap .dayList {
+    display: block;
+  }
+}
+
+/* Press kit. The diagram uses theme tokens, so light and dark both work. */
+.figure {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+.figure figcaption {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+.diagram {
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  margin-inline: auto;
+  font-family: var(--font-body);
+}
+.dNode {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+.dNodeAccent {
+  fill: var(--surface);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+.dRegion {
+  fill: var(--accent-subtle);
+  stroke: var(--accent);
+  stroke-dasharray: 4 4;
+  stroke-width: 1;
+}
+.dLabel {
+  fill: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
+}
+.dNote {
+  fill: var(--text-secondary);
+  font-size: 10.5px;
+}
+.dStep {
+  fill: var(--text-secondary);
+  font-size: 10px;
+}
+.dLine {
+  stroke: var(--border-strong);
+  stroke-width: 1.25;
+  fill: none;
+}
+.dLineAccent {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  fill: none;
+}
+.dHead {
+  fill: var(--border-strong);
+}
+.flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: var(--space-3);
+}
+.flowCard {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface);
+}
+.flowCard[data-tone="accent"] {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+.flowCard h3 {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+.section .flowCard ul {
+  padding-inline-start: var(--space-5);
+  font-size: var(--text-sm);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.logo img {
+  flex: none;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+}
+.download {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 500;
+}
+
+/* Transparency, "What it costs". The category table has 3 columns, so it stays a table on a phone. */
+.costTable {
+  table-layout: auto;
+}
+.costTable th[scope="row"] {
+  white-space: normal;
+}
+.costTable td {
+  vertical-align: top;
+}
+.costName {
+  display: block;
+}
+.costNote {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 1.45;
+}
+@media (max-width: 600px) {
+  .table.costTable {
+    display: table;
+  }
+}
+.section .subTitle {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+.slider {
+  max-width: 32rem;
+  padding-block: var(--space-2) var(--space-4);
+}
+.section .caveat {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-surface);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+/* Costs and usage page: one block per chart or bar list. */
+.usageBlock {
+  display: grid;
+  gap: var(--space-3);
+}
+.section .usageBlock .subTitle {
+  margin-top: var(--space-4);
+}
+.costsLink {
+  margin: 0;
+}

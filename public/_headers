@@ -1,0 +1,12 @@
+# Security headers for every static response (Workers static assets).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://cdn.apple-mapkit.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://*.apple-mapkit.com https://*.geo.apple.com https://*.ls.apple.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.apple-mapkit.com https://*.geo.apple.com; worker-src blob:; child-src blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(self), geolocation=(), payment=(), usb=(), interest-cohort=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-Frame-Options: DENY
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

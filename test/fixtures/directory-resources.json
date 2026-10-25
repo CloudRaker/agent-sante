@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": "426129",
+      "name": "ACTION CENTRE-VILLE (MONTRÉAL)",
+      "organization": null,
+      "address": {
+        "raw": "105, rue Ontario Est, bureau 201\nMontréal (Québec) H2X 1G9",
+        "street": "105, rue Ontario Est, bureau 201",
+        "city": "Montréal",
+        "province": "Québec",
+        "postal_code": "H2X1G9"
+      },
+      "location": {
+        "latitude": 45.512401267905,
+        "longitude": -73.566975438394,
+        "source": "source_map_link",
+        "accuracy": "unverified",
+        "map_url": "https://www.google.ca/maps/dir//105 Rue Ontario Est, Montréal, QC, H2X1G9/@45.512401267905,-73.566975438394/"
+      },
+      "timezone": "America/Toronto",
+      "services": [
+        "Activités physiques / Exercices / cours",
+        "Activités sociales",
+        "Activités sportives / Sports",
+        "Alphabétisation",
+        "Ateliers culinaires",
+        "Budget",
+        "Bénévolat",
+        "Défense des droits",
+        "Loisir",
+        "Service informatique",
+        "Sortie récréative et sociale de groupe",
+        "Soutien à domicile",
+        "Visites à domicile"
+      ],
+      "fetched_at": "2026-10-24T16:03:43.985Z",
+      "source_updated_at": "2026-08-13T20:09:12",
+      "source_url": "https://sante.gouv.qc.ca/repertoire-ressources/ressource/?nofiche=426129",
+      "distance_km": 0.31,
+      "opening": null,
+      "warnings": []
+    },
+    {
+      "id": "426280",
+      "name": "LE SAC À DOS",
+      "organization": null,
+      "address": {
+        "raw": "222, rue Sainte-Catherine Est\nMontréal (Québec) H2X 1L1",
+        "street": "222, rue Sainte-Catherine Est",
+        "city": "Montréal",
+        "province": "Québec",
+        "postal_code": "H2X1L1"
+      },
+      "location": {
+        "latitude": 45.51198109,
+        "longitude": -73.56164507,
+        "source": "source_map_link",
+        "accuracy": "unverified",
+        "map_url": "https://www.google.ca/maps/dir//222 Rue Sainte-Catherine Est, Montréal, QC, H2X1L1/@45.51198109,-73.56164507/"
+      },
+      "timezone": "America/Toronto",
+      "services": [
+        "Accompagnement - Démarches problème de bail / recherche de logement",
+        "Adaptation sociale",
+        "Aide à la recherche d'emploi",
+        "Buanderie",
+        "Conseil en relation d'aide",
+        "Intervenant psychosocial",
+        "Logement social",
+        "Soutien communautaire",
+        "Travail communautaire",
+        "Travail de rue"
+      ],
+      "fetched_at": "2026-10-24T16:04:26.097Z",
+      "source_updated_at": "2026-09-11T21:22:37",
+      "source_url": "https://sante.gouv.qc.ca/repertoire-ressources/ressource/?nofiche=426280",
+      "distance_km": 0.614,
+      "opening": null,
+      "warnings": []
+    },
+    {
+      "id": "685140",
+      "name": "LES RÉSIDENCES SOLEIL MANOIR PLAZA",
+      "organization": null,
+      "address": {
+        "raw": "505, rue Sherbrooke Est\nMontréal (Québec) H2L 4N3",
+        "street": "505, rue Sherbrooke Est",
+        "city": "Montréal",
+        "province": "Québec",
+        "postal_code": "H2L4N3"
+      },
+      "location": {
+        "latitude": 45.518574630914,
+        "longitude": -73.567233382412,
+        "source": "source_map_link",
+        "accuracy": "unverified",
+        "map_url": "https://www.google.ca/maps/dir//505 Rue Sherbrooke Est, Montréal, QC, H2L4N3/@45.518574630914,-73.567233382412/"
+      },
+      "timezone": "America/Toronto",
+      "services": [
+        "Aide au bain",
+        "Aide à l'habillage",
+        "Animation",
+        "Buanderie",
+        "Changement et/ou suivi de pansement",
+        "Dispositif sécurité immeuble (des frais sont exigés)",
+        "Distribution de médicaments (des frais sont exigés)",
+        "Entretien - Grand ménage intérieur / Entretien ménager / Aide au ménage",
+        "Hébergement (des frais sont exigés)",
+        "Infirmier/Infirmière auxiliaire (des frais sont exigés)",
+        "Injection de médicaments",
+        "Loisir",
+        "Préparation de dosette / pilulier (des frais sont exigés)",
+        "Préposé aux bénéficiaires",
+        "Service de repas préparés (des frais sont exigés)",
+        "Soins corporels / Soins d'hygiène",
+        "Soins infirmiers",
+        "Soins à domicile (des frais sont exigés)",
+        "Soutien à domicile (des frais sont exigés)",
+        "Système d'appel à l'aide fixe (des frais sont exigés)",
+        "Test de glycémie ou ajustement du glucomètre (des frais sont exigés)"
+      ],
+      "fetched_at": "2026-10-24T15:56:47.402Z",
+      "source_updated_at": "2026-09-11T22:55:23",
+      "source_url": "https://sante.gouv.qc.ca/repertoire-ressources/ressource/?nofiche=685140",
+      "distance_km": 0.963,
+      "opening": null,
+      "warnings": []
+    }
+  ],
+  "next_cursor": "3",
+  "limit": 3
+}

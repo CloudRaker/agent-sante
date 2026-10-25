@@ -1,0 +1,60 @@
+/* Agent Santé theme on Arc semantic tokens. Raw colors live only in this file.
+   Contrast of every pair is AA or better. */
+:root {
+  /* One radius for every box, whatever its size: cards, panels, menus, fields, buttons. Pills
+     (9999px) only for chips, one-line inputs, chat bubbles and toggles. */
+  --radius-control: 0.75rem;
+  --radius-panel: 0.75rem;
+  --radius-surface: 0.75rem;
+  --background: #f4f7fc;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-muted: #e9eff8;
+  --foreground: #0b1f3a;
+  --text-secondary: #3a4f6e;
+  --text-muted: #536683;
+  --border: #d3dcea;
+  --border-subtle: #e4eaf3;
+  --border-strong: #71839f;
+  --accent: #1f4fcc;
+  --accent-strong: #173c9e;
+  --accent-subtle: rgb(31 79 204 / 0.1);
+  --accent-foreground: #ffffff;
+  --success: #18794a;
+  --warning: #8a5300;
+  --danger: #c2262e;
+  --control-on: var(--accent);
+  --control-glyph: #ffffff;
+  --control-thumb-on: #ffffff;
+  /* Solid ring for keyboard focus (the Arc default is accent-strong at 72 percent). */
+  --focus-outline: var(--accent-strong);
+  /* A calm wash behind the first screen. Not a gradient on a component. */
+  --page-wash: radial-gradient(120% 60% at 50% 0%, rgb(31 79 204 / 0.07), transparent 70%);
+}
+
+:root[data-theme="dark"] {
+  --background: #08121f;
+  --surface: #0e1a2c;
+  --surface-raised: #13223a;
+  --surface-muted: #16243a;
+  --foreground: #e8eff9;
+  --text-secondary: #b3c2d8;
+  --text-muted: #91a3be;
+  --border: #23344d;
+  --border-subtle: #1a2a42;
+  --border-strong: #62789a;
+  --accent: #82a9ff;
+  --accent-strong: #aec6ff;
+  --accent-subtle: rgb(130 169 255 / 0.18);
+  --accent-foreground: #08121f;
+  --success: #5bd298;
+  --warning: #f0be4c;
+  --danger: #ff8c8c;
+  --control-on: var(--accent);
+  --control-glyph: #08121f;
+  --control-thumb-on: #08121f;
+  --control-track: #23344d;
+  --focus-outline: var(--accent-strong);
+  --page-wash: radial-gradient(120% 60% at 50% 0%, rgb(130 169 255 / 0.1), transparent 70%);
+  color-scheme: dark;
+}

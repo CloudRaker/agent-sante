@@ -1,0 +1,79 @@
+/* The question card: a bordered surface on Arc tokens, like the official quote card. */
+.question {
+  max-width: 68ch;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  background: var(--surface);
+}
+/* The fieldset gives the group role and its name (the legend). Its own box is reset: the card above draws it. */
+.group {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-3);
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+.text {
+  float: left;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--foreground);
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: var(--leading-body);
+}
+.icon {
+  flex: none;
+  margin-top: 0.15em;
+  color: var(--accent);
+}
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* A choice can be longer than one line on a phone: it wraps instead of overflowing. */
+.choice {
+  height: auto;
+  min-height: var(--control-height-md);
+  white-space: normal;
+  text-align: start;
+}
+/* A locked card: the other choices fade, the chosen one stays primary. No size change. */
+.question[data-locked] .choice:not([data-chosen]) {
+  color: var(--text-muted);
+  cursor: default;
+}
+.question[data-locked] .choice[data-chosen] {
+  cursor: default;
+}
+.other {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-2);
+  margin: 0;
+}
+.field[readonly] {
+  color: var(--foreground);
+  background: var(--surface-muted);
+}
+.send {
+  padding-inline: var(--space-3);
+}
+/* iOS zooms into a field under 16 px on focus, which moves the whole page. */
+@media (pointer: coarse) {
+  .field {
+    font-size: max(1rem, var(--text-sm));
+  }
+}

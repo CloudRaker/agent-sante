@@ -1,0 +1,20 @@
+# Local development only. Copy to .dev.vars (git ignores it).
+# FAKE_UPSTREAMS=1 replaces Run, milliseconds and Turnstile Siteverify with fakes.
+# The Worker refuses it when ENVIRONMENT is production or the host is not localhost.
+ENVIRONMENT=development
+FAKE_UPSTREAMS=1
+ALLOWED_HOSTNAMES=localhost,127.0.0.1
+# Cloudflare Turnstile test key that always passes (public test value from the Turnstile docs).
+TURNSTILE_SITE_KEY=1x00000000000000000000BB
+# Any random string of 32 characters or more. Generate one with: openssl rand -base64 48
+SESSION_SECRET=
+# Any random string of 32 characters or more. The fake agents call the place tools with it.
+TOOLS_SECRET=
+# Directory API for the place and drug tools (secret). Empty: the tools answer "unavailable".
+DIRECTORY_BASE_URL=
+# Optional: an Apple MapKit JS token for the places map (no token: list only).
+MAPKIT_JS_TOKEN=
+# Real upstreams (leave FAKE_UPSTREAMS=0 to use them):
+RUN_TOKEN=
+MS_API_KEY=
+TURNSTILE_SECRET=

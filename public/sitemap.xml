@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://agentsante.ca/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/a-propos" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/a-propos" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/a-propos" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/a-propos" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/appeler-le-811</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/appeler-le-811" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/calling-811" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/appeler-le-811" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/calling-811</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/appeler-le-811" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/calling-811" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/appeler-le-811" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/confidentialite" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/confidentialite" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/confidentialite" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/confidentialite" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/conditions</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/conditions" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/conditions" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/conditions" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/conditions" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/transparence</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/transparence" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/transparency" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/transparence" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/transparency</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/transparence" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/transparency" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/transparence" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/couts</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/couts" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/costs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/couts" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/costs</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/couts" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/costs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/couts" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/presse</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/presse" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/press" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/presse" />
+  </url>
+  <url>
+    <loc>https://agentsante.ca/en/press</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://agentsante.ca/presse" />
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://agentsante.ca/en/press" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentsante.ca/presse" />
+  </url>
+</urlset>

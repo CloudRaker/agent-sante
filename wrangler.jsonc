@@ -1,0 +1,87 @@
+// Agent Santé web app: one Worker serves the static app and the /api routes.
+// Account: CloudRaker production (separate from development).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agent-sante",
+  "main": "worker/index.ts",
+  "account_id": "b6c6a2e3217f0312f937a3ea95bbbf49",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "agentsante.ca", "custom_domain": true },
+    { "pattern": "www.agentsante.ca", "custom_domain": true },
+  ],
+  // The Worker runs first for every path except the hashed build files, so that an unknown
+  // page path answers 404 (the app still renders its not-found view).
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/*", "!/assets/*"],
+  },
+  "vars": {
+    "ENVIRONMENT": "production",
+    "RUN_BASE_URL": "https://cloudraker.cloudraker.run",
+    "RUN_BASE": "agent-sante",
+    "RUN_EXPECTED_MODEL": "anthropic/claude-haiku-5-5",
+    "MS_BASE_URL": "https://api.milliseconds.ai/v1/decision-machine-1",
+    // Voice messages: milliseconds rakeaudio (speech to text). Same key as MS_BASE_URL.
+    "MS_AUDIO_URL": "https://api.milliseconds.ai/v1/rakeaudio/transcribe",
+    // Public widget key (not a secret). Replace with the key of the agentsante.ca Turnstile widget.
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAFjPaDvNhCEuA3h9",
+    // Apple MapKit JS tokens. Public by design: Apple restricts each one to an origin.
+    // MAPKIT_JS_TOKEN: origin *.agentsante.ca (www and subdomains). MAPKIT_JS_TOKEN_APEX: origin
+    // agentsante.ca. /api/config gives the token of the request host, or none.
+    "MAPKIT_JS_TOKEN": "eyJraWQiOiJDWjVWVzVYU0E3IiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJLRThMQ1ZCVkpNIiwiaWF0IjoxNzkyODU5ODI1LCJvcmlnaW4iOiIqLmFnZW50c2FudGUuY2EiLCJzY29wZSI6Im1hcGtpdF9qcyJ9.BAXZOsLpSmz6bJamAvI8QphLO6ywRRjDqPgzsvFo_Sl0dTtvjPSxjLJSVVs57pwknCOvPQ9nKXIAX0mX8QYang",
+    "MAPKIT_JS_TOKEN_APEX": "eyJraWQiOiI0ODk0OFQyOVdXIiwidHlwIjoiSldUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJLRThMQ1ZCVkpNIiwiaWF0IjoxNzkyODU5ODI1LCJvcmlnaW4iOiJhZ2VudHNhbnRlLmNhIiwic2NvcGUiOiJtYXBraXRfanMifQ.aKmrBrGGrXzI-XMe7SKlzHlhiKUPTJFMctT7z_Lw7aFW0q8NNR8T-UGipCwToXeSbvDTJ8-AbpjOsbCdY6VhmQ",
+    "ALLOWED_HOSTNAMES": "agentsante.ca,www.agentsante.ca",
+    "FAKE_UPSTREAMS": "0",
+    // Launch guardrails. KILL_SWITCH "1" shows the maintenance page and makes the API answer 503.
+    "KILL_SWITCH": "0",
+    // Max Run calls (run starts and turns) per Québec day (Durable Object STATS counts them).
+    // One message can use up to 6 calls (handoffs and rewrites). "0" means no cap.
+    // The Worker refuses to serve while TURNSTILE_SITE_KEY is the placeholder above.
+    "DAILY_TURN_CAP": "20000",
+    // Clic Santé read API: "on" uses the API. "off": the agents give links to the
+    // Clic Santé list page only.
+    "CLICSANTE_API": "on",
+  },
+  // Workers AI translates a verified official quote into the conversation language
+  // (worker/translate.ts). The binding is remote only: tests inject a fake translator.
+  "ai": { "binding": "AI" },
+  // Workers Analytics Engine: the cost of each turn and the use of the agents (worker/analytics.ts,
+  // schemas in the README). No text, no IP, no postal code. A dataset is created on its first write.
+  "analytics_engine_datasets": [
+    { "binding": "COSTS", "dataset": "agent_sante_costs" },
+    { "binding": "USAGE", "dataset": "agent_sante_usage" },
+  ],
+  // Postal code positions (ISQ "CP Territoires", CC-BY 4.0). Load: node scripts/build-postal-d1.mjs --load
+  "d1_databases": [{ "binding": "POSTAL", "database_name": "agent-sante-postal", "database_id": "3e4eb0b9-002d-4b5b-98c2-ba99ffc76cd2" }],
+  // Secrets (wrangler secret put, never in the repo): RUN_TOKEN, MS_API_KEY, TURNSTILE_SECRET, SESSION_SECRET, TOOLS_SECRET.
+  // Optional secrets: INCIDENT_WEBHOOK_URL and INCIDENT_WEBHOOK_TOKEN (error-rate alert).
+  "durable_objects": {
+    "bindings": [
+      { "name": "SESSIONS", "class_name": "SessionGuard" },
+      { "name": "STATS", "class_name": "StatsCounter" },
+      { "name": "PLACES", "class_name": "SessionPlaces" },
+    ],
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["SessionGuard"] },
+    { "tag": "v2", "new_sqlite_classes": ["StatsCounter"] },
+    { "tag": "v3", "new_sqlite_classes": ["SessionPlaces"] },
+  ],
+  "ratelimits": [
+    { "name": "RL_SESSION", "namespace_id": "41001", "simple": { "limit": 10, "period": 60 } },
+    { "name": "RL_CHAT_IP", "namespace_id": "41002", "simple": { "limit": 40, "period": 60 } },
+    { "name": "RL_CHAT_SESSION", "namespace_id": "41003", "simple": { "limit": 12, "period": 60 } },
+    // Voice messages per session (on top of the two chat limits): one every 10 s on average.
+    { "name": "RL_TRANSCRIBE", "namespace_id": "41005", "simple": { "limit": 6, "period": 60 } },
+    // Clic Santé read API (only when CLICSANTE_API is "on"): about 1 request per second, one key for the site.
+    { "name": "RL_CLICSANTE", "namespace_id": "41004", "simple": { "limit": 10, "period": 10 } },
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": false },
+  },
+}

@@ -1,0 +1,8 @@
+/* Maintenance screen. */
+.maintenance {
+  display: grid;
+  width: 100%;
+  max-width: 36rem;
+  gap: var(--space-8);
+  margin: var(--space-10) auto var(--space-16);
+}

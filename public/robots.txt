@@ -1,0 +1,7 @@
+# Agent Santé is public-interest information: search engines and AI assistants may read and cite it.
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /tools/
+
+Sitemap: https://agentsante.ca/sitemap.xml

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "lib": ["ESNext"],
+    "types": ["./worker/env.d.ts", "vite/client"],
+    "paths": { "@shared/*": ["./shared/*"] }
+  },
+  "include": ["worker/**/*.ts", "shared/**/*.ts", "shared/**/*.json", "src/i18n/fr.ts", "src/i18n/en.ts", "src/i18n/pages.ts", "src/i18n/tool-pages.ts"]
+}

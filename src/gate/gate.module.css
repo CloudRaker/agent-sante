@@ -1,0 +1,80 @@
+/* Consent gate as a conversation: the chat screen styles (chat.module.css) draw the thread and
+   the dock; these are the action button and the links under it. */
+.actions {
+  display: grid;
+  gap: var(--space-2);
+}
+.action {
+  width: 100%;
+}
+.links {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.help {
+  display: grid;
+  gap: var(--space-3);
+}
+.helpTitle {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+.helpList {
+  display: grid;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: 0;
+  list-style: none;
+}
+.helpList li + li {
+  border-top: 1px solid var(--border-subtle);
+}
+.helpLink {
+  display: grid;
+  min-height: 48px;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  color: var(--foreground);
+  text-decoration: none;
+}
+.helpLink:hover {
+  background: var(--surface-muted);
+  color: var(--foreground);
+}
+.helpIcon {
+  color: var(--text-muted);
+}
+.helpText {
+  display: grid;
+  min-width: 0;
+}
+.helpLabel {
+  font-size: var(--text-sm);
+}
+.helpDetail {
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+.helpNumber {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.helpLink[data-urgent] .helpNumber,
+.helpLink[data-urgent] .helpIcon {
+  color: var(--danger);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .helpLink {
+    transition: background-color var(--duration-fast) var(--ease-standard);
+  }
+}

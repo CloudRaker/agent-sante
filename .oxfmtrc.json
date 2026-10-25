@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 140,
+  "ignorePatterns": [
+    "src/components/arc/**",
+    "worker/env.d.ts",
+    "dist/**",
+    "screenshots/**",
+    "pnpm-lock.yaml",
+    "test/fixtures/**",
+    "shared/agents.json",
+    "public/kb/**"
+  ]
+}

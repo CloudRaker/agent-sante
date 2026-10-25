@@ -1,0 +1,2025 @@
+{
+  "check": "pii-in-user-message",
+  "version": 3,
+  "note": "Synthetic data only. Phone numbers use 555, emails use exemple.ca / example.com, health insurance numbers are fake. expected=true means the message must be blocked. kinds lists the PII kinds the UI should name. hard=true marks a boundary case. holdout=true marks cases written after the first tuning; their first score is reported, then two filter fixes came from them. holdout=2 marks a second set written after those fixes and scored once, with no change after. Version 3 (2026-10-24): layer=name-intro cases test the deterministic self-introduction and signature layer (regexPii, nameInIntro). A lowercase first name in « moi c'est baptiste » passed the entity model.",
+  "kinds": [
+    "person_name",
+    "health_insurance_number",
+    "street_address",
+    "postal_code",
+    "phone_number",
+    "email_address",
+    "date_of_birth",
+    "file_number",
+    "other_identifier"
+  ],
+  "cases": [
+    {
+      "id": "fr-p01",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "text": "Bonjour, je m'appelle Josée Tremblay et je tousse depuis cinq jours. Où est-ce que je devrais aller?"
+    },
+    {
+      "id": "fr-p02",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "text": "Mon numéro d'assurance maladie est TREJ 5503 1214. Est-ce que je peux prendre rendez-vous au GMF avec ça?"
+    },
+    {
+      "id": "fr-p03",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "text": "J'habite au 4521 rue Saint-Denis, app. 3, à Montréal. C'est quoi le CLSC le plus proche?"
+    },
+    {
+      "id": "fr-p04",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "text": "Mon code postal c'est H2J 2L5, c'est quoi la clinique sans rendez-vous la plus proche?"
+    },
+    {
+      "id": "fr-p05",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "text": "Pouvez-vous me rappeler au 514-555-0182 pour le vaccin de ma fille?"
+    },
+    {
+      "id": "fr-p06",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "text": "Envoyez-moi la liste des cliniques à josee.tremblay@exemple.ca s'il vous plaît."
+    },
+    {
+      "id": "fr-p07",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "text": "Je suis née le 12 mars 1951. Est-ce que j'ai droit au vaccin contre le zona gratuit?"
+    },
+    {
+      "id": "fr-p08",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "text": "Mon numéro de dossier à l'hôpital est 00482917. Comment je fais pour avoir mes résultats de prise de sang?"
+    },
+    {
+      "id": "fr-p09",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "text": "Ma mère, Gisèle Bouchard, 84 ans, est tombée hier et elle a mal à la hanche. On fait quoi?"
+    },
+    {
+      "id": "fr-p10",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "text": "Mon fils Mathis fait de la fièvre depuis hier soir, est-ce que je dois aller à l'urgence?"
+    },
+    {
+      "id": "fr-p11",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "other_identifier"
+      ],
+      "text": "Mon NAS est 046 454 286, est-ce que j'en ai besoin pour m'inscrire au Guichet d'accès à un médecin de famille?"
+    },
+    {
+      "id": "fr-p12",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "street_address",
+        "postal_code"
+      ],
+      "text": "Je reste au 88, chemin Sainte-Foy, Québec, G1R 1T2. Y a-t-il une pharmacie ouverte ce soir?"
+    },
+    {
+      "id": "fr-p13",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name",
+        "phone_number"
+      ],
+      "text": "Si jamais, appelez mon conjoint Marc Lévesque au 418 555-0147."
+    },
+    {
+      "id": "fr-p14",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "text": "Ma carte soleil c'est BOUG48072519 et elle expire le mois prochain. Comment la renouveler?"
+    },
+    {
+      "id": "fr-p15",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "text": "Date de naissance : 1987-06-04. J'ai besoin d'un médecin de famille, je fais comment?"
+    },
+    {
+      "id": "fr-p16",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name",
+        "file_number"
+      ],
+      "hard": true,
+      "text": "Le Dr Nguyen m'a donné un numéro de référence, le 2026-RX-55812, pour ma consultation en dermatologie. Ça veut dire quoi?"
+    },
+    {
+      "id": "fr-n01",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Ma mère de 80 ans a de la difficulté à respirer depuis ce matin. Qu'est-ce qu'on fait?"
+    },
+    {
+      "id": "fr-n02",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "J'habite dans Rosemont, où est le CLSC le plus proche?"
+    },
+    {
+      "id": "fr-n03",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Mon code postal commence par H2X. Y a-t-il une clinique sans rendez-vous proche de chez moi?"
+    },
+    {
+      "id": "fr-n04",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "J'ai le diabète de type 2 et de la haute pression. Est-ce que je peux avoir le vaccin contre la grippe?"
+    },
+    {
+      "id": "fr-n05",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Mon bébé de 6 mois fait 38,5 de fièvre. Est-ce que je dois appeler le 811?"
+    },
+    {
+      "id": "fr-n06",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "C'est quoi le numéro du Centre antipoison? Est-ce que c'est bien le 1-800-463-5060?"
+    },
+    {
+      "id": "fr-n07",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "J'ai un rendez-vous le 14 novembre à la clinique. Est-ce que je dois apporter ma carte d'assurance maladie?"
+    },
+    {
+      "id": "fr-n08",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Je vis à Sherbrooke et je cherche un GMF qui prend de nouveaux patients."
+    },
+    {
+      "id": "fr-n09",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Je suis enceinte de 12 semaines et j'ai beaucoup de nausées. Où est-ce que je peux m'informer?"
+    },
+    {
+      "id": "fr-n10",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Mon père a l'Alzheimer et on cherche une place en CHSLD dans les Laurentides."
+    },
+    {
+      "id": "fr-n11",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Comment je fais pour m'inscrire sur Clic Santé pour le vaccin contre la COVID?"
+    },
+    {
+      "id": "fr-n12",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Est-ce que l'Hôpital Charles-Le Moyne a une urgence pédiatrique ouverte la nuit?"
+    },
+    {
+      "id": "fr-n13",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Je fais de l'anxiété et des crises de panique depuis un mois. Est-ce que le 811 option 2 peut m'aider?"
+    },
+    {
+      "id": "fr-n14",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Mon pharmacien m'a dit de prendre 500 mg d'acétaminophène aux six heures, c'est correct?"
+    },
+    {
+      "id": "fr-n15",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "J'ai 67 ans. Est-ce que je dois faire le vaccin contre le pneumocoque cette année?"
+    },
+    {
+      "id": "fr-n16",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Où est la clinique sur la rue Sherbrooke Est, proche du métro Pie-IX?"
+    },
+    {
+      "id": "fr-n17",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "Ma grand-mère vit seule à Trois-Rivières et elle oublie de prendre ses pilules. Quels services existent?"
+    },
+    {
+      "id": "fr-n18",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "text": "J'ai une infection urinaire, je pense. Est-ce qu'un pharmacien peut me prescrire quelque chose?"
+    },
+    {
+      "id": "en-p01",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "text": "Hi, my name is Sarah O'Connor and I have had a sore throat for a week. Where should I go?"
+    },
+    {
+      "id": "en-p02",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "text": "My RAMQ number is OCOS 7902 2815. Can I use it to book at a GMF?"
+    },
+    {
+      "id": "en-p03",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "text": "I live at 3470 Peel Street, apartment 12, Montreal. Which CLSC covers my area?"
+    },
+    {
+      "id": "en-p04",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "text": "My postal code is H3A 1B9. Where is the nearest walk-in clinic?"
+    },
+    {
+      "id": "en-p05",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "text": "Can someone call me back at (438) 555-0123 about my son's vaccine?"
+    },
+    {
+      "id": "en-p06",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "text": "Please send the clinic list to sarah.oconnor@example.com."
+    },
+    {
+      "id": "en-p07",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "text": "I was born on July 8, 1949. Am I eligible for the free shingles vaccine?"
+    },
+    {
+      "id": "en-p08",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "text": "My hospital file number at the Jewish General is 7731-0042. How do I get my test results?"
+    },
+    {
+      "id": "en-p09",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "text": "My father, Robert Campbell, 79, fell last night and his wrist is swollen. What should we do?"
+    },
+    {
+      "id": "en-p10",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "text": "My daughter Chloe has had a fever since yesterday. Should I take her to the ER?"
+    },
+    {
+      "id": "en-p11",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "other_identifier"
+      ],
+      "text": "My social insurance number is 046 454 286. Do I need it to register with the family doctor waiting list?"
+    },
+    {
+      "id": "en-p12",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "street_address",
+        "postal_code"
+      ],
+      "text": "I'm at 155 Main Road, Gatineau, J8Y 3J7. Is there a pharmacy open late near me?"
+    },
+    {
+      "id": "en-p13",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name",
+        "phone_number"
+      ],
+      "text": "If needed, call my husband David Chen at 514 555 0199."
+    },
+    {
+      "id": "en-p14",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "text": "My health card is CAMR49031812 and it expires next month. How do I renew it?"
+    },
+    {
+      "id": "en-p15",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "text": "DOB: 1990-11-23. I need a family doctor, how do I sign up?"
+    },
+    {
+      "id": "en-p16",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "hard": true,
+      "text": "The clinic gave me case number MTL-448213 for my referral. How long is the wait usually?"
+    },
+    {
+      "id": "en-n01",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "My 80-year-old mother has been short of breath since this morning. What should we do?"
+    },
+    {
+      "id": "en-n02",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I live in NDG. Where is the closest CLSC?"
+    },
+    {
+      "id": "en-n03",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "My postal code starts with H4A. Is there a walk-in clinic near me?"
+    },
+    {
+      "id": "en-n04",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I have asthma and COPD. Can I get the flu shot at a pharmacy?"
+    },
+    {
+      "id": "en-n05",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "My 2-year-old has a rash and a fever of 39. Should I call 811?"
+    },
+    {
+      "id": "en-n06",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "What is the poison centre number? Is it 1-800-463-5060?"
+    },
+    {
+      "id": "en-n07",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I have an appointment on November 14 at the clinic. Do I need to bring my health card?"
+    },
+    {
+      "id": "en-n08",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I live in Quebec City and I'm looking for a GMF taking new patients."
+    },
+    {
+      "id": "en-n09",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I'm 30 weeks pregnant and my feet are very swollen. Where can I get information?"
+    },
+    {
+      "id": "en-n10",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "My dad has Parkinson's and we need home care services in the West Island."
+    },
+    {
+      "id": "en-n11",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "How do I book a COVID vaccine on Clic Santé?"
+    },
+    {
+      "id": "en-n12",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Does the Montreal Children's Hospital or Sainte-Justine have a shorter ER wait tonight?"
+    },
+    {
+      "id": "en-n13",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I've been feeling depressed for weeks and can't sleep. Can 811 option 2 help me?"
+    },
+    {
+      "id": "en-n14",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "My pharmacist told me to take 400 mg of ibuprofen with food. Is that normal?"
+    },
+    {
+      "id": "en-n15",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "I'm 72. Should I get the RSV vaccine this fall?"
+    },
+    {
+      "id": "en-n16",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Is there a clinic on Sherbrooke Street West near Atwater metro?"
+    },
+    {
+      "id": "en-n17",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "My grandmother lives alone in Laval and keeps forgetting her pills. What services exist?"
+    },
+    {
+      "id": "en-n18",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "text": "I think I have pink eye. Can a pharmacist help or do I need a doctor?"
+    },
+    {
+      "id": "fr-p17",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "text": "Ma carte d'assurance maladie, c'est gagm 6203 1599. Elle est encore bonne?"
+    },
+    {
+      "id": "fr-p18",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "text": "C'est pour mon père, son numéro RAMQ est le LAVR-4211-0827, il a besoin d'un rendez-vous."
+    },
+    {
+      "id": "fr-p19",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "text": "Vous pouvez me texter au 514.555.0134 si une place se libère en CHSLD."
+    },
+    {
+      "id": "fr-p20",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "text": "Mon cell c'est le (819) 555-0177 poste 22, la clinique m'a dit d'appeler le GAP."
+    },
+    {
+      "id": "fr-p21",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "text": "Rejoignez-moi au +1 450 555 0110, je suis à Longueuil."
+    },
+    {
+      "id": "fr-p22",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "hard": true,
+      "text": "Je suis au H2X1Y4, c'est quoi le GMF le plus proche?"
+    },
+    {
+      "id": "fr-p23",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "hard": true,
+      "text": "code postal h1v-3r2, pharmacie ouverte 24h?"
+    },
+    {
+      "id": "fr-p24",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "text": "Je suis du 14 juillet 1958, est-ce que je peux avoir le vaccin contre le zona?"
+    },
+    {
+      "id": "fr-p25",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "text": "DDN : 23/05/1960. Je dois renouveler ma carte."
+    },
+    {
+      "id": "fr-p26",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "text": "Ma fille est née le vingt-trois mai deux mille dix-neuf, elle a droit à quels vaccins?"
+    },
+    {
+      "id": "fr-p27",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "text": "c'est pour ma voisine madame lucie gagnon-bélanger, elle a 90 ans et vit seule"
+    },
+    {
+      "id": "fr-p28",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "text": "Bonjour, ici Jean-François Roy. Je cherche un psychologue au CLSC."
+    },
+    {
+      "id": "fr-p29",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "hard": true,
+      "text": "app. 5, 1200 boul. René-Lévesque Ouest, est-ce qu'il y a une clinique dans l'édifice?"
+    },
+    {
+      "id": "fr-p30",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "hard": true,
+      "text": "Écrivez-moi à josee point tremblay arobase exemple point ca."
+    },
+    {
+      "id": "fr-n19",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Je suis proche du marché Jean-Talon, y a-t-il une clinique sans rendez-vous?"
+    },
+    {
+      "id": "fr-n20",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Je suis née en 1951, est-ce que j'ai droit au vaccin contre le zona?"
+    },
+    {
+      "id": "fr-n21",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Mon rendez-vous est le 12 mars 2027 à 14 h à l'Hôpital Maisonneuve-Rosemont. Où est-ce que je me stationne?"
+    },
+    {
+      "id": "fr-n22",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Est-ce que le 1 877 644-4545 de Services Québec peut m'aider pour ma carte soleil?"
+    },
+    {
+      "id": "fr-n23",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "J'habite sur la rue Masson, quel CLSC dessert mon quartier?"
+    },
+    {
+      "id": "fr-n24",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Quelle est l'adresse de l'urgence de l'Hôpital Pierre-Le Gardeur?"
+    },
+    {
+      "id": "fr-n25",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "J'ai pris 2 comprimés de 325 mg il y a 4 heures, est-ce que je peux appeler le 811 pour savoir si c'est correct?"
+    },
+    {
+      "id": "fr-n26",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Mon code postal commence par J4K, je suis à Longueuil. Où faire vacciner mon enfant?"
+    },
+    {
+      "id": "fr-n27",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Est-ce que l'Institut Philippe-Pinel ou le CLSC Saint-Michel offre des services en santé mentale?"
+    },
+    {
+      "id": "en-p17",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "text": "my medicare card is lavm 5501 1234, is it still valid?"
+    },
+    {
+      "id": "en-p18",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "text": "Text me at 514.555.0134 if a spot opens up."
+    },
+    {
+      "id": "en-p19",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "text": "My cell is +1 (819) 555-0177 ext. 22."
+    },
+    {
+      "id": "en-p20",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "hard": true,
+      "text": "I'm at h3z2y7, what's the closest GMF?"
+    },
+    {
+      "id": "en-p21",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "text": "My birthday is 14/07/1958, can I get the shingles vaccine?"
+    },
+    {
+      "id": "en-p22",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "text": "My son was born the twenty-third of May twenty nineteen, which vaccines does he need?"
+    },
+    {
+      "id": "en-p23",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "text": "this is for my neighbour mrs lucie gagnon-bélanger, she is 90 and lives alone"
+    },
+    {
+      "id": "en-p24",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "hard": true,
+      "text": "apt 5, 1200 René-Lévesque Blvd West, is there a clinic in the building?"
+    },
+    {
+      "id": "en-p25",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "hard": true,
+      "text": "Write to me at sarah dot oconnor at example dot com."
+    },
+    {
+      "id": "en-p26",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "text": "Hello, this is Marie-Ève Bergeron. I'm looking for a psychologist at the CLSC."
+    },
+    {
+      "id": "en-n19",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "I'm near Jean-Talon Market, is there a walk-in clinic?"
+    },
+    {
+      "id": "en-n20",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "I was born in 1951, am I eligible for the shingles vaccine?"
+    },
+    {
+      "id": "en-n21",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "My appointment is on March 12, 2027 at 2 pm at the Royal Victoria. Where do I park?"
+    },
+    {
+      "id": "en-n22",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Can Services Québec at 1-877-644-4545 help me with my health card?"
+    },
+    {
+      "id": "en-n23",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "I live on Masson Street, which CLSC covers my area?"
+    },
+    {
+      "id": "en-n24",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "What is the address of the Pierre-Le Gardeur Hospital emergency room?"
+    },
+    {
+      "id": "en-n25",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "I took 2 tablets of 325 mg 4 hours ago, can I call 811 to check?"
+    },
+    {
+      "id": "en-n26",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "text": "Does the Louis-H. Lafontaine institute or the CLSC Saint-Michel offer mental health services?"
+    },
+    {
+      "id": "fr-h01",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Allô, c'est Ginette Côté, j'ai une otite je pense. Le GMF est fermé, je vais où?"
+    },
+    {
+      "id": "fr-h02",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "ma carte c'est la ROYJ 7105 2234, ça marche-tu pour Clic Santé?"
+    },
+    {
+      "id": "fr-h03",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Laissez un message au 418-555-0190, je travaille de nuit."
+    },
+    {
+      "id": "fr-h04",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Je suis dans le G1K 3B4, y a-t-il une clinique ouverte samedi?"
+    },
+    {
+      "id": "fr-h05",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Je suis au 2250, avenue du Mont-Royal Est. La pharmacie Jean Coutu à côté vaccine-t-elle?"
+    },
+    {
+      "id": "fr-h06",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Mon chum est né le 2 décembre 1949, il a droit au vaccin VRS?"
+    },
+    {
+      "id": "fr-h07",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "mon courriel : g.cote62@exemple.ca"
+    },
+    {
+      "id": "fr-h08",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Ma petite Léa-Rose a des boutons partout depuis ce matin."
+    },
+    {
+      "id": "fr-h09",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Au CHUM, mon numéro de dossier c'est le 4417 2290, comment avoir mon rapport?"
+    },
+    {
+      "id": "fr-h10",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "other_identifier"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Mon numéro de permis de conduire c'est T6524-150877-08, ils me le demandent à la clinique."
+    },
+    {
+      "id": "fr-h11",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Je suis née le 5 avril 1944 et je vis seule à Lévis."
+    },
+    {
+      "id": "fr-h12",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Docteure Isabelle Fortin m'a envoyé une requête pour une prise de sang."
+    },
+    {
+      "id": "fr-h13",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Mon numéro : 581 555 0123."
+    },
+    {
+      "id": "fr-h14",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "postal_code",
+        "street_address"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "12 rue des Érables, Rimouski G5L 2K8"
+    },
+    {
+      "id": "fr-n31",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "Je suis dans le coin de Rimouski, code postal G5L. Il y a une urgence?"
+    },
+    {
+      "id": "fr-n32",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "Mon médecin au CLSC Hochelaga-Maisonneuve est parti à la retraite, je fais quoi?"
+    },
+    {
+      "id": "fr-n33",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "Est-ce que la pharmacie Jean Coutu ou Uniprix fait le vaccin contre la grippe sans rendez-vous?"
+    },
+    {
+      "id": "fr-n34",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "J'ai 83 ans et je vis seul depuis la mort de ma femme. Il y a des services pour les aînés?"
+    },
+    {
+      "id": "fr-n35",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "J'ai fait une prise de sang le 3 octobre, combien de temps pour les résultats?"
+    },
+    {
+      "id": "fr-n36",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "Je suis à l'Hôpital du Sacré-Cœur depuis 4 heures à l'urgence, c'est normal?"
+    },
+    {
+      "id": "en-h01",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Hi, I'm Kevin Tremblay, my throat is killing me and the GMF is closed."
+    },
+    {
+      "id": "en-h02",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "card number ROYK 8106 0215, does it work for Clic Santé?"
+    },
+    {
+      "id": "en-h03",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Leave a message at 418-555-0190, I work nights."
+    },
+    {
+      "id": "en-h04",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "I'm in G1K 3B4, is any clinic open Saturday?"
+    },
+    {
+      "id": "en-h05",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "I'm at 5100 Sherbrooke Street West, unit 4. Does the pharmacy next door vaccinate?"
+    },
+    {
+      "id": "en-h06",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "My husband was born December 2, 1949. Can he get the RSV vaccine?"
+    },
+    {
+      "id": "en-h07",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "my email: k.tremblay88@example.com"
+    },
+    {
+      "id": "en-h08",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "My little Olivia has spots all over since this morning."
+    },
+    {
+      "id": "en-h09",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "At the MUHC my chart number is 4417 2290, how do I get my report?"
+    },
+    {
+      "id": "en-h10",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "other_identifier"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "My passport number is GA123456, the clinic wants it."
+    },
+    {
+      "id": "en-h11",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "Dr. Amanda Wilson sent me a requisition for blood work."
+    },
+    {
+      "id": "en-h12",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "holdout": true,
+      "text": "My number: 581 555 0123."
+    },
+    {
+      "id": "en-n31",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "I'm around Rimouski, postal code G5L. Is there an ER?"
+    },
+    {
+      "id": "en-n32",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "My doctor at the CLSC Côte-des-Neiges retired, what do I do?"
+    },
+    {
+      "id": "en-n33",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "Does Jean Coutu or Pharmaprix do flu shots without an appointment?"
+    },
+    {
+      "id": "en-n34",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "I'm 83 and live alone since my wife died. Are there services for seniors?"
+    },
+    {
+      "id": "en-n35",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "I had a blood test on October 3, how long for results?"
+    },
+    {
+      "id": "en-n36",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": true,
+      "text": "I've been at the Sacré-Coeur Hospital ER for 4 hours, is that normal?"
+    },
+    {
+      "id": "fr-q01",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Je m'occupe de mon oncle Réjean Pelletier qui a l'Alzheimer, où trouver du répit?"
+    },
+    {
+      "id": "fr-q02",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Le numéro sur ma carte est BELM 6608 1932, je l'ai perdue, je fais quoi?"
+    },
+    {
+      "id": "fr-q03",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Appelez ma fille au 873 555-0166, c'est elle qui s'occupe de moi."
+    },
+    {
+      "id": "fr-q04",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "On reste au 345, 3e Avenue, à Val-d'Or. Il y a un CLSC proche?"
+    },
+    {
+      "id": "fr-q05",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Mon garçon est né le 30 septembre 2021, il lui manque des vaccins."
+    },
+    {
+      "id": "fr-q06",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Mon numéro de requête pour l'IRM est le 88317-B, combien de temps d'attente?"
+    },
+    {
+      "id": "fr-q07",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "postal_code"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "J9P 4N7, y a-t-il une urgence ouverte?"
+    },
+    {
+      "id": "fr-q08",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Mon infirmière, Nathalie, m'a dit d'appeler ici."
+    },
+    {
+      "id": "fr-q09",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "email_address"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "rejoignez-moi par courriel: rejean_p@exemple.ca"
+    },
+    {
+      "id": "fr-q10",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "Je suis à Val-d'Or, est-ce que l'hôpital a une urgence ouverte la nuit?"
+    },
+    {
+      "id": "fr-q11",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "Mon fils de 5 ans tousse depuis 3 jours et fait 38 de fièvre."
+    },
+    {
+      "id": "fr-q12",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "Est-ce que la clinique Familiprix sur le boulevard Taschereau fait des tests de grossesse?"
+    },
+    {
+      "id": "fr-q13",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "Mon rendez-vous est le 2 février 2027, est-ce que je peux le déplacer sur Clic Santé?"
+    },
+    {
+      "id": "en-q01",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "I take care of my uncle Gerald Murphy who has dementia, where can I find respite?"
+    },
+    {
+      "id": "en-q02",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "health_insurance_number"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "The number on my card is MURG 4408 1137, I lost it, what do I do?"
+    },
+    {
+      "id": "en-q03",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "phone_number"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "Call my daughter at 873 555-0166, she looks after me."
+    },
+    {
+      "id": "en-q04",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "street_address"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "We live at 345 3rd Avenue in Val-d'Or. Is there a CLSC nearby?"
+    },
+    {
+      "id": "en-q05",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "date_of_birth"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "My boy was born on 30 September 2021 and is missing vaccines."
+    },
+    {
+      "id": "en-q06",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "file_number"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "My MRI requisition number is 88317-B, how long is the wait?"
+    },
+    {
+      "id": "en-q07",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "holdout": 2,
+      "text": "My nurse, Jennifer, told me to call here."
+    },
+    {
+      "id": "en-q08",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "I'm in Val-d'Or, does the hospital have an ER open at night?"
+    },
+    {
+      "id": "en-q09",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "Does the Familiprix on Taschereau Boulevard do pregnancy tests?"
+    },
+    {
+      "id": "en-q10",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "My appointment is on February 2, 2027, can I move it on Clic Santé?"
+    },
+    {
+      "id": "en-q11",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "holdout": 2,
+      "text": "My 5-year-old has been coughing for 3 days with a fever of 38."
+    },
+    {
+      "id": "fr-nm01",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "salut moi c'est baptiste, je pense que j'ai la grippe"
+    },
+    {
+      "id": "fr-nm02",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Bonjour, je m'appelle chantal, mon fils tousse beaucoup"
+    },
+    {
+      "id": "fr-nm03",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Moi c'est Kevin, est-ce que je peux avoir le vaccin à la pharmacie?"
+    },
+    {
+      "id": "fr-nm04",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "C'est Sylvie qui écrit pour ma mère, elle a de la fièvre"
+    },
+    {
+      "id": "fr-nm05",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Mon nom est Gagnon, je cherche un GMF à Laval"
+    },
+    {
+      "id": "fr-nm06",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "mon prénom est mélanie et j'ai une otite"
+    },
+    {
+      "id": "fr-nm07",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Bonjour, ici Roxanne. Où faire vacciner mon bébé?"
+    },
+    {
+      "id": "fr-nm08",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Allô, c'est Ginette Côté, j'ai mal au dos depuis une semaine"
+    },
+    {
+      "id": "fr-nm09",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Je suis Marie, j'ai une question sur le zona"
+    },
+    {
+      "id": "fr-nm10",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Où est la clinique sans rendez-vous la plus proche? Merci, Jean"
+    },
+    {
+      "id": "fr-nm11",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Est-ce que la pharmacie peut renouveler mon ordonnance?\n— Lucie"
+    },
+    {
+      "id": "fr-nm12",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Mon bébé a des boutons. Merci beaucoup! Bonne journée, Nadia"
+    },
+    {
+      "id": "fr-nm13",
+      "lang": "fr",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "je m appelle steve pis j'ai la grippe"
+    },
+    {
+      "id": "en-nm01",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "hi my name is jordan and I have a fever"
+    },
+    {
+      "id": "en-nm02",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Hi, I'm Kevin, my throat really hurts"
+    },
+    {
+      "id": "en-nm03",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Hello, I am priya. Where can I get a flu shot?"
+    },
+    {
+      "id": "en-nm04",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "This is Daniel, I need a family doctor in Gatineau"
+    },
+    {
+      "id": "en-nm05",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "You can call me Max. My ear hurts since Monday."
+    },
+    {
+      "id": "en-nm06",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "My first name is Aisha and I think I have strep"
+    },
+    {
+      "id": "en-nm07",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Where do I go for stitches? Thanks, Emily"
+    },
+    {
+      "id": "en-nm08",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Is the CLSC open on Sunday?\n- Tom"
+    },
+    {
+      "id": "en-nm09",
+      "lang": "en",
+      "expected": true,
+      "kinds": [
+        "person_name"
+      ],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Hey, this is jenny, my son has a rash"
+    },
+    {
+      "id": "fr-nn01",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "je suis malade depuis trois jours, où aller?"
+    },
+    {
+      "id": "fr-nn02",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "moi c'est la fièvre qui m'inquiète le plus"
+    },
+    {
+      "id": "fr-nn03",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Moi c'est pour mon père, il a 80 ans"
+    },
+    {
+      "id": "fr-nn04",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Je suis enceinte et fatiguée, c'est normal?"
+    },
+    {
+      "id": "fr-nn05",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Bonjour, c'est urgent, mon fils a de la difficulté à respirer"
+    },
+    {
+      "id": "fr-nn06",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Y a-t-il une clinique ici à Laval?"
+    },
+    {
+      "id": "fr-nn07",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "C'est quoi le numéro d'Info-Santé?"
+    },
+    {
+      "id": "fr-nn08",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Merci beaucoup!"
+    },
+    {
+      "id": "fr-nn09",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Merci d'avance pour votre aide"
+    },
+    {
+      "id": "fr-nn10",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "je suis inquiète pour ma mère qui tousse"
+    },
+    {
+      "id": "fr-nn11",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Je suis rendue à l'urgence depuis 5 heures, c'est normal?"
+    },
+    {
+      "id": "fr-nn12",
+      "lang": "fr",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "moi c'est surtout le mal de tête qui me dérange"
+    },
+    {
+      "id": "en-nn01",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "I'm worried about my son's cough"
+    },
+    {
+      "id": "en-nn02",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "I'm sick and tired, where should I go?"
+    },
+    {
+      "id": "en-nn03",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "I am pregnant and I have a headache"
+    },
+    {
+      "id": "en-nn04",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "I'm looking for a walk-in clinic near Verdun"
+    },
+    {
+      "id": "en-nn05",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "this is for my neighbour who lives alone"
+    },
+    {
+      "id": "en-nn06",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "I'm 45 and I've never had a shingles shot"
+    },
+    {
+      "id": "en-nn07",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Thanks again for the help"
+    },
+    {
+      "id": "en-nn08",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "I'm not sure if I need to see a doctor"
+    },
+    {
+      "id": "en-nn09",
+      "lang": "en",
+      "expected": false,
+      "kinds": [],
+      "hard": true,
+      "layer": "name-intro",
+      "text": "Hi, I'm new in Quebec, how do I get a health card?"
+    }
+  ]
+}
