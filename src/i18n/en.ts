@@ -251,6 +251,9 @@ export const en: Dict = {
     timeout: "The answer takes too long. Try again, or call 811.",
     offline: "You are not connected to the Internet. Check your connection, then try again.",
     retry: "Try to send the message again",
+    stuck:
+      "The message still does not go through. Our safety checks may have blocked it. Reload the page to start a new conversation, or try from another device. If it is urgent, call 811 or 911.",
+    reload: "Reload the page",
   },
   ended: {
     adviceTitle: "We cannot continue this conversation",

@@ -510,3 +510,8 @@
   margin-inline-start: 0.25em;
   vertical-align: -0.15em;
 }
+
+/* Under the "stuck" notice: reload the page for a new session. */
+.reload {
+  margin-top: var(--space-3);
+}

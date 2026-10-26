@@ -1,7 +1,7 @@
 // The chat screen: thread, live activity steps, one morphing alert, composer.
 // The person never sees an unchecked reply: the thread receives a reply only after both checks pass.
 import { useReducedMotion } from "motion/react";
-import { CircleCheck, FileDown, FileText, LogOut, MessageCircleOff, Phone, X } from "lucide-react";
+import { CircleCheck, FileDown, FileText, LogOut, MessageCircleOff, Phone, RotateCw, X } from "lucide-react";
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState, type Ref } from "react";
 import { Alert } from "@/components/arc/alert/alert";
 import { Button } from "@/components/arc/button/button";
@@ -302,6 +302,13 @@ export function Chat({
           <div className={styles.dockInner}>
             <Alert open={!!notice && !chat.ended} tone={notice?.kind === "pii" ? "danger" : "warning"} title={alertTitle}>
               {alertBody}
+              {notice?.kind === "error" && notice.code === "stuck" && (
+                // A reload starts a new session: the conversation only lives in this page.
+                <Button variant="secondary" size="sm" className={styles.reload} onClick={() => window.location.reload()}>
+                  <RotateCw size={16} strokeWidth={1.75} aria-hidden="true" />
+                  {t.errors.reload}
+                </Button>
+              )}
             </Alert>
             {chat.ended ? (
               <div className={styles.ended}>

@@ -252,6 +252,9 @@ export const fr = {
     timeout: "La réponse prend trop de temps. Réessayez, ou appelez le 811.",
     offline: "Vous n'êtes plus connecté à Internet. Vérifiez votre connexion, puis réessayez.",
     retry: "Réessayer d'envoyer le message",
+    stuck:
+      "Le message ne passe toujours pas. Nos mécanismes de sécurité l'ont peut-être bloqué. Rechargez la page pour commencer une nouvelle conversation, ou essayez depuis un autre appareil. Si c'est urgent, appelez le 811 ou le 911.",
+    reload: "Recharger la page",
   },
   ended: {
     adviceTitle: "Nous ne pouvons pas poursuivre cette conversation",

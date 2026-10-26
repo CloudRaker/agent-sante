@@ -50,7 +50,7 @@ export function shownAttachments(meta: Record<string, ReplyMeta>): Attachments |
 
 export type Notice =
   | { kind: "pii"; kinds: PiiKind[] }
-  | { kind: "error"; code: "unavailable" | "busy" | "timeout" | "offline" }
+  | { kind: "error"; code: "unavailable" | "busy" | "timeout" | "offline" | "stuck" }
   | { kind: "recap"; code: "unavailable" | "failed" };
 
 export type Ended = { reason: EndReason | "expired" | "closed" | "capacity" | "maintenance" };
@@ -88,6 +88,8 @@ export function useChat({ session, lang, onLanguage, simple = false }: Options) 
   /** The reply id whose question waits for an answer. The next message answers it. */
   const openQuestion = useRef<string | null>(null);
   const [openQuestionId, setOpenQuestionId] = useState<string | null>(null);
+  /** Failed attempts by message id: the second failure of the same message offers a fresh page. */
+  const failures = useRef(new Map<string, number>());
   /** Messages sent as a suggested answer, by id (a retry sends them the same way). */
   const choiceIds = useRef(new Set<string>());
   /** Recap requests, by id (the bubble shows a label; the request sends the app message). */
@@ -257,10 +259,11 @@ export function useChat({ session, lang, onLanguage, simple = false }: Options) 
           return "failed";
         }
         setStatus("failed");
-        setNotice({
-          kind: "error",
-          code: code === "busy" || code === "rate_limited" ? "busy" : code === "timeout" ? "timeout" : "unavailable",
-        });
+        const mapped = code === "busy" || code === "rate_limited" ? "busy" : code === "timeout" ? "timeout" : "unavailable";
+        const count = (failures.current.get(messageId) ?? 0) + 1;
+        failures.current.set(messageId, count);
+        // The same message fails again: this session may be stuck. Offer a new page.
+        setNotice({ kind: "error", code: mapped === "unavailable" && count >= 2 ? "stuck" : mapped });
         return "failed";
       } finally {
         if (abort.current === ctrl) abort.current = null;
