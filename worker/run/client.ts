@@ -192,11 +192,15 @@ export class RunClient implements RunApi {
     caller?.addEventListener("abort", onAbort);
     const events: RunEvent[] = [];
     let runId = knownRunId ?? "";
+    const body = JSON.stringify(typeof input === "string" ? { input } : input);
     try {
       const res = await this.call(path, {
         method: "POST",
-        headers: { accept: "text/event-stream", "idempotency-key": idempotencyKey },
-        body: JSON.stringify(typeof input === "string" ? { input } : input),
+        // The key carries a fingerprint of the request. A retry of the same request reuses the
+        // run; a retry that differs (routing went another way, simple mode changed) gets its own
+        // key instead of an idempotency_mismatch on every attempt.
+        headers: { accept: "text/event-stream", "idempotency-key": `${idempotencyKey}.${fingerprint(`${path}\n${body}`)}` },
+        body,
         signal: ctrl.signal,
       });
       runId = res.headers.get("x-run-id") ?? runId;
@@ -351,4 +355,14 @@ export async function* readSse(body: ReadableStream<Uint8Array>): AsyncGenerator
   } finally {
     reader.releaseLock();
   }
+}
+
+/** FNV-1a 32-bit of a string, in base 36: a short, stable fingerprint (not a security hash). */
+export function fingerprint(text: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return (h >>> 0).toString(36);
 }
